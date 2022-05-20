@@ -36,8 +36,8 @@ afbeeldingen, video's en audio.
 
 3. Wat is een anchor tag?
   Text binnen de anchor-tag <a> </a> gedraagt zich als een link.
-  Je kunt hier met een href (hypertext reference) verwijzen naar een extern document
-   of een element binnen het document zelf.
+  Je kunt hier met een href attribuut (hypertext reference) verwijzen naar een extern document
+   of een element binnen het document zelf. Voorbeeld: <a href="https://www.framedevogel.nl </a>
 
 
 
