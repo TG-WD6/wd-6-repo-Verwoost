@@ -1,0 +1,16 @@
+The implicit ARIA role of html elements.
+
+Header: If not a descendant of an article, aside, main, nav or section element, 
+or an element with role=article, complementary, main, navigation or region 
+then role=banner. Otherwise no corresponding role.
+
+Footer: If not a descendant of an article, aside, main, nav or section element,
+or an element with role=article, complementary, main, navigation or region
+then role=contentinfo. Otherwise no corresponding role.
+
+Section: role=region if the section element has an accessible name. Otherwise, no corresponding role
+
+Aside: role=complementary
+
+Input: role=textbox
+
