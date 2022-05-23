@@ -69,3 +69,29 @@ afbeeldingen, video's en audio.
   Text binnen de anchor-tag  &lt;a>  &lt;/a> gedraagt zich als een link.
   Je kunt hier met een href attribuut (hypertext reference) verwijzen naar een extern document
    of een element binnen het document zelf. Voorbeeld:  &lt;a> href="https://www.framedevogel.nl"  &lt;/a>
+
+* ### 4 Noem een aantal nieuwe functionaliteiten in HTML5
+De &lt;video> en &lt;audio> tags: met deze tags plaats je video of audio waar je voorheen JavaScript nodig had.
+De tags die je document structuur geven als &lt;nav> , &lt;header>, &lt;footer en &lt;section> zijn eveneens nieuw.
+Voor het toepassen van Vector Graphics heb je geen extra programma's meer nodig.
+
+* ### 5 Wat zijn HTML attributen?
+Dit zijn speciale woorden die je in de openingstag van HTML-elementen zet om bepaalde kenmerken van dit element te bepalen.  Bijvoorbeeld: het &lt;img> element heeft een src="mijnPath" attribuut en een alt="mijnAlt" attribuut, &lt;a> heeft het href="mijnURL" attribuut, &lt;html> heeft het lang="mijnTaal" attribuut.
+
+* ### 6 Wat is HTML semantics?
+Met sementics worden elementen bedoelt die een duidelijke rol hebben. &lt;div> is dat bijvoorbeeld NIET. Wel: 
+```
+<article>
+<aside>
+<details>
+<figcaption>
+<figure>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+<time>
+```
