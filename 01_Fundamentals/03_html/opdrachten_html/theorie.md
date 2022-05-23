@@ -95,3 +95,33 @@ Met sementics worden elementen bedoelt die een duidelijke rol hebben. &lt;div> i
 <summary>
 <time>
 ```
+
+* ### 7 Waarvoor worden meta tags gebruikt?
+Met meta tags kun je informatie over het document toevoegen zoals de gebruikte character-set, de auteur en een omschrijving. Ze bestaan uit een 'name' en een 'content' attribuut. Bijvoorbeeld: 
+``` 
+<meta name="author" content="Joost">
+<meta name="description" content="Dit is een omschrijving van deze pagina.">
+```
+De meta elementen staan in het &lt;head> gedeelte van het document.
+
+* ### 8 Wat is een nested element?
+Een nested element is een element binnen een ander element.
+In het volgende voorbeeld is een article element 'nested' in een section element dat op zijn beurt 'nested' is in het body element dat weer 'nested' is in het html element.
+```
+<html>
+  <body>
+    <section>
+      <article>
+      </article>
+    </section>
+  </body>
+</html>
+```
+
+* ### 9 Wat is het verschil tussen inline en block elementen?
+Een block element neemt de hele breedte van de parent in beslag in tegenstelling tot inline elementen.
+Block elementen stapel je op elkaar, inline elementen kunnen naast elkaar.
+
+* ### 10 Wat is Accessibility?
+Dit is wat je doet om je applicatie toegankelijker te maken voor mensen met een handicap.
+
