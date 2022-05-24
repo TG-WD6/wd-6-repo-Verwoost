@@ -109,6 +109,7 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 
 ### Maak een .html file waar je alledrie in gebruikt
 <br>
+
 [link naar antwoord](hfdstkEENopdrachtZes.html)
 
 
