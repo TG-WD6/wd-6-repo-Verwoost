@@ -121,3 +121,6 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 * Meerdere selectors die hetzelfde stukje CSS gebruiken
 
 ### Maak een .html file waarin beide voorbeelden worden gebruikt
+<br>
+
+[link naar antwoord](hfdstkEENopdrachtZEVEN.html)
