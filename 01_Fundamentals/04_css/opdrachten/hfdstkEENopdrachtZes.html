@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht Zes</title>
+    <style>
+        * {
+            background-color: yellow;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        a[target] {
+            background-color: green;
+            color: white;
+        }
+
+        article>h2 {
+            background-color: blue;
+            color: white;
+        }
+
+        img+p {
+            background-color: purple;
+            color: white;
+        }
+
+        article, h3, p {
+            background-color: beige;
+        }
+
+        body{
+            background-color: gray;
+        }
+
+        img~h3 {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <a href="#chapter1" target="_blank">Deze link heeft een attribute: target en heeft daarom een groene
+                achtergrond</a>
+            <a href="#chapter2">Hoofdstuk 2</a>
+            <a href="#chapter3">Hoofdstuk 3</a>
+        </ul>
+    </nav>
+
+    <section class="chapter1" id="chapter1">
+        <div class="container">
+            <article>
+                <h2>Title1 is een child van article en heeft daarom een blauwe achtergrond</h2>
+                <img src="../images/image7.png" alt="">
+                <p>Dit is een paragraph adjecant aan een image en heeft daarom een paarse achtergrond</p>
+                <h2>h2 tekst is een child van article en heeft daarom een blauwe achtergrond</h2>
+                <p> Dit is een tweede paragraph tekst</p>
+            </article>
+            Deze tekst heeft door de universal selector een gele achtergrond.
+        </div>
+    </section>
+
+    <section class="chapter2" id="chapter2">
+        <div class="container">
+            <article>
+                <h2>Title2 is een child van article en heeft daarom een blauwe achtergrond</h2>
+                <p>Dit is een paragraph in een article in een section</p>
+                <h3>Dit is een h3</h3>
+                <img src="../images/image30.png" alt="">
+                <p>Dit is een paragraph adjecant aan een image en heeft daarom een paarse achtergrond</p>
+                <h3>Dit is een h3 en sibling 1 van 2 na een image en heeft een rode achtergrond</h3>
+                <code>some code</code>
+                <p>Dit is een paragraph in een article in een section</p>
+                <h3>Dit is een h3 en sibling 2 van 2 na een image en heeft een rode achtergrond</h3>
+            </article>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -95,4 +95,18 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 
 [link naar antwoord](hfdstkEENopdrachtVIJF.html)
 
+<br>
+<br>
+
+* ### Q6 Verder heb je ook nog de volgende selectors:
+
+
+* universal selector
+* attribute selectors
+* child selectors
+* adjacent sibling selectors
+* general sibling selectors
+
+### Maak een .html file waar je alledrie in gebruikt
+
 
