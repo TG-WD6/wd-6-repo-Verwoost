@@ -8,7 +8,7 @@
     <title>Opdracht Zes</title>
     <style>
         * {
-            background-color: yellow;
+            background-color: aquamarine;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
@@ -22,16 +22,22 @@
             color: white;
         }
 
+        .container {
+            width: 60vw;
+        }
+
         img+p {
             background-color: purple;
             color: white;
         }
 
-        article, h3, p {
+        article,
+        h3,
+        p {
             background-color: beige;
         }
 
-        body{
+        body {
             background-color: gray;
         }
 
@@ -56,13 +62,17 @@
     <section class="chapter1" id="chapter1">
         <div class="container">
             <article>
+                <h3>Dit is een h3</h3>
                 <h2>Title1 is een child van article en heeft daarom een blauwe achtergrond</h2>
+                <p>Dit is een paragraph </p>
                 <img src="../images/image7.png" alt="">
-                <p>Dit is een paragraph adjecant aan een image en heeft daarom een paarse achtergrond</p>
+
+                <p>Dit is een paragraph adjacent (direct volgend ná) aan een image en heeft daarom een paarse
+                    achtergrond</p>
                 <h2>h2 tekst is een child van article en heeft daarom een blauwe achtergrond</h2>
                 <p> Dit is een tweede paragraph tekst</p>
             </article>
-            Deze tekst heeft door de universal selector een gele achtergrond.
+            Deze tekst heeft door de universal selector een aquamarine achtergrond.
         </div>
     </section>
 
@@ -73,11 +83,29 @@
                 <p>Dit is een paragraph in een article in een section</p>
                 <h3>Dit is een h3</h3>
                 <img src="../images/image30.png" alt="">
-                <p>Dit is een paragraph adjecant aan een image en heeft daarom een paarse achtergrond</p>
+                <p>Dit is een paragraph adjacent aan een image en heeft daarom een paarse achtergrond</p>
                 <h3>Dit is een h3 en sibling 1 van 2 na een image en heeft een rode achtergrond</h3>
-                <code>some code</code>
+                <p>Dit is een paragraph in een article in een section</p>
                 <p>Dit is een paragraph in een article in een section</p>
                 <h3>Dit is een h3 en sibling 2 van 2 na een image en heeft een rode achtergrond</h3>
+            </article>
+        </div>
+    </section>
+
+    <section class="chapter3" id="chapter3">
+        <div class="container">
+            <article>
+                <h2>Hoofdstuk 3</h2>
+                <br>
+                <h3>Een mooie titel</h3>
+                <img src="../images/image30.png" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus velit voluptate labore alias.
+                    Suscipit quidem iste recusandae reiciendis quas nulla, corrupti soluta ullam doloribus placeat,
+                    consectetur esse reprehenderit dolore optio.</p>
+                <h3>De tweede titel</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus iusto alias quisquam quia
+                    officiis rem, earum veritatis tempora, aut ab velit consequuntur modi. Sequi optio corrupti ipsum id
+                    voluptatem iste?</p>
             </article>
         </div>
     </section>
