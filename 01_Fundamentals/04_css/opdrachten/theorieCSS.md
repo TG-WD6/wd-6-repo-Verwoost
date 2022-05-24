@@ -112,4 +112,12 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 
 [link naar antwoord](hfdstkEENopdrachtZes.html)
 
+<br>
+<br>
 
+* ### Q7 Je kan selectors ook op meerdere manieren combineren. Bijvoorbeeld:
+
+* Een selector die alle elementen met type div EN class “opdracht” selecteert
+* Meerdere selectors die hetzelfde stukje CSS gebruiken
+
+### Maak een .html file waarin beide voorbeelden worden gebruikt
