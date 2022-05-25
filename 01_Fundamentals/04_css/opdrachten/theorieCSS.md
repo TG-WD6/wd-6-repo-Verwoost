@@ -287,7 +287,7 @@ Voorbeeld:
 
 2. Hoe hoog is de box? 120px
 
-3. Wat merk je op met width en height? alles behalve margin telt mee voor de breedte en hoogte.
+3. Wat merk je op met width en height? alles behalve margin telt mee voor de breedte en hoogte. Dus als je width en height op 100px zet en de padding op 5px, dan is de totale hoogte 100px PLUS (2 x 5px) = 110px
 
 <br>
 
