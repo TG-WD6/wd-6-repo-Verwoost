@@ -124,3 +124,96 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 <br>
 
 [link naar antwoord](hfdstkEENopdrachtZEVEN.html)
+<br>
+<br>
+
+* ### Q8 Leg in eigen woorden uit wat met cascade en inheritance wordt bedoeld. Maak voorbeelden om je antwoord uit te leggen.
+
+<br>
+
+Cascade: kun je zien als een waterval waarbij het water dat het langst aan het vallen is de meeste impact heeft.
+Met betrekking tot CSS zijn er drie regels waar je rekening mee moet houden: 
+
+* volgorde (source order):      wanneer meerdere regels even specifiek en belangrijk zijn telt de onderste
+* specicificiteit (specificity) wanneer meerdere regels even belangrijk zijn telt de meest specifieke
+* belang (importance)           de meest belangrijke regel telt   
+
+<br>
+Voorbeeld 1: de h2 elementen zullen rood zijn omdat de laatste regel telt.
+<br>
+
+```
+<style>
+  h2{
+    color: blue;
+  }
+
+  h2{
+    color: red;
+  }
+
+```
+<br>
+
+Voorbeeld 2: Het eerste h2 element is rood. Het tweede h2 element is blauw omdat de .class selector meer specifiek is. Het derde element groen omdat deze een id attribute heeft. Een id selector is de meest specifieke selector.
+
+<br>
+
+```
+<style> 
+
+  h2{ 
+    color: red;
+  }
+
+  .bluetitle{
+    color: blue;
+  }
+
+  #greentitle{
+    color: green;
+  }
+
+</style>
+</head>
+
+<html>
+  <body>
+
+    <h2>Title1</h2>
+
+    <h2 class="bluetitle">Title2</h2>
+
+    <h2 class="bluetitle" id="greentitle">Title3</h2>
+
+```
+<br>
+<br>
+
+Voorbeeld 3: In het volgende voorbeeld zal het h2 element rood zijn en geen border hebben omdat hoewel de id-selector het meest specifiek is, de regel "border: none !important;" in de class-selector de rest overtreft wat betreft belang.
+<br>
+
+```
+  .greenNoBorder{
+    color: green;
+    border: none !important;
+  }
+
+  #redGreyBorder{
+    color: red;
+    border: 2px solid grey;
+  }
+
+</style>
+</head>
+
+<html>
+  <body>
+
+  <h2 class="greenNoBorder" id="redGreyBorder">Title</h2>
+
+```
+
+
+
+
