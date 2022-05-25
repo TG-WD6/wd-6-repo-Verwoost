@@ -214,6 +214,91 @@ Voorbeeld 3: In het volgende voorbeeld zal het h2 element rood zijn en geen bord
 
 ```
 
+## H2 Het BOX-model
+
+* ### Q1 Wat zijn de eigenschappen van block boxes en inline boxes?
+
+<br>
+
+Block neemt de gehele breedte van de container in beslag, inline boxes kunnen naast elkaar.
+
+<br>
+
+* ### Q2 Maak wat hieronder staat met paragraph en span tags.
+
+![alt_text](../images/image17.png "image_tooltip")
+
+<br>
+
+[link naar het antwoord](hfdstkTWEEopdrachtTWEE.html)
+
+<br>
+
+* ### Q3 Wat gebeurt er als je een width en een height toevoegt aan de span tag ( &lt;span> ) van vorige opdracht?
+
+Helemaal niets.
+
+<br>
+
+* ### Q4 Hieronder zie je een box-model:
+
+![alt_text](../images/image11.png)
+
+Leg uit wat de volgende termen betekenen: content, padding, margin en border.
+
+<br>
+
+1. Content is de inhoud.
+2. Padding is de ruimte tussen de inhoud en de border.
+3. Border is de rand om de inhoud en de padding.
+4. Margin is ruimte tussen de border en buiten de box.
+
+<br>
+
+* ### Q5 Als je ruimte wilt maken tussen de border en content, welke css property gebruik je dan? Maak een voorbeeld in je antwoord.
+
+```
+Antwoord: padding.
+Voorbeeld: 
+
+<p style= "padding: 2rem;"> Dit is een paragraaf </p>
+
+```
+
+<br>
+
+* ### Q6 Als je ruimte wilt maken tussen de border en buiten de box, welke css property gebruik je dan? Maak een voorbeeld in je antwoord.
+
+```
+Antwoord: margin.
+Voorbeeld:
+
+<p style= "margin: 2rem;"> Dit is een paragraaf </p>
+
+```
+
+<br>
+
+* ### Q7 Maak nu een blok met width: 100px, height: 100px, margin: 5px, padding 5px en border-width: 5px. Zie hieronder:
+
+![alt_text](../images/image25.png)
+
+1. Hoe breed is de box? 120px
+
+2. Hoe hoog is de box? 120px
+
+3. Wat merk je op met width en height? alles behalve margin telt mee voor de breedte en hoogte.
+
+<br>
+
+[link naar het voorbeeld](hfdstkTWEEopdrachtZEVEN.html)
+
+* ### Q8 Welke CSS property kun je gebruiken om ervoor te zorgen dat de waarde van width en height de totale breedte en hoogte is van het blok van de voorgaande opdracht?
+
+box-sizing: border-box;
+
+<br>
+<br>
 
 
 
