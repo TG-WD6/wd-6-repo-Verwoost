@@ -319,6 +319,29 @@ Andere elementen schuiven op alsof het element niet bestaat.
 
 [link naar de antwoorden](hfdstkDRIE.html)
 
+## H4 Pseudo Elements
+
+* ### Q1 Er zijn 16 verschillende pseudo-elementen. Beschrijf ze alle 14 kort en maak voor elk een voorbeeld
+
+1. **::after** als je iets wilt toevoegen na een element. Bijvoorbeeld een pijl na een link.
+2. **::backdrop** als je een achtergrondkleur wilt toevoegen aan een element als het fullscreen wordt weergegeven.
+3. **::before** als je iets wilt toevoegen vóór een element. Bijvoorbeeld een icon voor een listitem.
+4. **::cue** als je de cijfers bij het afspelen van een video wilt aanpassen
+6. **::first-letter** als je de eerste letter van de inhoud van een element wilt stylen. de IJ werkt niet.
+5. **::cue-region** heeft ook iets te maken met de tekst die bij een video komt
+7. **::first-line** als je de eerste regel van de inhoud van een element wilt stylen. toepassen bij block elementen en niet bij inline elementen.
+8. **::file-selector-button** als je bij &lt;input type="file"> de knop: bestand kiezen wilt aanpassen.
+9. **::grammar-error** als de browser een grammaticale fout detecteert.
+10. **::marker** de bullets bij een listitem. Het pijltje bij een summary.
+11. **::part** heeft iets met schaduw te maken, maar ik begrijp het niet helemaal.
+12. **::placeholder** dit kun je beter niet aanpassen ivm leesbaarheid en accessibility.
+13. **::selection** de door de gebruiker geselecteerde tekst stylen. Denk aan contrast en accessibility.
+14. **::slotted** te ingewikkeld voor nu.
+15. **::spelling-error** als de browser een spelfout detecteert.
+16. **::target-text** als de browser scroll-to-text fragments ondersteunt dan kun je deze stylen.
+
+[link naar de voorbeelden](hfdstkVIERopdrachtEEN.html)
+
 
 
 
