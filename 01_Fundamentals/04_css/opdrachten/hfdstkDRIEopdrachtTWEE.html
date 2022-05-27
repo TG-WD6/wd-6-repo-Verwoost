@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS H3 Q2</title>
+
+    <style>
+        h1,
+        p {
+            color: white;
+            position: relative;
+            top: 100px;
+            left: 200px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        img {
+            position: absolute;
+            border: 10px solid white;
+            box-shadow: 10px 10px 15px 5px grey;
+        }
+
+        .outer {
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+
+        .inner {
+            height: 50px;
+            width: 50px;
+            position: relative;
+            background-color: green;
+            left: 25px;
+            top: 25px;
+        }
+
+        .container {
+            position: relative;
+            height: 500px;
+            width: 700px;
+            border: 1px solid black;
+        }
+
+        .whiteTXT {
+            color: white;
+        }
+
+        .yellowTXT {
+            color: goldenrod;
+            top: 50px;
+            left: 300px;
+            margin-top: 0px;
+        }
+
+        h2 {
+            position: relative;
+            top: 50px;
+            left: 300px;
+            margin-bottom: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .yellowBG {
+            background-color: yellow;
+            position: relative;
+            top: 180px;
+            left: 10px;
+            width: 500px;
+            padding-left: 2em;
+
+        }
+
+        .bgWhiteOpacity {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: black;
+            top: 180px;
+            left: 50px;
+            padding-left: 1em;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../images/rainbow.png" alt="a rainbow">
+        <h1>Dit is een titel</h1>
+        <p>Dit is een paragraaf</p>
+        <p>Dit is nog een paragraaf</p>
+    </div>
+
+    <div class="container" style="height:150px;">
+        <div class="outer"></div>
+        <div class="inner"></div>
+    </div>
+
+    <div class="container">
+        <img src="../images/coast.jpg" alt="a view on the sunny coast of Ibiza">
+        <h2>Groeten uit <span class="whiteTXT">IBIZA</span></h2>
+        <p class="yellowTXT">Kom je ook hier vakantie vieren?</p>
+    </div>
+
+    <div class="container" style="top: -50px">
+        <h2 style="background-color: yellow; top:230px; left: 0px; width: 680px;">hello</h2>
+        <img src="../images/coast.jpg" style="box-shadow: none; border-right: none;" alt="a view on the sunny coast of Ibiza">
+        <h2 class="yellowBG">Bbbrrrrr...</h3>
+            <p class="bgWhiteOpacity">Super koud hier zeg!</p>
+    </div>
+
+</body>
+
+</html>

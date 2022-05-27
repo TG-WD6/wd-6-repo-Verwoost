@@ -300,5 +300,33 @@ box-sizing: border-box;
 <br>
 <br>
 
+## H3 Display and Positioning
+
+* ### Q1 De belangrijkste waardes van “position” zijn static, relative, absolute, fixed & sticky. Leg voor elke uit wat ze doen.
+
+<br>
+
+1. Static: Dit is de standaardwaarde. Het element blijft in de normale flow van het document.
+2. Relative: Het element wordt relatief aan de initiele positie gepositioneerd en de ruimte die het element in zou nemen blijft bezet. Andere elementen blijven dus op hun plek.
+3. Absolute: Het element wordt uit de normale flow getild en verhoudt zich tot de buitenkant van de container.
+Andere elementen schuiven op alsof het element niet bestaat. 
+4. Fixed:  Het element wordt uit de normale flow getild en verhoud zich tot de initiele positie in de viewport.
+5. Sticky: Het element blijft in de normale flow en verhoud zich tot het dichtstbijzijnde scrolling element. Als je scrollt lijkt dit element vast-(geplakt) te zitten.
+
+<br>
+
+* ### Q2  Zie de onderstaande HTML code.
+
+&lt;h1>Dit is een titel&lt;/h1>
+
+&lt;p>Dit is een paragraaf.&lt;/p>
+
+&lt;p>Dit is nog een paragraaf.&lt;/p>
+
+Zorg ervoor dat het &lt;h1> element altijd 50px van de top en 50px van de rechterkant van het scherm zichtbaar is. Maak het &lt;h1> element rood door een RGB kleurcodering toe te passen.
+
+<br>
+
+
 
 
