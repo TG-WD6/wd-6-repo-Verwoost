@@ -129,9 +129,8 @@ Dit is wat je doet om je applicatie toegankelijker te maken voor mensen met een 
 
 ## HTML exercises ##
 
-[link naar het resultaat](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/03_html/opdrachten_html/animals.html)
+[link naar het resultaat CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/03_html/opdrachten_html/animals.html)
 
 <br>
 
-<a href="https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/03_html/opdrachten_html/animals.html" target="_blank" >link naar het resultaat</a>
 
