@@ -77,7 +77,7 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 
 <br>
 
-[link naar antwoord](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtVIER.html)
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtVIER.html)
 
 <br>
 <br>
@@ -93,7 +93,7 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 
 <br>
 
-[link naar antwoord](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtVIJF.html)
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtVIJF.html)
 
 <br>
 <br>
@@ -110,7 +110,7 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 ### Maak een .html file waar je alledrie in gebruikt
 <br>
 
-[link naar antwoord](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtZES.html)
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtZES.html)
 
 <br>
 <br>
@@ -123,7 +123,7 @@ Maak het onderstaande na door gebruik te maken van selectors. De kleuren die hie
 ### Maak een .html file waarin beide voorbeelden worden gebruikt
 <br>
 
-[link naar antwoord](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtZEVEN.html)
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkEENopdrachtZEVEN.html)
 <br>
 <br>
 
@@ -230,7 +230,7 @@ Block neemt de gehele breedte van de container in beslag, inline boxes kunnen na
 
 <br>
 
-[link naar het antwoord](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkTWEEopdrachtTWEE.html)
+[link naar het antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkTWEEopdrachtTWEE.html)
 
 <br>
 
@@ -291,7 +291,7 @@ Voorbeeld:
 
 <br>
 
-[link naar het voorbeeld](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkTWEEopdrachtZEVEN.html)
+[link naar het voorbeeld CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkTWEEopdrachtZEVEN.html)
 
 * ### Q8 Welke CSS property kun je gebruiken om ervoor te zorgen dat de waarde van width en height de totale breedte en hoogte is van het blok van de voorgaande opdracht?
 
@@ -317,7 +317,7 @@ Andere elementen schuiven op alsof het element niet bestaat.
 
 * ### Q2  to Q8
 
-[link naar de antwoorden](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkDRIE.html)
+[link naar de antwoorden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkDRIE.html)
 
 ## H4 Pseudo Elements
 
@@ -340,7 +340,7 @@ Andere elementen schuiven op alsof het element niet bestaat.
 15. **::spelling-error** als de browser een spelfout detecteert.
 16. **::target-text** als de browser scroll-to-text fragments ondersteunt dan kun je deze stylen.
 
-[link naar de voorbeelden](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIERopdrachtEEN.html)
+[link naar de voorbeelden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIERopdrachtEEN.html)
 
 
 
