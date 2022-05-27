@@ -315,17 +315,11 @@ Andere elementen schuiven op alsof het element niet bestaat.
 
 <br>
 
-* ### Q2  Zie de onderstaande HTML code.
+* ### Q2  to Q8
 
-&lt;h1>Dit is een titel&lt;/h1>
+[link naar de antwoorden](hfdstkDRIE.html)
 
-&lt;p>Dit is een paragraaf.&lt;/p>
 
-&lt;p>Dit is nog een paragraaf.&lt;/p>
-
-Zorg ervoor dat het &lt;h1> element altijd 50px van de top en 50px van de rechterkant van het scherm zichtbaar is. Maak het &lt;h1> element rood door een RGB kleurcodering toe te passen.
-
-<br>
 
 
 
