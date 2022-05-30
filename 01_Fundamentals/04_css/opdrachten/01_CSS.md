@@ -354,7 +354,7 @@ Andere elementen schuiven op alsof het element niet bestaat.
 
 <br>
 
-### Q3 Hieronder vind je nog eens een voorbeeld van het gebruik van een pseudo-element ::before. Kun jij dit namaken? Gebruik een eigen afbeelding.
+* ### Q3 Hieronder vind je nog eens een voorbeeld van het gebruik van een pseudo-element ::before. Kun jij dit namaken? Gebruik een eigen afbeelding.
 
 ![alt_text](../images/image29.png)
 
@@ -362,7 +362,31 @@ Andere elementen schuiven op alsof het element niet bestaat.
 
 [link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIER.html)
 
+<br>
 
+* ### Q4 Hieronder vind je wederom een voorbeeld van het gebruik van een pseudo-element. Kun jij dit namaken?
+
+<br>
+
+![alt_text](../images/image31.png)
+
+<br>
+
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIER.html)
+
+<br>
+
+* ### Q5 De laatste opdracht vergt wat creativiteit. Zie het onderstaande voorbeeld en maak het na.
+
+
+
+![alt_text](../images/image18.png)
+
+<br>
+
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIER.html)
+
+<br>
 
 
 
