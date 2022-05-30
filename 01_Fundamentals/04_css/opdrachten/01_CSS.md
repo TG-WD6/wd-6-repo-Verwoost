@@ -321,7 +321,7 @@ Andere elementen schuiven op alsof het element niet bestaat.
 
 ## H4 Pseudo Elements
 
-* ### Q1 Er zijn 16 verschillende pseudo-elementen. Beschrijf ze alle 14 kort en maak voor elk een voorbeeld
+* ### Q1 Er zijn 16 verschillende pseudo-elementen. Beschrijf ze alle 16 kort en maak voor elk een voorbeeld
 
 1. **::after** als je iets wilt toevoegen na een element. Bijvoorbeeld een pijl na een link.
 2. **::backdrop** als je een achtergrondkleur wilt toevoegen aan een element als het fullscreen wordt weergegeven.
@@ -341,6 +341,26 @@ Andere elementen schuiven op alsof het element niet bestaat.
 16. **::target-text** als de browser scroll-to-text fragments ondersteunt dan kun je deze stylen.
 
 [link naar de voorbeelden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIERopdrachtEEN.html)
+
+<br>
+
+* ### Q2 Hieronder vind je een voorbeeld van het gebruik van een pseudo-element. Kun jij dit namaken?
+
+![alt_text](../images/image34.png)
+
+<br>
+
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIER.html)
+
+<br>
+
+### Q3 Hieronder vind je nog eens een voorbeeld van het gebruik van een pseudo-element ::before. Kun jij dit namaken? Gebruik een eigen afbeelding.
+
+![alt_text](../images/image29.png)
+
+<br>
+
+[link naar antwoord CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/hfdstkVIER.html)
 
 
 

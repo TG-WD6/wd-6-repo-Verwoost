@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS H4 Q2</title>
+    <style>
+        .my-button {
+
+            background-color: lightseagreen;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 600px;
+            height: 50px;
+            border-bottom: 8px solid lightseagreen;
+            text-align: center;
+            font-size: 200%;
+        }
+
+        .my-button::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            background-color: lightseagreen;
+            border-right: 8px solid tomato;
+            border-bottom: 8px solid tomato;
+            height: 50px;
+            right: 0px;
+            top: 0px;
+        }
+
+        .my-button::before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            background-color: lightseagreen;
+            border-left: 8px solid tomato;
+            border-top: 8px solid tomato;
+            height: 50px;
+            left: 0px;
+            top: 0px;
+
+        }
+
+        .my-paragraph::before {
+           content: '';
+           position: absolute;
+           width: 600px;
+           height: 400px;
+           background-image: url(../images/dog.png);
+           background-repeat: no-repeat;
+           z-index: -1;
+
+            
+        }
+
+        .my-paragraph {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 150%;
+            width: 600px;
+            height: 400px;
+            padding: 1rem;
+            border-style: double;
+            
+
+        }
+
+        .dog-container{
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+
+        .container{
+            position: relative;
+            height:58px;
+            width: 600px;
+
+        }
+
+        .bigdot{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 200px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            left: 100px;
+        }
+
+ 
+        .dot-container{
+            position: relative;
+            width: 900px;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .inner-p{
+            content: "1";
+            color: white;
+            position: absolute;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            width: 300px;
+            height: 100px;
+            font-size: 200%;
+            border-radius: 50px;  
+        }
+
+        .inner-p::after{
+            content: '.';
+            color: white;
+            font-weight: bold;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            position: absolute;
+            right: 0px;
+            transform: rotate(180deg);
+        }
+
+        .inner-p::before{
+            content: '.';
+            color: white;
+            font-weight: bold;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0px;
+            
+
+        }
+
+        .square-red{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(22.5deg);
+            
+
+        }
+
+        .square-red::after{
+            content: '';
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            transform: rotate(67.5deg);
+           
+        }
+        .square-red::before{
+            content: '';
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            transform: rotate(45deg);
+           
+        }
+
+        .square-container{
+            width: 400px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+      <div class="my-button">Button
+
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    
+<div class="dog-container">
+    <p class="my-paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit numquam corrupti ipsa
+        modi
+        accusamus, quaerat quae? Dolor consectetur qui nemo sit esse dolore. Obcaecati adipisci quaerat sapiente
+        suscipit, facere dolorem! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia repellat eum
+        assumenda
+        sapiente eveniet vitae velit nulla iusto quas quo illum reiciendis expedita exercitationem possimus, quis
+        fuga
+        laudantium eligendi numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nam qui quaerat
+        aspernatur harum? Nobis quos iste odit, exercitationem laborum, aspernatur magni quo quaerat provident maiores
+        </p>
+    </div>
+
+
+    <div class="dot-container">
+        <div class="bigdot">
+            <h1 class="inner-p">
+                1
+            </h1>
+        </div>
+
+        <div class="bigdot">
+            <h1 class="inner-p">
+                2
+            </h1>
+        </div>
+
+        <div class="bigdot">
+            <h1 class="inner-p">
+                3
+            </h1>
+        </div>
+    </div>
+
+    <div class="square-container">
+        <div class="square-red"></div>
+    </div>
+
+</body>
+
+</html>
