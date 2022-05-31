@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-*,
-*::before,
-*::after {
-=======
 *, *::before, *::after {
->>>>>>> template/main
     box-sizing: border-box;
 }
 
