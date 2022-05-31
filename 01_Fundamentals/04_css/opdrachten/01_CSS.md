@@ -467,3 +467,88 @@ Zie het onderstaande voorbeeld en maak het na met flexbox.
 
 <br>
 
+# ** H5 CSS Grid**
+
+### **Opdracht 1**
+
+Bij CSS Grid wordt vaak gebruikgemaakt van een speciale lengte-eenheid: “**fr**”. Onderzoek wat deze doet en beschrijf het in je eigen woorden.
+
+<br>
+
+Fraction: is een breuk. De ruimte die je hebt gedeeld door het aantal rows of columns. 
+
+<br>
+
+### **Opdracht 2**
+
+Via “grid-template-rows” en “grid-template-columns” kan je de maten van je Grid bepalen. Via “grid-row” en “grid-column” kan je vervolgens het begin + einde van een item aangeven in respectievelijk horizontale en verticale richting.
+
+Gebruik deze properties en maak het volgende na:
+
+![alt_text](../images/image10.png)
+
+<br>
+
+### **Opdracht 3**
+
+Je kan bij grid ook een speciale waarde gebruiken voor herhalende rijen / kolommen: **repeat()**. Onderzoek hoe deze werkt en herschrijf nu de vorige opdracht met een repeat() waarde.
+
+<br>
+
+### **Opdracht 4**
+
+Een andere vergelijkbare speciale waarde is de **minmax()** functie. Onderzoek hoe deze werkt en verwerk het in je grid.
+
+<br>
+
+### **Opdracht 5**
+
+Soms is de grootte van je grid item niet precies hetzelfde als de maat die je Grid gebruikt. Dan kan je een aantal properties gebruiken om dit grid item binnen de aangewezen ruimte te positioneren. Dit kan je bepalen voor het hele grid tegelijkertijd, of per item individueel - net zoals bij flexbox!
+
+Geef je “article” divs een “height: 200px;” en “width: 600px;”. Positioneer ze vervolgens zoals onderstaand:
+
+![alt_text](../images/image4.png)
+
+<br>
+
+### **Opdracht 6**
+
+Wat is het verschil tussen justify/align/place-items en justify/align/place-content?
+
+<br>
+
+### **Opdracht 7**
+
+Je kan ook wat ruimte tussen je rijen / kolommen zetten met “grid-row-gap” / “grid-column-gap” of de shorthand “grid-gap”. Dit is vrij vergelijkbaar met padding / margin. Bij moderne browsers kan je “grid” uit de naam van deze CSS properties weglaten.
+
+Geef je grid een gap van 10px.
+
+<br>
+
+### **Opdracht 8**
+
+Tot zover heb je je grid ingedeeld met bepaalde maten en getallen gebruikt om het begin/einde van de rij/kolom aan te geven per item. Maar het kan ook anders!
+
+Je kan namelijk ook bepaalde lijnen aangeven bij het indelen van je grid, en deze lijnen vervolgens als begin / eindpunt bepalen bij je items. Dit kan helpen met de overzichtelijkheid.
+
+Geef je grid de waardes “grid-template-columns: [col-start] 300px [col-mid] 1fr [col-end];” en “grid-template-rows: [row-start] 1fr [row-mid] 1fr [row-end];”. Gebruik vervolgens **alleen** de namen van de lijnen om je grid-items in te delen.
+
+<br>
+
+### **Opdracht 9**
+
+Je kan bij CSS Grid ook een “standaardmaat” voor rijen / kolommen definieren, mocht er een grid item “buiten” je gedefinieerde grid vallen. Als dat gebeurt wordt het een onderdeel van een **_implicit grid_**. Hoe groot dit implicit grid is qua maat kan je bepalen via **“grid-auto-columns”** en **“grid-auto-rows”**.
+
+Vervang je “grid-template-rows” door “grid-auto-rows”. Maak een nieuwe “article” div met “grid-row-start: 5” om dit te testen.
+
+Meer lezen over Implicit vs Explicit Grid? [Hier](https://css-tricks.com/difference-explicit-implicit-grids/) is een goed artikel.
+
+<br>
+
+### **Opdracht 10**
+
+Tenslotte kan je ook bepaalde delen van je grid een naam geven. Dit doe je met de **“grid-template-areas”** property. Vervolgens kan je je grid items toewijzen aan een bepaald gebied met de **“grid-area”** property.
+
+Gebruik grid-template-areas om je sidebar te benoemen. Gebruik vervolgens grid-area (en **geen** grid-column of grid-row!) om je sidebar de gepaste plek te geven.
+
+<br>
