@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transitions</title>
+
+    <style>
+        *{box-sizing: border-box;}
+
+        .p-colorchange{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rebeccapurple;
+            font-weight: bold;
+            transition-property: color;
+            transition-duration: 3s;
+        }
+
+        .p-colorchange:hover{
+           color: goldenrod;
+        }
+
+        .container{
+            width: 600px;
+            height: 400px;
+            border: 1px solid black;
+        }
+
+        .container:hover .blok{
+            transform: translateX(500px);
+            background-color: white;
+            color: black;
+        }
+
+        .container:hover .blok-1{
+            border-radius: 50%;
+        }
+
+        .container:hover .blok-2{
+            border-radius: 15px;
+        }
+
+        .blok{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: goldenrod;
+            height: 96px;
+            width: 96px;
+            margin: 2px;
+            position: relative;
+            background-color: rebeccapurple;
+            border: 1px solid black;
+            transition-property:all;
+            transition-duration: 3s;
+        }
+
+        .blok-1{
+            transition-timing-function: ease-in-out;
+        }
+
+
+        .blok-2{
+            transition-timing-function: linear; 
+        }
+
+        .blok-3{
+            transition-timing-function: ease-out;
+        }
+
+        .blok-4{
+            transition-timing-function: ease-in;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="p-colorchange">
+            beweeg de cursor over deze tekst om de kleur te veranderen
+        </p>
+    </div>
+    <br>
+    <div class="container">
+        <div class="blok blok-1">ease-in-out</div>
+        <div class="blok blok-2">linear</div>
+        <div class="blok blok-3">ease-out</div>
+        <div class="blok blok-4">ease-in</div>
+    </div>
+</body>
+</html>
