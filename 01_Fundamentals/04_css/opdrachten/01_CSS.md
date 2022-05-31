@@ -388,6 +388,82 @@ Andere elementen schuiven op alsof het element niet bestaat.
 
 <br>
 
+## H5 Flexbox
 
+<br>
 
+[link naar antwoorden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/01_Fundamentals/04_css/opdrachten/flex_box.html)
+
+## **Opdrachten**
+
+<br>
+
+### **Opdracht 1**
+
+Zie het onderstaande voorbeeld en maak het na met flex. Gebruik **geen** width, height of line-height.
+
+![alt_text](../images/image9.png)
+
+<br>
+
+### **Opdracht 2**
+
+Zie het onderstaande voorbeeld, de items staan nu anders uitgelijnd. Maak het na met flex. Gebruik **geen** width, height of line-height.
+
+![alt_text](../images/image15.png)
+
+<br>
+
+### **Opdracht 3**
+
+Zie het onderstaande voorbeeld, een van de items is breder dan de rest. Maak het na met flex. Gebruik **geen** width, height of line-height.
+
+![alt_text](../images/image27.png)
+
+<br>
+
+### **Opdracht 4**
+
+De property ‘justify-content’ is een property die door flex gebruikt wordt. Maak een voorbeeld dat gebruik maakt van de align-items property.
+
+<br>
+
+### **Opdracht 5**
+
+De property ‘align-items’ is een property die door flex gebruikt wordt. Maak een voorbeeld dat gebruik maakt van de align-items property.
+
+<br>
+
+### **Opdracht 6**
+
+Maak het onderstaande na met flexbox. Properties die je o.a dient te gebruiken zijn:
+
+* display
+* justify-content
+* flex-direction
+
+![alt_text](../images/image14.png)
+
+<br>
+
+### **Opdracht 7**
+
+Maak het onderstaande na met flexbox. Properties die je o.a dient te gebruiken zijn:
+
+* display
+* justify-content
+* flex-direction
+* align-items
+
+![alt_text](../images/image39.png)
+
+<br>
+
+### **Opdracht 8**
+
+Zie het onderstaande voorbeeld en maak het na met flexbox.
+
+![alt_text](../images/image22.png )
+
+<br>
 
