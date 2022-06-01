@@ -93,3 +93,24 @@ nav a {
   position: relative;
   bottom: 2px;
 }
+
+@media screen and (max-width:480px) {
+  .page-title{
+    width: 270px;
+  }
+}
+
+@media screen and (max-width:480px) and (min-width:320px) {
+
+  .gallery-item .thumbnail{
+    width: 95%;
+  }
+  
+}
+
+@media screen and (min-resolution: 150dpi) {
+  .logo{
+    background-image: url("./images/spaceship2.png");
+  }
+  
+}
