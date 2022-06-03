@@ -1,0 +1,8 @@
+@import "./assets/button";
+
+.button{
+    background-color: aqua;
+    &:hover{
+        background-color: cadetblue;
+    }
+}

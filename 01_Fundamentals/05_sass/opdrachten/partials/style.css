@@ -1,0 +1,16 @@
+.button {
+  background-color: #ff5733;
+}
+
+.button:hover {
+  background-color: #c70039;
+}
+
+.button {
+  background-color: aqua;
+}
+
+.button:hover {
+  background-color: cadetblue;
+}
+/*# sourceMappingURL=style.css.map */
