@@ -1,0 +1,176 @@
+.nav-bar {
+    position: relative;
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $primary-color;
+}
+
+.nav-bar__logo {
+    width: 25vw;
+}
+
+%navlink_before_basic {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    margin-left: -28px;
+    margin-top: -4px;
+
+}
+
+.nav-bar__links {
+    color: white;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            margin-left: 36px;
+        }
+    }
+}
+
+.nav-bar__links--home::before {
+    @extend %navlink_before_basic;
+    content: '';
+    background-image: url(../images/house-solid.svg);
+    background-size: contain;
+
+}
+
+.nav-bar__links--popular::before {
+    @extend %navlink_before_basic;
+    content: '';
+    background-image: url(../images/heart-pulse-solid.svg);
+    background-size: contain;
+}
+
+.nav-bar__links--contact::before {
+    @extend %navlink_before_basic;
+    content: '';
+    background-image: url(../images/map-pin-solid.svg);
+    background-size: contain;
+
+}
+
+
+
+.nav-bar__toggle-menu {
+    display: none;
+    height: 32px;
+    flex-direction: column;
+    justify-content: space-around;
+
+    span {
+        width: 32px;
+        height: 4px;
+        background-color: white;
+        color: $primary-color;
+        border-radius: 6px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .nav-bar {
+        justify-content: space-between;
+    }
+
+    .nav-bar__logo {
+        margin-left: 1em;
+    }
+
+    .nav-bar__links {
+        background-color: $primary-color;
+        display: block;
+        position: absolute;
+        top: 80px;
+        animation-name: menu-slide-out;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+        
+
+        ul {
+            flex-direction: column;
+            
+
+            li {
+                margin-top: 1em;
+                margin-left: 1em;
+            }
+        }
+
+        @keyframes menu-slide-out {
+            from {
+                width: 100%;
+                transform: translateX(0vw);
+                
+                
+            }
+
+            95%{
+                width: 0%;
+            }
+
+            to {
+                width: 0%;
+                transform: translateX(100vw);
+                
+                
+            }
+
+        }
+    }
+
+    .nav-bar__links.show-menu {
+        background-color: $primary-color;
+        display: block;
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        animation-name: menu-slide-in;
+        animation-duration: 0.3s;
+
+        @keyframes menu-slide-in {
+            from {
+               width: 0%;
+               transform: translateX(100vw);
+            }
+
+            to {
+                width: 100%;
+                transform: translateX(0vw);
+            }
+
+        }
+
+        ul {
+            flex-direction: column;
+
+            li {
+                margin-top: 1em;
+                margin-left: 1em;
+            }
+        }
+    }
+
+
+    .nav-bar__toggle-menu {
+        display: flex;
+        margin-right: 1em;
+    }
+
+    .nav-bar__toggle-menu.show-menu {
+        span {
+            background-color: black;
+        }
+    }
+
+    .nav-bar__logo {
+        width: 40vw;
+    }
+
+}

@@ -1,0 +1,18 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+
+}
+
+body{
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+a, a:link, a:hover, a:visited, a:active{
+    color: unset;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}

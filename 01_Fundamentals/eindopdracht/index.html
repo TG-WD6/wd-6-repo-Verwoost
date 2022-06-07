@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGrounds</title>
+    <link rel="stylesheet" href="./styles/main.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <img class="nav-bar__logo" src="./images/TG-logo-768x155.png" alt="TechGrounds logo"
+                srcset="./images/TG-logo-768x155.png 768w, ./images/TG-Lgo-300x60.png 300w" sizes="(max-width: 600px) 300px,
+            768px">
+            <div class="nav-bar__links" id="menu">
+                <ul>
+                    <li class="nav-bar__links--home"><a href="">Home</a></li>
+                    <li class="nav-bar__links--popular"><a href="">Popular</a></li>
+                    <li class="nav-bar__links--contact"><a href="">Contact</a></li>
+
+                </ul>
+            </div>
+
+            <div class="nav-bar__toggle-menu" onclick="toggleMenu();">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+</body>
+
+<script>
+    function toggleMenu() {
+        let menu = document.getElementById('menu');
+        
+        if (menu.className === "nav-bar__links") {
+            menu.className += " show-menu";
+            
+        } else {
+            menu.className = "nav-bar__links";
+            
+        }
+    }
+</script>
+
+</html>
