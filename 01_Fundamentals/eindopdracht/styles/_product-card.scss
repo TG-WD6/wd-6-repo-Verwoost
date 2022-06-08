@@ -1,0 +1,87 @@
+.product-card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.product-card {
+    display: flex;
+    width: 80vw;
+    height: 165px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.product-card__image-placeholder {
+    min-width: 165px;
+    height: 165px;
+    background-color: grey;
+}
+
+.product-card__text-box {
+    width: 30vw;
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+    color: grey;
+}
+
+.product-card__product-title{
+    font-weight: bold;
+    
+}
+
+.product-card__product-title, .product-card__brand-name{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: darkslategray;
+}
+
+.product-card__product-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-card__product-price{
+    color: crimson;
+    font-weight: bold;
+}
+.product-card__price-cents-span{
+    font-size: 75%;
+    position: relative;
+    top: -3px;
+}
+
+.product-card__delivery-info{
+    color: rgb(24, 162, 24);
+}
+
+.product-card__add-to-cart-btn{
+    background-color: #ffdc4d;
+    width: 8em;
+    height: 3em;
+    border: none;
+    &::after{
+        content: '';
+        position: absolute;
+        background-image: url(../images/basket_grey.svg);
+        background-size: contain;
+        height: 24px;
+        width: 24px;
+        margin-top: -12px;
+    }
+
+    &::before{
+        content: '+';
+        position: absolute;
+        font-size: 250%;
+        margin-left: -40px;
+        margin-top: -24px;
+        color: darkslategray;
+    }
+}

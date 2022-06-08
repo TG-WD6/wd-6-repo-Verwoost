@@ -347,6 +347,7 @@ ul {
   border-bottom: 1px solid black;
   width: 90%;
   margin-top: 2rem;
+  line-height: 150%;
 }
 
 .login-card__remember-label {
@@ -380,5 +381,111 @@ ul {
   width: 18px;
   margin-left: -32px;
   margin-top: -2px;
+}
+
+.product-card__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.product-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80vw;
+  height: 165px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product-card__image-placeholder {
+  min-width: 165px;
+  height: 165px;
+  background-color: grey;
+}
+
+.product-card__text-box {
+  width: 30vw;
+  height: 165px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: grey;
+}
+
+.product-card__product-title {
+  font-weight: bold;
+}
+
+.product-card__product-title, .product-card__brand-name {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: darkslategray;
+}
+
+.product-card__product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card__product-price {
+  color: crimson;
+  font-weight: bold;
+}
+
+.product-card__price-cents-span {
+  font-size: 75%;
+  position: relative;
+  top: -3px;
+}
+
+.product-card__delivery-info {
+  color: #18a218;
+}
+
+.product-card__add-to-cart-btn {
+  background-color: #ffdc4d;
+  width: 8em;
+  height: 3em;
+  border: none;
+}
+
+.product-card__add-to-cart-btn::after {
+  content: '';
+  position: absolute;
+  background-image: url(../images/basket_grey.svg);
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  margin-top: -12px;
+}
+
+.product-card__add-to-cart-btn::before {
+  content: '+';
+  position: absolute;
+  font-size: 250%;
+  margin-left: -40px;
+  margin-top: -24px;
+  color: darkslategray;
 }
 /*# sourceMappingURL=main.css.map */
