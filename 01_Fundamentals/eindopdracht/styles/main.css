@@ -236,8 +236,44 @@ ul {
     display: flex;
     margin-right: 1em;
   }
-  .nav-bar__toggle-menu.show-menu span {
-    background-color: black;
+  .nav-bar__toggle-menu.show-menu span:nth-child(1) {
+    -webkit-animation-name: hamburger-close;
+            animation-name: hamburger-close;
+    -webkit-animation-duration: 1.2s;
+            animation-duration: 1.2s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  @-webkit-keyframes hamburger-close {
+    from {
+      -webkit-transform: rotateZ(0deg) translate(0px, 0px);
+              transform: rotateZ(0deg) translate(0px, 0px);
+    }
+    to {
+      -webkit-transform: rotateZ(405deg) translate(8px, 8px);
+              transform: rotateZ(405deg) translate(8px, 8px);
+    }
+  }
+  @keyframes hamburger-close {
+    from {
+      -webkit-transform: rotateZ(0deg) translate(0px, 0px);
+              transform: rotateZ(0deg) translate(0px, 0px);
+    }
+    to {
+      -webkit-transform: rotateZ(405deg) translate(8px, 8px);
+              transform: rotateZ(405deg) translate(8px, 8px);
+    }
+  }
+  .nav-bar__toggle-menu.show-menu span:nth-child(2) {
+    -webkit-transition-duration: 1.2s;
+            transition-duration: 1.2s;
+    -webkit-transform: rotateZ(-405deg);
+            transform: rotateZ(-405deg);
+  }
+  .nav-bar__toggle-menu.show-menu span:nth-child(3) {
+    -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+    opacity: 0;
   }
   .nav-bar__logo {
     width: 40vw;

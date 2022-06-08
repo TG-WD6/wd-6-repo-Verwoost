@@ -25,7 +25,7 @@
                 </ul>
             </div>
 
-            <div class="nav-bar__toggle-menu" onclick="toggleMenu();">
+            <div class="nav-bar__toggle-menu" id="hamburger" onclick="toggleMenu();">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -38,12 +38,15 @@
 <script>
     function toggleMenu() {
         let menu = document.getElementById('menu');
+        let hamburger = document.getElementById('hamburger'); 
         
         if (menu.className === "nav-bar__links") {
             menu.className += " show-menu";
+            hamburger.className += " show-menu"
             
         } else {
             menu.className = "nav-bar__links";
+            hamburger.className = "nav-bar__toggle-menu";
             
         }
     }
