@@ -312,10 +312,10 @@ ul {
 }
 
 .login-card__img-placeholder {
-  background-color: lightgrey;
+  background-color: gray;
   height: 250px;
   width: 250px;
-  border-radius: 15%;
+  border-radius: 10%;
   margin-top: 1rem;
 }
 
@@ -414,7 +414,7 @@ ul {
 
 .product-card__image-placeholder {
   min-width: 165px;
-  height: 165px;
+  min-height: 165px;
   background-color: grey;
 }
 
@@ -429,13 +429,15 @@ ul {
       -ms-flex-direction: column;
           flex-direction: column;
   color: grey;
+  margin-left: 1em;
 }
 
 .product-card__product-title {
   font-weight: bold;
 }
 
-.product-card__product-title, .product-card__brand-name {
+.product-card__product-title,
+.product-card__brand-name {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   color: darkslategray;
@@ -449,7 +451,7 @@ ul {
 }
 
 .product-card__product-price {
-  color: crimson;
+  color: red;
   font-weight: bold;
 }
 
@@ -460,7 +462,7 @@ ul {
 }
 
 .product-card__delivery-info {
-  color: #18a218;
+  color: green;
 }
 
 .product-card__add-to-cart-btn {
@@ -487,5 +489,66 @@ ul {
   margin-left: -40px;
   margin-top: -24px;
   color: darkslategray;
+}
+
+.product-card__add-to-cart-btn:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 680px) {
+  .product-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 90vw;
+    height: auto;
+  }
+  .product-card__image-placeholder {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .product-card__text-box {
+    width: 90vw;
+    height: auto;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .product-card__brand-name,
+  .product-card__product-title {
+    text-align: center;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  .product-card__product-description {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .product-card__price-box {
+    width: 90vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .product-card__delivery-info {
+    margin: 0.5rem;
+  }
+  .product-card__product-price {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin: 0px 5em 0px  0px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

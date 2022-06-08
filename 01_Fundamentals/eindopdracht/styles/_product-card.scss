@@ -17,7 +17,7 @@
 
 .product-card__image-placeholder {
     min-width: 165px;
-    height: 165px;
+    min-height: 165px;
     background-color: grey;
 }
 
@@ -27,14 +27,16 @@
     display: flex;
     flex-direction: column;
     color: grey;
+    margin-left: 1em;
 }
 
-.product-card__product-title{
+.product-card__product-title {
     font-weight: bold;
-    
+
 }
 
-.product-card__product-title, .product-card__brand-name{
+.product-card__product-title,
+.product-card__brand-name {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: darkslategray;
@@ -45,28 +47,31 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
 }
 
-.product-card__product-price{
-    color: crimson;
+.product-card__product-price {
+    color: red;
     font-weight: bold;
 }
-.product-card__price-cents-span{
+
+.product-card__price-cents-span {
     font-size: 75%;
     position: relative;
     top: -3px;
 }
 
-.product-card__delivery-info{
-    color: rgb(24, 162, 24);
+.product-card__delivery-info {
+    color: green;
 }
 
-.product-card__add-to-cart-btn{
+.product-card__add-to-cart-btn {
     background-color: #ffdc4d;
     width: 8em;
     height: 3em;
     border: none;
-    &::after{
+
+    &::after {
         content: '';
         position: absolute;
         background-image: url(../images/basket_grey.svg);
@@ -76,7 +81,7 @@
         margin-top: -12px;
     }
 
-    &::before{
+    &::before {
         content: '+';
         position: absolute;
         font-size: 250%;
@@ -84,4 +89,60 @@
         margin-top: -24px;
         color: darkslategray;
     }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .product-card {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90vw;
+        height: auto;
+    }
+
+    .product-card__image-placeholder {
+        align-self: center;
+
+    }
+
+    .product-card__text-box {
+        width: 90vw;
+        height: auto;
+        align-self: center;
+    }
+
+    .product-card__brand-name,
+    .product-card__product-title {
+        text-align: center;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .product-card__product-description {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-card__price-box {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card__delivery-info {
+        margin: 0.5rem;
+    }
+
+    .product-card__product-price {
+        align-self: flex-end;
+        margin:  0px 5em 0px  0px;
+    }
+
+
+
+
 }
