@@ -42,6 +42,12 @@
     }
 }
 
+.nav-bar__links{
+    a:visited{
+    color:white;
+    }
+}
+
 .nav-bar__links--home::before {
     @extend %navlink_before_basic;
 

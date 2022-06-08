@@ -1,0 +1,82 @@
+.login-card__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.login-card__fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    min-width: 340px;
+}
+
+.login-card__img-placeholder{
+    background-color: lightgrey;
+    height: 250px;
+    width: 250px;
+    border-radius: 15%;
+    margin-top: 1rem;
+}
+
+.login-card__flex-horizontal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    font-size: 90%;
+}
+
+.login-card__title{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.login-card__subtext{
+    margin-top: 0.5rem;
+    color: gray;
+}
+
+.login-card__email-input, .login-card__password-input{
+    border: none;
+    border-bottom: 1px solid black;
+    width: 90%;
+    margin-top: 2rem;
+}
+
+.login-card__remember-label{
+    margin-left: -2rem;
+}
+
+.login-card__forget-link{
+    color: $secondary-color;
+}
+
+.login-card__submit-btn{
+    width: 90%;
+    color: white;
+    font-weight: bold;
+    background-color: $secondary-color;
+    border: none;
+    padding-top: 0.5rem;
+    padding-bottom:  0.5rem;
+
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+.login-card__submit-btn::before{
+    content: '';
+    position: absolute;
+    background-image: url(../images/Druplicon.svg);
+    background-size: contain;
+    height: 18px;
+    width: 18px;
+    margin-left: -32px;
+    margin-top: -2px;
+    
+}

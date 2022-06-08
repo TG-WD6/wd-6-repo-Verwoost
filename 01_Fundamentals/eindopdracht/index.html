@@ -31,23 +31,50 @@
                 <span></span>
             </div>
         </nav>
+
+
     </header>
+
+    <br>
+
+    <div class="main">
+        <div class="login-card__container">
+            <form class="login-card">
+                <fieldset class="login-card__fieldset">
+                    <div class="login-card__img-placeholder"></div>
+                    <h2 class="login-card__title">Login</h2>
+                    <p class="login-card__subtext">Login with Your Email</p>
+                    <input type="email" name="email" id="login-card__email-input" class="login-card__email-input"
+                        placeholder="Email">
+                    <input type="password" name="password" id="login-card__password-input"
+                        class="login-card__password-input" placeholder="Password">
+                    <div class="login-card__flex-horizontal">
+                        <input type="checkbox" name="remember-check" id="login-card__remember-check"
+                            class="login-card__remember-check">
+                        <label for="remember-check" class="login-card__remember-label">Remember me</label>
+                        <a href="" class="login-card__forget-link">Forget Password?</a>
+                    </div>
+                    <button class="login-card__submit-btn" type="submit">LOGIN</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 
 </body>
 
 <script>
     function toggleMenu() {
         let menu = document.getElementById('menu');
-        let hamburger = document.getElementById('hamburger'); 
-        
+        let hamburger = document.getElementById('hamburger');
+
         if (menu.className === "nav-bar__links") {
             menu.className += " show-menu";
             hamburger.className += " show-menu"
-            
+
         } else {
             menu.className = "nav-bar__links";
             hamburger.className = "nav-bar__toggle-menu";
-            
+
         }
     }
 </script>
