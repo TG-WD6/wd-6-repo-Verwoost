@@ -624,6 +624,18 @@ footer ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-left: 5vw;
+}
+
+.animation__container .animation__starter {
+  height: 50px;
+  width: 100px;
+  background-color: #2f125f;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+  z-index: 99;
 }
 
 .animation__container:hover .dot1 {
@@ -726,6 +738,15 @@ footer ul {
   width: 32px;
   height: 32px;
   background-image: url(../images/Druplicon.svg);
+  background-size: contain;
+}
+
+.dot.special::before {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/pepernoot.png);
   background-size: contain;
 }
 

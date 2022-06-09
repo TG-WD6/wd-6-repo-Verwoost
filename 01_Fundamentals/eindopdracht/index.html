@@ -116,8 +116,14 @@
         </div>
 
         <br>
+        
+            
+        
+        <br>
 
         <div class="animation__container">
+
+            <p class="animation__starter" onclick="pepernoot();" id="switch-button">pepernoten</p>
             <div class="animation__dot-pair dot-pair1">
                 <div class="dot dot1"></div>
                 <div class="dot dot2"></div>
@@ -134,9 +140,12 @@
                 <div class="dot dot7"></div>
                 <div class="dot dot8"></div>
             </div>
+             
         </div>
-
+        
+       
         <br>
+        
     </main>
 
 
@@ -216,6 +225,27 @@
 </body>
 
 <script>
+function pepernoot(){
+    let dots=document.getElementsByClassName('dot');
+    let button=document.getElementById('switch-button');
+    if (button.innerHTML == 'pepernoten') {
+        button.innerHTML = 'druplicon';
+        
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+        if(!dots[i].classList.contains('special')){
+        dots[i].className += " special";
+
+    }else{
+        let number = i + 1;
+        dots[i].className = "dot dot" + number;
+        button.innerHTML = 'pepernoten';
+    }
+        
+    }
+}
+
     function toggleMenu() {
         let menu = document.getElementById('menu');
         let hamburger = document.getElementById('hamburger');
@@ -230,6 +260,9 @@
 
         }
     }
+
 </script>
+
+
 
 </html>
