@@ -601,8 +601,8 @@ footer ul {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 95vw;
-    margin-left: 2.5vw;
+    width: auto;
+    margin-left: 0vw;
   }
   .footer__flex-left, .footer__flex-right {
     width: 95vw;
