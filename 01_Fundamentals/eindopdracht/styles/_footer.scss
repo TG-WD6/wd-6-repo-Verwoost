@@ -1,4 +1,4 @@
-.footer__container{
+.footer__container {
     display: flex;
     justify-content: space-between;
     width: 90vw;
@@ -7,68 +7,80 @@
     padding: 2em;
 }
 
-.footer__title{
+.footer__title {
     color: darkslategray;
     font-weight: bold;
     margin-bottom: 0px;
 }
 
-footer{
+footer {
 
-    a:visited, a:active, a:link{
+    a:visited,
+    a:active,
+    a:link {
         color: grey;
     }
 
-    a:hover{
-        color:darkslategray;
+    a:hover {
+        color: darkslategray;
     }
 
-    ul{
+    ul {
         padding-left: 0px;
     }
 }
 
-.footer__flex-left, .footer__flex-right{
+.footer__flex-left,
+.footer__flex-right {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 
- .footer__catagories-box, .footer__stores-box, .footer__socials-box{
+.footer__catagories-box,
+.footer__stores-box,
+.footer__socials-box {
     margin-left: 2em;
 }
 
-.footer__socials-icons-box{
-    img:hover{
-     transform: scale(110%);
+.footer__socials-icons-box {
+    img:hover {
+        transform: scale(110%);
     }
- }
-
-
-@media screen and (max-width:680px){
-  .footer__container{
-      flex-direction: column;
-      align-items: center;
-      width: auto;
-      margin-left: 0vw;
-      
-      
-  }
-
-  .footer__flex-left, .footer__flex-right{
-    width: 95vw;
-    flex-direction: column;
-    
 }
 
-.footer__service-box, .footer__catagories-box, .footer__stores-box{
-    margin-left: 2em;
-}
 
-.footer__socials-box{
-    align-self: center;
-    margin: 0px;
-}
-    
+@media screen and (max-width:680px) {
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin-left: 0vw;
+
+
+    }
+
+    .footer__flex-left,
+    .footer__flex-right {
+        width: 95vw;
+        flex-direction: column;
+
+    }
+
+    .footer__service-box,
+    .footer__catagories-box,
+    .footer__stores-box {
+        margin-left: 2em;
+
+        li {
+            margin-top: 1em;
+        }
+    }
+
+    .footer__socials-box {
+        align-self: center;
+        margin: 0px;
+    }
+
 }
