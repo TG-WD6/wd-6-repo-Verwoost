@@ -37,8 +37,16 @@ footer {
 
 }
 
+.footer__catagories-box{
+    margin-left: 8em;
 
-.footer__catagories-box,
+    li{
+        margin-top: 0.5em;
+    }
+}
+
+
+
 .footer__stores-box,
 .footer__socials-box {
     margin-left: 2em;
@@ -53,6 +61,10 @@ footer {
     li {
         margin-top: 0.5em;
     }
+}
+
+.footer__socials-box{
+    margin-right: 4em;
 }
 
 .footer__socials-icons-box {
@@ -97,6 +109,13 @@ footer {
     .footer__socials-box {
         align-self: center;
         margin: 0px;
+        
+    }
+
+    .footer__catagories-box{
+        li{
+            margin-top: 1em;
+        }
     }
 
 }

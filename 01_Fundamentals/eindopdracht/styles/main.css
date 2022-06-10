@@ -610,13 +610,19 @@ footer ul {
           justify-content: space-between;
 }
 
-.footer__catagories-box,
+.footer__catagories-box {
+  margin-left: 8em;
+}
+
+.footer__catagories-box li {
+  margin-top: 0.5em;
+}
+
 .footer__stores-box,
 .footer__socials-box {
   margin-left: 2em;
 }
 
-.footer__catagories-box li,
 .footer__stores-box li,
 .footer__socials-box li {
   margin-top: 0.5em;
@@ -624,6 +630,10 @@ footer ul {
 
 .footer__service-box li {
   margin-top: 0.5em;
+}
+
+.footer__socials-box {
+  margin-right: 4em;
 }
 
 .footer__socials-icons-box img:hover {
@@ -672,6 +682,9 @@ footer ul {
         -ms-grid-row-align: center;
         align-self: center;
     margin: 0px;
+  }
+  .footer__catagories-box li {
+    margin-top: 1em;
   }
 }
 
