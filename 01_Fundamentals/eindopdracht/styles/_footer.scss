@@ -58,13 +58,17 @@ footer{
 
   .footer__flex-left, .footer__flex-right{
     width: 95vw;
-    font-size: 80%;
-    justify-content: space-around;
+    flex-direction: column;
     
 }
 
+.footer__service-box, .footer__catagories-box, .footer__stores-box{
+    margin-left: 2em;
+}
 
-
-
+.footer__socials-box{
+    align-self: center;
+    margin: 0px;
+}
     
 }
