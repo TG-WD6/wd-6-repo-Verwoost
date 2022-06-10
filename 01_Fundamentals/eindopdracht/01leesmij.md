@@ -1,1 +1,1 @@
-https://tg-wd6-verwoost.netlify.app/
+https://verwoost-eindopdracht1.netlify.app/
