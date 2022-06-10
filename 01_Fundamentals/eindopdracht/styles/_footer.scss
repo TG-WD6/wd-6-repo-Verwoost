@@ -42,6 +42,17 @@ footer {
 .footer__stores-box,
 .footer__socials-box {
     margin-left: 2em;
+
+    li {
+        margin-top: 0.5em;
+    }
+}
+
+.footer__service-box {
+
+    li {
+        margin-top: 0.5em;
+    }
 }
 
 .footer__socials-icons-box {
@@ -68,8 +79,13 @@ footer {
 
     }
 
+    .footer__catagories-box{
+        display: flex;
+        justify-content: space-around;
+        margin-left: 0px;
+    }
+
     .footer__service-box,
-    .footer__catagories-box,
     .footer__stores-box {
         margin-left: 2em;
 

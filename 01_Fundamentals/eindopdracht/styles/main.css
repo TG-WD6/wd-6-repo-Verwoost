@@ -616,6 +616,16 @@ footer ul {
   margin-left: 2em;
 }
 
+.footer__catagories-box li,
+.footer__stores-box li,
+.footer__socials-box li {
+  margin-top: 0.5em;
+}
+
+.footer__service-box li {
+  margin-top: 0.5em;
+}
+
 .footer__socials-icons-box img:hover {
   -webkit-transform: scale(110%);
           transform: scale(110%);
@@ -641,13 +651,19 @@ footer ul {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .footer__catagories-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-left: 0px;
+  }
   .footer__service-box,
-  .footer__catagories-box,
   .footer__stores-box {
     margin-left: 2em;
   }
   .footer__service-box li,
-  .footer__catagories-box li,
   .footer__stores-box li {
     margin-top: 1em;
   }
