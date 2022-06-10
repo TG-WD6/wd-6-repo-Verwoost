@@ -54,6 +54,11 @@
 
 .login-card__forget-link{
     color: $secondary-color;
+
+    &:hover{
+        transform: scale(110%);
+        color: $primary-color;
+    }
 }
 
 .login-card__submit-btn{
@@ -67,6 +72,7 @@
 
     &:hover{
         cursor:pointer;
+        transform: scale(110%);
     }
 }
 

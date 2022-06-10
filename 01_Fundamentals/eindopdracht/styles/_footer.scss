@@ -19,6 +19,10 @@ footer{
         color: grey;
     }
 
+    a:hover{
+        color:darkslategray;
+    }
+
     ul{
         padding-left: 0px;
     }
@@ -34,6 +38,12 @@ footer{
  .footer__catagories-box, .footer__stores-box, .footer__socials-box{
     margin-left: 2em;
 }
+
+.footer__socials-icons-box{
+    img:hover{
+     transform: scale(110%);
+    }
+ }
 
 
 @media screen and (max-width:680px){
@@ -52,6 +62,8 @@ footer{
     justify-content: space-around;
     
 }
+
+
 
 
     

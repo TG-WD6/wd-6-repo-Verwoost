@@ -44,7 +44,13 @@
 
 .nav-bar__links{
     a:visited{
-    color:white;
+    color: white;
+    }
+
+    a:hover{
+        
+        color: pink;
+        text-decoration: underline;
     }
 }
 

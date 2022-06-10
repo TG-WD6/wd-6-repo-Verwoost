@@ -15,6 +15,11 @@
         text-align: center;
         padding-top: 1em;
         z-index: 99;
+
+        &:hover{
+            transform: scale(110%);
+            cursor: pointer;
+        }
     }
 
     &:hover .dot1{
@@ -75,7 +80,7 @@
 .dot{
     height: 32px;
     width: 32px;
-    background-color: $secondary-color;
+    
     border-radius: 50%;
     opacity: 0;
     &::before{

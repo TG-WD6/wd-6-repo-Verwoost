@@ -8,7 +8,7 @@ body {
   scroll-behavior: smooth;
 }
 
-a, a:link, a:hover, a:visited, a:active {
+a:link, a:visited, a:active {
   text-decoration: none;
 }
 
@@ -67,6 +67,11 @@ ul {
 
 .nav-bar__links a:visited {
   color: white;
+}
+
+.nav-bar__links a:hover {
+  color: pink;
+  text-decoration: underline;
 }
 
 .nav-bar__links--home::before {
@@ -358,6 +363,12 @@ ul {
   color: #003fff;
 }
 
+.login-card__forget-link:hover {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  color: #2f125f;
+}
+
 .login-card__submit-btn {
   width: 90%;
   color: white;
@@ -370,6 +381,8 @@ ul {
 
 .login-card__submit-btn:hover {
   cursor: pointer;
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
 }
 
 .login-card__submit-btn::before {
@@ -493,6 +506,8 @@ ul {
 
 .product-card__add-to-cart-btn:hover {
   cursor: pointer;
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
 }
 
 @media screen and (max-width: 680px) {
@@ -575,6 +590,10 @@ footer a:visited, footer a:active, footer a:link {
   color: grey;
 }
 
+footer a:hover {
+  color: darkslategray;
+}
+
 footer ul {
   padding-left: 0px;
 }
@@ -590,6 +609,11 @@ footer ul {
 
 .footer__catagories-box, .footer__stores-box, .footer__socials-box {
   margin-left: 2em;
+}
+
+.footer__socials-icons-box img:hover {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
 }
 
 @media screen and (max-width: 680px) {
@@ -636,6 +660,12 @@ footer ul {
   text-align: center;
   padding-top: 1em;
   z-index: 99;
+}
+
+.animation__container .animation__starter:hover {
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  cursor: pointer;
 }
 
 .animation__container:hover .dot1 {
@@ -727,7 +757,6 @@ footer ul {
 .dot {
   height: 32px;
   width: 32px;
-  background-color: #003fff;
   border-radius: 50%;
   opacity: 0;
 }
