@@ -33,18 +33,18 @@ Gegeven de volgende code:
 ![image](../01_basics/images/image45.png)
 
 1. Wat zie je in de console? Was dat wat je verwachtte?
-    String
+     **String** 
 2. Vervang bij het voorbeeld “Number” door de volgenden:
-    * true boolean
-    * false boolean
+    * true   &nbsp;  &nbsp;          **boolean**
+    * false    &nbsp; &nbsp;          **boolean**
     * undefined (als je ‘= “Number”’ in zijn geheel weghaalt doet dat hetzelfde)
-    * 22 number
-    * 22n bigint
-    * Symbol() function
-    * null object
-    * {} object with a value of [Object Object]
-    * new Object(); object with a value of [Object Object]
-    * function calculateSomething() {}  function
+    * 22       &nbsp; &nbsp;           **number**
+    * 22n &nbsp; &nbsp;   **bigint**
+    * Symbol() &nbsp; &nbsp;  **function**
+    * null &nbsp; &nbsp;   **object**
+    * {} &nbsp; &nbsp;  **object with a value of [Object Object]**
+    * new Object(); &nbsp; &nbsp;  **object with a value of [Object Object]**
+    * function calculateSomething() {} &nbsp; &nbsp;   **function**
 
 
 
@@ -54,13 +54,13 @@ Gegeven de volgende code:
 
 ![image](../01_basics/images/image54.png)
 
-1. Wat komt hier uit?  55
-2. Wat komt er uit als je van beiden een number maakt? 10
+1. Wat komt hier uit? &nbsp; &nbsp;    **55**
+2. Wat komt er uit als je van beiden een number maakt? &nbsp; &nbsp;  **10**
 3. Wat komt er uit als je de + vervangt door:
-    * "=="  true
-    * "==="  false
-    * "!="  false
-    * "!=="  true
+    * "==" &nbsp; &nbsp;   **true**
+    * "===" &nbsp; &nbsp;   **false**
+    * "!=" &nbsp; &nbsp;   **false**
+    * "!==" &nbsp; &nbsp;   **true**
 
 
 
@@ -68,30 +68,30 @@ Gegeven de volgende code:
 
 We gaan operators wat nader onderzoeken, en ermee experimenteren.
 
-1. Wat komt er uit het volgende? 2 en 2
+1. Wat komt er uit het volgende? &nbsp; &nbsp;   **2 en 2**
 
 ![image](../01_basics/images/image13.png)
 
-2. Wat komt er uit als je de console.log() hierboven omdraait? 1 en 3
-3. Wat komt er uit het volgende? 4 en 2.4
+2. Wat komt er uit als je de console.log() hierboven omdraait? &nbsp; &nbsp;   **1 en 3**
+3. Wat komt er uit het volgende? &nbsp; &nbsp;   **4 en 2.4**
 
 ![image](../01_basics/images/image5.png)
 
-4. Wat komt er uit het volgende? (spaties toegevoegd voor helderheid) false want niet undefined of null
+4. Wat komt er uit het volgende? (spaties toegevoegd voor helderheid) &nbsp; &nbsp;  **false want niet undefined of null**
 
 ![image](../01_basics/images/image6.png)
 
 5. Wat komt er uit bovenstaand als je de waarde van someNumber verandert in:
-    * 5  false
-    * Boolean false
-    * false true
-    * “false” false
-    * true false
-    * “true” false
-    * null true
-    * undefined true
+    * 5 &nbsp; &nbsp;   **false**
+    * Boolean &nbsp; &nbsp;   **false**
+    * false &nbsp; &nbsp;  **true**
+    * “false” &nbsp; &nbsp;  **false**
+    * true &nbsp; &nbsp;  **false**
+    * “true” &nbsp; &nbsp;  **false**
+    * null &nbsp; &nbsp;  **true**
+    * undefined &nbsp; &nbsp;  **true**
 6. Zoek op of experimenteer wat "+=" doet. Werkt deze ook met Strings? Weet je hoe je deze anders kan schrijven?
-    neemt de waarde en voegt daar iets aan toe. x = (x+y) is hetzelfde als x += y.
+    **neemt de waarde en voegt daar iets aan toe. x = (x+y) is hetzelfde als x += y.**
 7. Doe hetzelfde voor "-=", "*=", "/=", "%=" en "**=".
     ``` x= (x-y)  is hetzelfde als x-=y
         x= (x*y)  is hetzelfde als x*=y
@@ -107,7 +107,7 @@ We gaan operators wat nader onderzoeken, en ermee experimenteren.
 
         x= x**y is hetzelfde als x**=y  machtsverheffen x=2 y=3  x= 2**3  dus(x=8)
 
-        ```
+    ```
 
 <br>
 
@@ -145,13 +145,13 @@ substring() en slice() lijken erg op elkaar. We onderzoeken de verschillen. Test
 
 substring() en slice() kunnen 2 waardes meegegeven worden - een index waar de nieuwe waarde begint en een index waar deze moet eindigen.
 
-1. Wat doet substring() als het eerste getal hoger is dan het tweede getal? Draait ze om
-2. Wat doet slice() als het eerste getal hoger is dan het tweede getal? Geeft een leeg resultaat
+1. Wat doet substring() als het eerste getal hoger is dan het tweede getal? &nbsp; &nbsp;   **Draait ze om**
+2. Wat doet slice() als het eerste getal hoger is dan het tweede getal? &nbsp; &nbsp;   **Geeft een leeg resultaat**
 
 Deze waardes hoeven niet per se positief te zijn - je kan ook negatieve getallen meegeven.
 
-3. Wat doet substring() bij negatieve waardes? behandelt ze als 0
-4. Wat doet slice() bij negatieve waardes? telt vanaf het einde van de string terug
+3. Wat doet substring() bij negatieve waardes? &nbsp; &nbsp;  **behandelt ze als 0**
+4. Wat doet slice() bij negatieve waardes? &nbsp; &nbsp;  **telt vanaf het einde van de string terug**
 
 
 
@@ -326,18 +326,23 @@ We gaan functies oefenen door bij het begin te beginnen:
 [link naar de voorbeelden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/02_Programming/Javascript/01_basics_opdrachten/index.html)
 
 <br>
+
 ### **Opdracht 4.2**
 
 We gaan een paar veelgebruikte DOM methods onderzoeken. Je bent inmiddels bekend met document.GetElementById(). Veel andere DOM methods geven Arrays terug - je hebt het inmiddels al vaker gelezen maar hoe je die verwerkt gaan we later nog leren :)
 
 1. Onderzoek de volgende DOM methodes en gebruik ze in een voorbeeld:
-    * document.getElementsByClassName
-    * document.getElementsByTagName
-    * document.querySelector
-    * document.querySelectorAll
-    * element.innerHTML
-    * element.innerText
+    * document.getElementsByClassName returns array met alle elementen met deze classname
+    * document.getElementsByTagName   returns array met alle elementen van dit type
+    * document.querySelector          returns het eerste element dat aan de query voldoet
+    * document.querySelectorAll       returns array met alle elementen die aan de query voldoen
+    * element.innerHTML               returns of sets de inhoud van het element
+    * element.innerText               returns of sets de text in een element
 2. Bij opdracht 4.1c heb je een input als parameter meegegeven. Roep die functie nu aan met een _oninput_ ipv _onchange_, en console.log() de parameter.value ipv de parameter. Zie je de verschillen als je nu wat intypt?
+
+<br>
+
+[link naar de voorbeelden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/02_Programming/Javascript/01_basics_opdrachten/index.html)
 
 
 
