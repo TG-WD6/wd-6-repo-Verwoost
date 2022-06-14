@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics</title>
+    <script src="basics.js" refer></script>
+    <style>
+        .buttons__container{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons__box{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .show-result-btn{
+            background-color: crimson;
+            color: white;
+            font-weight: bold;
+            width: 8em;
+            height: 3em;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="buttons__container">
+            <div class="buttons__box">
+                <h2>4.1</h2>
+                
+                <input type="text" name="text-input" id="text-input" oninput="ShowTextResult()" placeholder="Name">
+                <textarea name="txt-box1" id="txt-box1" cols="30" rows="10"></textarea>
+                
+            </div>
+
+             <div class="buttons__box">
+                <h2>1.2</h2>
+                <input type="number" name="number-input" id="number-input" onchange="ShowResult('txt-box2')">
+                <textarea name="txt-box1" id="txt-box2" cols="30" rows="10"></textarea>
+                <button class="show-result-btn" onclick="ShowResult('txt-box2')">Random</button>
+                
+            </div>
+            <!--
+            <div class="buttons__box">
+                <h2>1.3</h2>
+                <p>verwacht:</p>
+                <textarea name="txt-box1" id="txt-box3" cols="30" rows="10"></textarea>
+                <button class="show-result-btn" onclick="ShowResult()">show</button>
+                
+            </div>
+
+            <div class="buttons__box">
+                <h2>1.4</h2>
+                <p>verwacht:</p>
+                <textarea name="txt-box1" id="txt-box4" cols="30" rows="10"></textarea>
+                <button class="show-result-btn" onclick="ShowResult()">show</button>
+                
+            </div> -->
+
+            
+
+            
+        </div>
+    </main>
+
+</body>
+
+</html>
