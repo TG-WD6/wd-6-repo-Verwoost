@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGrounds</title>
+    <link rel="stylesheet" href="./styles/main.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <img class="nav-bar__logo" src="./images/TG-logo-768x155.png" alt="TechGrounds logo"
+                srcset="./images/TG-logo-768x155.png 768w, ./images/TG-Logo-300x60.png 300w" sizes="(max-width: 600px) 300px,
+            768px">
+            <div class="nav-bar__links" id="menu">
+                <ul>
+                    <li class="nav-bar__links--home"><a href="">Home</a></li>
+                    <li class="nav-bar__links--popular"><a href="">Popular</a></li>
+                    <li class="nav-bar__links--contact"><a href="">Contact</a></li>
+
+                </ul>
+            </div>
+
+            <div class="nav-bar__toggle-menu" id="hamburger" onclick="toggleMenu();">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <br>
+
+    <main>
+        <div class="login-card__container">
+            <form class="login-card">
+                <fieldset class="login-card__fieldset">
+                    <div class="login-card__img-placeholder"></div>
+                    <h2 class="login-card__title">Login</h2>
+                    <p class="login-card__subtext">Login with Your Email</p>
+                    <input type="email" name="email" id="login-card__email-input" class="login-card__email-input"
+                        placeholder="Email">
+                    <input type="password" name="password" id="login-card__password-input"
+                        class="login-card__password-input" placeholder="Password">
+                    <div class="login-card__flex-horizontal">
+                        <input type="checkbox" name="remember-check" id="login-card__remember-check"
+                            class="login-card__remember-check">
+                        <label for="remember-check" class="login-card__remember-label">Remember me</label>
+                        <a href="" class="login-card__forget-link">Forget Password?</a>
+                    </div>
+                    <button class="login-card__submit-btn" type="submit">LOGIN</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="product-card__container">
+            <div class="product-card">
+                <div class="product-card__image-placeholder"></div>
+                <div class="product-card__text-box">
+                    <p class="product-card__brand-name">techgrounds</p>
+                    <p class="product-card__product-title">Techgrounds titel</p>
+                    <p class="product-card__product-description">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Repellendus minus illo aspernatur necessitatibus quam facilis debitis aut rem, eius vel
+                        ullam asperiores incidunt pariatur. </p>
+                </div>
+
+                <div class="product-card__price-box">
+                    <p class="product-card__product-price">99,<span class="product-card__price-cents-span">99</span></p>
+                    <p class="product-card__delivery-info">Voor 23:59 besteld, morgen in huis</p>
+                    <button class="product-card__add-to-cart-btn"></button>
+                </div>
+            </div>
+            <br>
+            <div class="product-card">
+                <div class="product-card__image-placeholder"></div>
+                <div class="product-card__text-box">
+                    <p class="product-card__brand-name">techgrounds</p>
+                    <p class="product-card__product-title">Techgrounds titel</p>
+                    <p class="product-card__product-description">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Repellendus minus illo aspernatur necessitatibus quam facilis debitis aut rem, eius vel
+                        ullam asperiores incidunt pariatur. </p>
+                </div>
+
+                <div class="product-card__price-box">
+                    <p class="product-card__product-price">99,<span class="product-card__price-cents-span">99</span></p>
+                    <p class="product-card__delivery-info">Voor 23:59 besteld, morgen in huis</p>
+                    <button class="product-card__add-to-cart-btn"></button>
+                </div>
+            </div>
+            <br>
+            <div class="product-card">
+                <div class="product-card__image-placeholder"></div>
+                <div class="product-card__text-box">
+                    <p class="product-card__brand-name">techgrounds</p>
+                    <p class="product-card__product-title">Techgrounds titel</p>
+                    <p class="product-card__product-description">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Repellendus minus illo aspernatur necessitatibus quam facilis debitis aut rem, eius vel
+                        ullam asperiores incidunt pariatur. </p>
+                </div>
+
+                <div class="product-card__price-box">
+                    <p class="product-card__product-price">99,<span class="product-card__price-cents-span">99</span></p>
+                    <p class="product-card__delivery-info">Voor 23:59 besteld, morgen in huis</p>
+                    <button class="product-card__add-to-cart-btn"></button>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        
+            
+        
+        <br>
+
+        <div class="animation__container">
+
+            <p class="animation__starter" onclick="pepernoot();" id="switch-button">pepernoten</p>
+            <div class="animation__dot-pair dot-pair1">
+                <div class="dot dot1"></div>
+                <div class="dot dot2"></div>
+            </div>
+            <div class="animation__dot-pair dot-pair2">
+                <div class="dot dot3"></div>
+                <div class="dot dot4"></div>
+            </div>
+            <div class="animation__dot-pair dot-pair3">
+                <div class="dot dot5"></div>
+                <div class="dot dot6"></div>
+            </div>
+            <div class="animation__dot-pair dot-pair4">
+                <div class="dot dot7"></div>
+                <div class="dot dot8"></div>
+            </div>
+             
+        </div>
+        
+       
+        <br>
+        
+    </main>
+
+
+    <footer>
+        <div class="footer__container">
+            <div class="footer__flex-left">
+
+                <div class="footer__service-box">
+
+                    <ul>
+                        <li>
+                            <p class="footer__title">Klantenservice</p>
+                        </li>
+                        <li><a href="">Contact opnemen</a></li>
+                        <li><a href="">Bestellen en leveren</a></li>
+                        <li><a href="">Betalen</a></li>
+                        <li><a href="">Retourneren</a></li>
+                        <li><a href="">Garantie & Reparatie</a></li>
+                    </ul>
+                </div>
+                <div class="footer__stores-box">
+
+                    <ul>
+                        <li>
+                            <p class="footer__title">Winkels</p>
+                        </li>
+                        <li><a href="">Almere</a></li>
+                        <li><a href="">Amstelveen</a></li>
+                        <li><a href="">Amsterdam</a></li>
+                        <li><a href="">Den Haag</a></li>
+                        <li><a href="">Eindhoven</a></li>
+                        <li><a href="">Groningen</a></li>
+                        <li><a href="">Maastricht</a></li>
+                        <li><a href="">Utrecht</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__catagories-box">
+                    <div class="footer__catagories-box-top">
+
+                        <ul>
+                            <li>
+                                <p class="footer__title">Ontdek</p>
+                            </li>
+                            <li><a href="">Inspiratie</a></li>
+                            <li><a href="">Merken</a></li>
+                            <li><a href="">Outlet</a></li>
+                            <li><a href="">Acties</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__catagories-box-bottom">
+                        <ul>
+                            <li><a href="">Damesmode</a></li>
+                            <li><a href="">Herenmode</a></li>
+                            <li><a href="">Kindermode</a></li>
+                            <li><a href="">Wonen</a></li>
+                            <li><a href="">Cosmetica</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__flex-right">
+
+                <div class="footer__socials-box">
+                    <p class="footer__title">Wil je ons volgen?</p>
+                    <div class="footer__socials-icons-box">
+                        <a href=""><img src="./images/facebook-square-brands.svg" alt="" width="32px"></a>
+                        <a href=""><img src="./images/instagram-square-brands.svg" alt="" width="32px"></a>
+                        <a href=""><img src="./images/linkedin-brands.svg" alt="" width="32px"></a>
+                        <a href=""><img src="./images/twitter-brands.svg" alt="" width="32px"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+function pepernoot(){
+    let dots=document.getElementsByClassName('dot');
+    let button=document.getElementById('switch-button');
+    if (button.innerHTML == 'pepernoten') {
+        button.innerHTML = 'druplicon';
+        
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+        if(!dots[i].classList.contains('special')){
+        dots[i].className += " special";
+
+    }else{
+        let number = i + 1;
+        dots[i].className = "dot dot" + number;
+        button.innerHTML = 'pepernoten';
+    }
+        
+    }
+}
+
+    function toggleMenu() {
+        let menu = document.getElementById('menu');
+        let hamburger = document.getElementById('hamburger');
+
+        if (menu.className === "nav-bar__links") {
+            menu.className += " show-menu";
+            hamburger.className += " show-menu"
+
+        } else {
+            menu.className = "nav-bar__links";
+            hamburger.className = "nav-bar__toggle-menu";
+
+        }
+    }
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,138 @@
+.animation__container{
+    height: 300px;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5vw;
+
+    .animation__starter{
+        height: 50px;
+        width: 100px;
+        background-color: $primary-color;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding-top: 1em;
+        z-index: 99;
+
+        &:hover{
+            transform: scale(110%);
+            cursor: pointer;
+        }
+    }
+
+    &:hover .dot1{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    &:hover .dot3{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-delay: .125s;
+        animation-iteration-count: infinite;
+    }
+
+    &:hover .dot5{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-delay: 0.25s;
+        animation-iteration-count: infinite;
+    }
+
+    &:hover .dot7{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-delay: 0.375s;
+        animation-iteration-count: infinite;
+    }
+
+    &:hover .dot2{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-delay: 0.5s;
+        animation-iteration-count: infinite;
+    }
+
+    &:hover .dot4{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-delay: 0.625s;
+        animation-iteration-count: infinite;
+    }
+
+    &:hover .dot6{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-delay: 0.75s;
+        animation-iteration-count: infinite;
+    }
+    &:hover .dot8{
+        animation-name: loading-animation;
+        animation-duration: 1s;
+        animation-delay: 0.875s;
+        animation-iteration-count: infinite;
+    }
+}
+
+.dot{
+    height: 32px;
+    width: 32px;
+    
+    border-radius: 50%;
+    opacity: 0;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background-image: url(../images/Druplicon.svg);
+        background-size: contain;
+    }
+}
+
+.dot.special::before{
+    content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background-image: url(../images/pepernoot.png);
+        background-size: contain;
+}
+
+.animation__dot-pair{
+    display: flex;
+    width: 200px;
+    position: absolute;
+    justify-content: space-between;
+    
+}
+
+
+.dot-pair2{
+    transform: rotateZ(45deg);
+}
+
+.dot-pair3{
+    transform: rotateZ(90deg);
+}
+
+.dot-pair4{
+    transform: rotateZ(135deg);
+}
+
+@keyframes loading-animation {
+from{
+    opacity: 0;
+}
+50%{ 
+    opacity: 1;
+}
+to{
+    opacity: 0;
+}
+    
+}
+
