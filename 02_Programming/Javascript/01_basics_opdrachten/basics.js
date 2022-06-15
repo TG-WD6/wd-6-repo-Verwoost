@@ -50,12 +50,36 @@ function ShowResult($txtBox) {
 
 function ShowTextResult(){
     //let textbox = document.getElementById('txt-box1');
-    let textInput = document.getElementById('text-input').value;
-    //textbox.innerHTML = addHello(textInput.value);
-    console.log(addHello(textInput));
+    let input = document.getElementById('text-input').value;
+    let modifiedText = addHello(input);
+    //textbox.innerHTML = addHello(textInput);
+    console.log(modifiedText);
 }
 
 function addHello(parameter){
     let result = "Hello, " + parameter + "! How are you today?";
     return result;
+}
+
+console.log(Math.max(1,3,2));
+console.log(Math.min(1,3,2));
+
+var output = document.getElementById('txt-box3');
+
+function showIsMember(){
+    let checkName = document.getElementById('name-input').value.toLowerCase();
+    let result = isMember(checkName);
+    //let output = document.getElementById('txt-box3');
+    output.innerHTML = result;
+}
+
+ 
+
+function isMember(checkName){
+    let teamNames = ["joost", "fares", "lex","nathaniel"];
+    if(teamNames.includes(checkName)){
+        return checkName + " is one of the goodguys!"
+    }else{
+        return checkName + " is not one of us"
+    }
 }

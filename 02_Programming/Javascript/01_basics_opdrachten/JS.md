@@ -219,6 +219,7 @@ Schrijf voor de volgende opdrachten 1 If/Else die 1 variabele waarde controleert
 8. Zo niet, log dan in je console als de waarde 11 of groter EN 20 of kleiner is.
 9. Zo niet, log dan in je console als de waarde 21 of 23 is.
 10. Zo niet, log dan in je console als de waarde kleiner dan 35 OF tussen de 40 en 45 is.
+
 ```
 if (someNumber>5 && someNumber<10 ) {
     console.log("tussen 5 en 10");
@@ -234,6 +235,7 @@ if (someNumber>5 && someNumber<10 ) {
 }
 
 ```
+
 11. Test of je bij alle uitkomsten kan komen. Verandert er iets als je alle If/Else omzet in aparte If blokken?
      Ja, je voldoet meerdere keren aan de voorwaarden als de if blokken apart staan.
 
@@ -332,12 +334,12 @@ We gaan functies oefenen door bij het begin te beginnen:
 We gaan een paar veelgebruikte DOM methods onderzoeken. Je bent inmiddels bekend met document.GetElementById(). Veel andere DOM methods geven Arrays terug - je hebt het inmiddels al vaker gelezen maar hoe je die verwerkt gaan we later nog leren :)
 
 1. Onderzoek de volgende DOM methodes en gebruik ze in een voorbeeld:
-    * document.getElementsByClassName returns array met alle elementen met deze classname
-    * document.getElementsByTagName   returns array met alle elementen van dit type
-    * document.querySelector          returns het eerste element dat aan de query voldoet
-    * document.querySelectorAll       returns array met alle elementen die aan de query voldoen
-    * element.innerHTML               returns of sets de inhoud van het element
-    * element.innerText               returns of sets de text in een element
+    * document.getElementsByClassName **returns array met alle elementen met deze classname**
+    * document.getElementsByTagName &nbsp; &nbsp;  **returns array met alle elementen van dit type**
+    * document.querySelector   &nbsp; &nbsp; &nbsp; &nbsp;       **returns het eerste element dat aan de query voldoet**
+    * document.querySelectorAll    &nbsp; &nbsp; &nbsp; &nbsp;    **returns array met alle elementen die aan de query voldoen**
+    * element.innerHTML      &nbsp; &nbsp; &nbsp; &nbsp;          **returns of sets de inhoud van het element**
+    * element.innerText         &nbsp; &nbsp; &nbsp; &nbsp;       **returns of sets de text in een element**
 2. Bij opdracht 4.1c heb je een input als parameter meegegeven. Roep die functie nu aan met een _oninput_ ipv _onchange_, en console.log() de parameter.value ipv de parameter. Zie je de verschillen als je nu wat intypt?
 
 <br>
@@ -362,4 +364,19 @@ Als je meer wil inlezen over het Math object, kan je dat doen via [w3schools](ht
 
 3. Er zijn nog 2 belangrijke Math methods die handig zijn om te kennen. Onderzoek wat Math.min() en Math.max() doen. Kan je van beide al een voorbeeld geven?
 
+Respectievelijk de laagste en de hoogste waarde uit een array van getallen.
+
+<br>
+
+### **Opdracht 4.4:**
+
+We eindigen deze oefeningen met een lastige:
+
+1. Schrijf een functie waar je een naam aan mee kan geven. Laat de naam vergelijken met de namen van mensen in je groepje. Wanneer je functie de naam wel/niet herkent moet dat als boodschap teruggegeven worden.
+2. Schrijf een 2e functie die de eerste functie aanroept, en vervolgens de teruggegeven boodschap in een div element op je pagina toont. Denk aan de DOM methods!
+3. Schrijf nu het bovenstaande nogmaals, maar gebruik dit keer Arrow Functions. Als het niet overal lukt is dat niet erg!
+
+<br>
+
+[link naar de voorbeelden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/02_Programming/Javascript/01_basics_opdrachten/index.html)
 
