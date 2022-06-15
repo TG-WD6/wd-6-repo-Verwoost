@@ -64,7 +64,7 @@ function addHello(parameter){
 console.log(Math.max(1,3,2));
 console.log(Math.min(1,3,2));
 
-var output = document.getElementById('txt-box3');
+const output = document.getElementById('txt-box3');
 
 function showIsMember(){
     let checkName = document.getElementById('name-input').value.toLowerCase();
