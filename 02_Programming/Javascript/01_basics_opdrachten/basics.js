@@ -49,9 +49,10 @@ function ShowResult($txtBox) {
 }
 
 function ShowTextResult(){
-    let textbox = document.getElementById('txt-box1');
-    let textInput = document.getElementById('text-input');
-    textbox.innerHTML = addHello(textInput.value);
+    //let textbox = document.getElementById('txt-box1');
+    let textInput = document.getElementById('text-input').value;
+    //textbox.innerHTML = addHello(textInput.value);
+    console.log(addHello(textInput));
 }
 
 function addHello(parameter){
