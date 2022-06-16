@@ -8,91 +8,94 @@ let orange = document.getElementById('orange');
 let mango = document.getElementById('mango');
 let grape = document.getElementById('grape');
 let fruitInput = document.getElementById('fruit-input');
+let comPareArray = ['appel', 'appels', 'peer', 'peren', 'sinaasappel', 'sinaasappels', 'ananas','ananassen', 'druif', 'druiven', 'mango', 'mango\'s', 'mangos', 'kers', 'kersen', 'banaan', 'bananen', 'aardbei', 'aardbeien'];
+let regex = /[\..*,.*:.*;.*'.*'.*!.*\?.*".*".\n]/ig;
 
 function checkFruits() {
     let fruitInputString = fruitInput.value;
     let cleanString = cleanUp(fruitInputString);
 
-    function cleanUp(string) {
-        let regex = /[\..*,.*:.*;.*'.*'.*!.*\?.*".*".\n]/ig;
+    function cleanUp(string) {     
         let regString = string.replace(regex, ' ');
         let lowerString = regString.toLowerCase();
         return lowerString;
     }
 
     let fruitArray = Array.from(cleanString.split(' '));
-    let comPareArray = ['appel', 'appels', 'peer', 'peren', 'sinaasappel', 'sinaasappels', 'ananas','ananassen', 'druif', 'druiven', 'mango', 'mango\'s', 'mangos', 'kers', 'kersen', 'banaan', 'bananen', 'aardbei', 'aardbeien'];
-    const emptyArray = new Array(0);
+    
+    
     for (const x in fruitArray) {
         for (const y in comPareArray) {
             if (fruitArray[x] == comPareArray[y]) {
 
-                emptyArray.unshift(comPareArray[y]);
+                const match = comPareArray[y];
+                console.log(match);
+                switch (match) {
+                    case 'appel':
+        
+                    case 'appels':
+                        apple.className += ' guessed';
+                        break;
+        
+                    case 'peer':
+        
+                    case 'peren':
+                        pear.className += ' guessed';
+                        break;
+        
+                    case 'sinaasappel':
+        
+                    case 'sinaasappels':
+                        orange.className += ' guessed';
+                        break;
+        
+                    case 'ananas':
+        
+                    case 'ananassen':
+                        pineapple.className += ' guessed';
+                        break;
+        
+                    case 'druif':
+        
+                    case 'druiven':
+                        grape.className += ' guessed';
+                        break;
+        
+                    case 'mango':
+        
+                    case 'mango\'s':
+                        mango.className += ' guessed';
+                        break;
+        
+                    case 'kers':
+        
+                    case 'kersen':
+                        cherry.className += ' guessed';
+                        break;
+        
+                    case 'banaan':
+        
+                    case 'bananen':
+                        banana.className += ' guessed';
+                        break;
+        
+                    case 'aardbei':
+        
+                    case 'aardbeien':
+                        strawberry.className += ' guessed';
+                        break;
+                    default:
+                        break;
+                }
             }
 
         }
     }
-    console.log(emptyArray);
+  
 
-    for (const b in emptyArray) {
-        switch (emptyArray[b]) {
-            case 'appel':
+   
 
-            case 'appels':
-                apple.className += ' guessed';
-                break;
-
-            case 'peer':
-
-            case 'peren':
-                pear.className += ' guessed';
-                break;
-
-            case 'sinaasappel':
-
-            case 'sinaasappels':
-                orange.className += ' guessed';
-                break;
-
-            case 'ananas':
-
-            case 'ananassen':
-                pineapple.className += ' guessed';
-                break;
-
-            case 'druif':
-
-            case 'druiven':
-                grape.className += ' guessed';
-                break;
-
-            case 'mango':
-
-            case 'mango\'s':
-                mango.className += ' guessed';
-                break;
-
-            case 'kers':
-
-            case 'kersen':
-                cherry.className += ' guessed';
-                break;
-
-            case 'banaan':
-
-            case 'bananen':
-                banana.className += ' guessed';
-                break;
-
-            case 'aardbei':
-
-            case 'aardbeien':
-                strawberry.className += ' guessed';
-                break;
-            default:
-                break;
-        }
-    }
+    
 
 
 
