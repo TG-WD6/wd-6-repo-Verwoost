@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics</title>
+    <script src="bingo.js" defer></script>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+
+        .fruit__img {
+            opacity: 0;
+
+        }
+
+        .fruit__img.guessed {
+            transition-duration: 1s;
+            opacity: 1;
+        }
+
+
+        .show-result-btn {
+            background-color: crimson;
+            color: white;
+            font-weight: bold;
+            width: 8em;
+            height: 3em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div class="container">
+            <div class="fruit-box">
+                <h2>vruchtenbingo</h2>
+                <p>Maak een tekst over verschillende vruchten. Raad jij ze alle 9?</p>
+                <textarea name="fruit-input" id="fruit-input" cols="30" rows="10" placeholder="Jouw tekst"></textarea>
+
+                <button class="show-result-btn" onclick="checkFruits()">Check</button>
+                <div class="bingobox">
+                    <div class="bingo-row">
+                        <img class="fruit__img" id="strawberry" src="./images/aardbei.png" alt="">
+                        <img class="fruit__img" id="pineapple" src="./images/ananas.png" alt="">
+                        <img class="fruit__img" id="apple" src="./images/appel.png" alt="">
+                    </div>
+                    <div class="bingo-row">
+                        <img class="fruit__img" id="banana" src="./images/banaan.png" alt="">
+                        <img class="fruit__img" id="grape" src="./images/druif.png" alt="">
+                        <img class="fruit__img" id="cherry" src="./images/kers.png" alt="">
+                    </div>
+                    <div class="bingo-row">
+                        <img class="fruit__img" id="mango" src="./images/mango.png" alt="">
+                        <img class="fruit__img" id="pear" src="./images/peer.png" alt="">
+                        <img class="fruit__img" id="orange" src="./images/sinaasappel.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
