@@ -1,3 +1,73 @@
+let strawberry = document.getElementById('strawberry');
+let banana = document.getElementById('banana');
+let cherry = document.getElementById('cherry');
+let pear = document.getElementById('pear');
+let pineapple = document.getElementById('pineapple');
+let apple = document.getElementById('apple');
+let orange = document.getElementById('orange');
+let mango = document.getElementById('mango');
+let grape = document.getElementById('grape');
+let fruitInput = document.getElementById('fruit-input');
+
+function checkFruits(){
+let fruitInputString = fruitInput.value;
+let lowerString = fruitInputString.toLowerCase();
+let replaceDot = lowerString.replace(/\./g, ' ');
+let replaceComma = replaceDot.replace(/\,/g, ' ');
+let replaceNewLine = replaceComma.replace(/\n/g, ' ');
+let replaceQuestionmark = replaceNewLine.replace(/\?/g, '');
+let replaceExclamation = replaceQuestionmark.replace(/\!/g, '');
+let fruitArray = Array.from(replaceExclamation.split(' '));
+console.log(fruitArray);
+if (fruitArray.includes('appel')||fruitArray.includes('appels')){
+    apple.className += ' guessed';
+} 
+
+if (fruitArray.includes('peer')||fruitArray.includes('peren')){
+    pear.className += ' guessed';
+} 
+
+if (fruitArray.includes('sinaasappel')||fruitArray.includes('sinaasappels')){
+    orange.className += ' guessed';
+} 
+
+if (fruitArray.includes('ananas')||fruitArray.includes('ananassen')){
+    pineapple.className += ' guessed';
+} 
+
+if (fruitArray.includes('druif')||fruitArray.includes('druiven')){
+    grape.className += ' guessed';
+} 
+
+if (fruitArray.includes('mango')||fruitArray.includes('mango\'s') || fruitArray.includes('mangos') ){
+    mango.className += ' guessed';
+} 
+
+if (fruitArray.includes('kers')||fruitArray.includes('kersen')){
+    cherry.className += ' guessed';
+} 
+
+if (fruitArray.includes('banaan')||fruitArray.includes('bananen')){
+    banana.className += ' guessed';
+} 
+
+if (fruitArray.includes('aardbeien')||fruitArray.includes('aardbei')){
+    strawberry.className += ' guessed';
+} 
+
+}
+
+
+
+let array =['appel', 'banaan', 'aardbei', 'kiwi', 'peer'];
+let random = Math.floor(Math.random() * array.length);
+array[0] = 'mango';
+console.log(array[random]);
+
+// Neem een string, split m bij spaties en de array bestaat uit woorden
+let myString = "Hallo, dit is een zin die ik mogelijk kan opdelen in woorden";
+let myArray = Array.from(myString.split(' '));
+console.log(myArray[7]);
 
 
 function ShowResult($txtBox) {
@@ -49,11 +119,10 @@ function ShowResult($txtBox) {
 }
 
 function ShowTextResult(){
-    //let textbox = document.getElementById('txt-box1');
+    let textbox = document.getElementById('txt-box1');
     let input = document.getElementById('text-input').value;
     let modifiedText = addHello(input);
-    //textbox.innerHTML = addHello(textInput);
-    console.log(modifiedText);
+    textbox.innerHTML = modifiedText;
 }
 
 function addHello(parameter){
