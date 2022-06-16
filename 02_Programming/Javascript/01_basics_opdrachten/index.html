@@ -19,16 +19,6 @@
 
         }
 
-        .fruit__img {
-            opacity: 0;
-
-        }
-
-        .fruit__img.guessed {
-            transition-duration: 1s;
-            opacity: 1;
-        }
-
         .buttons__box {
             display: flex;
             flex-direction: column;
@@ -47,33 +37,6 @@
 <body>
 
     <main>
-
-        <div class="container">
-            <div class="fruit-box">
-                <h2>vruchtenbingo</h2>
-                <p>Maak een tekst over verschillende vruchten. Raad jij ze alle 9?</p>
-                <textarea name="fruit-input" id="fruit-input" cols="30" rows="10" placeholder="Jouw tekst"></textarea>
-
-                <button class="show-result-btn" onclick="checkFruits()">Check</button>
-                <div class="bingobox">
-                    <div class="bingo-row">
-                        <img class="fruit__img" id="strawberry" src="./images/aardbei.png" alt="">
-                        <img class="fruit__img" id="pineapple" src="./images/ananas.png" alt="">
-                        <img class="fruit__img" id="apple" src="./images/appel.png" alt="">
-                    </div>
-                    <div class="bingo-row">
-                        <img class="fruit__img" id="banana" src="./images/banaan.png" alt="">
-                        <img class="fruit__img" id="grape" src="./images/druif.png" alt="">
-                        <img class="fruit__img" id="cherry" src="./images/kers.png" alt="">
-                    </div>
-                    <div class="bingo-row">
-                        <img class="fruit__img" id="mango" src="./images/mango.png" alt="">
-                        <img class="fruit__img" id="pear" src="./images/peer.png" alt="">
-                        <img class="fruit__img" id="orange" src="./images/sinaasappel.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <div class="buttons__container">
