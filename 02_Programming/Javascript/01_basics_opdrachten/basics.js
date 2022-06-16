@@ -14,8 +14,10 @@ let fruitInputString = fruitInput.value;
 let lowerString = fruitInputString.toLowerCase();
 let replaceDot = lowerString.replace(/\./g, ' ');
 let replaceComma = replaceDot.replace(/\,/g, ' ');
-let replaceNewLine = replaceComma.replace(/\n/g, ' ')
-let fruitArray = Array.from(replaceNewLine.split(' '));
+let replaceNewLine = replaceComma.replace(/\n/g, ' ');
+let replaceQuestionmark = replaceNewLine.replace(/\?/g, '');
+let replaceExclamation = replaceQuestionmark.replace(/\!/g, '');
+let fruitArray = Array.from(replaceExclamation.split(' '));
 console.log(fruitArray);
 if (fruitArray.includes('appel')||fruitArray.includes('appels')){
     apple.className += ' guessed';
