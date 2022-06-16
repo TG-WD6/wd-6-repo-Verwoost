@@ -11,13 +11,17 @@ let fruitInput = document.getElementById('fruit-input');
 
 function checkFruits(){
 let fruitInputString = fruitInput.value;
-let lowerString = fruitInputString.toLowerCase();
-let replaceDot = lowerString.replace(/\./g, ' ');
-let replaceComma = replaceDot.replace(/\,/g, ' ');
-let replaceNewLine = replaceComma.replace(/\n/g, ' ');
-let replaceQuestionmark = replaceNewLine.replace(/\?/g, '');
-let replaceExclamation = replaceQuestionmark.replace(/\!/g, '');
-let fruitArray = Array.from(replaceExclamation.split(' '));
+let cleanString = cleanUp(fruitInputString);
+
+function cleanUp(string) {
+    let regex = /[\..*,.*:.*;.*'.*'.*!.*\?.*".*".\n]/ig;
+    let regString = string.replace(regex, ' ');
+    let lowerString = regString.toLowerCase();
+    return lowerString;
+}
+
+
+let fruitArray = Array.from(cleanString.split(' '));
 console.log(fruitArray);
 if (fruitArray.includes('appel')||fruitArray.includes('appels')){
     apple.className += ' guessed';
@@ -56,6 +60,7 @@ if (fruitArray.includes('aardbeien')||fruitArray.includes('aardbei')){
 } 
 
 }
+
 
 
 
