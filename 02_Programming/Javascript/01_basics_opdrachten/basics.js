@@ -9,57 +9,99 @@ let mango = document.getElementById('mango');
 let grape = document.getElementById('grape');
 let fruitInput = document.getElementById('fruit-input');
 
-function checkFruits(){
-let fruitInputString = fruitInput.value;
-let lowerString = fruitInputString.toLowerCase();
-let replaceDot = lowerString.replace(/\./g, ' ');
-let replaceComma = replaceDot.replace(/\,/g, ' ');
-let replaceNewLine = replaceComma.replace(/\n/g, ' ');
-let replaceQuestionmark = replaceNewLine.replace(/\?/g, '');
-let replaceExclamation = replaceQuestionmark.replace(/\!/g, '');
-let fruitArray = Array.from(replaceExclamation.split(' '));
-console.log(fruitArray);
-if (fruitArray.includes('appel')||fruitArray.includes('appels')){
-    apple.className += ' guessed';
-} 
+function checkFruits() {
+    let fruitInputString = fruitInput.value;
+    let cleanString = cleanUp(fruitInputString);
 
-if (fruitArray.includes('peer')||fruitArray.includes('peren')){
-    pear.className += ' guessed';
-} 
+    function cleanUp(string) {
+        let regex = /[\..*,.*:.*;.*'.*'.*!.*\?.*".*".\n]/ig;
+        let regString = string.replace(regex, ' ');
+        let lowerString = regString.toLowerCase();
+        return lowerString;
+    }
 
-if (fruitArray.includes('sinaasappel')||fruitArray.includes('sinaasappels')){
-    orange.className += ' guessed';
-} 
+    let fruitArray = Array.from(cleanString.split(' '));
+    let comPareArray = ['appel', 'appels', 'peer', 'peren', 'sinaasappel', 'sinaasappels', 'ananas','ananassen', 'druif', 'druiven', 'mango', 'mango\'s', 'mangos', 'kers', 'kersen', 'banaan', 'bananen', 'aardbei', 'aardbeien'];
+    const emptyArray = new Array(0);
+    for (const x in fruitArray) {
+        for (const y in comPareArray) {
+            if (fruitArray[x] == comPareArray[y]) {
 
-if (fruitArray.includes('ananas')||fruitArray.includes('ananassen')){
-    pineapple.className += ' guessed';
-} 
+                emptyArray.unshift(comPareArray[y]);
+            }
 
-if (fruitArray.includes('druif')||fruitArray.includes('druiven')){
-    grape.className += ' guessed';
-} 
+        }
+    }
+    console.log(emptyArray);
 
-if (fruitArray.includes('mango')||fruitArray.includes('mango\'s') || fruitArray.includes('mangos') ){
-    mango.className += ' guessed';
-} 
+    for (const b in emptyArray) {
+        switch (emptyArray[b]) {
+            case 'appel':
 
-if (fruitArray.includes('kers')||fruitArray.includes('kersen')){
-    cherry.className += ' guessed';
-} 
+            case 'appels':
+                apple.className += ' guessed';
+                break;
 
-if (fruitArray.includes('banaan')||fruitArray.includes('bananen')){
-    banana.className += ' guessed';
-} 
+            case 'peer':
 
-if (fruitArray.includes('aardbeien')||fruitArray.includes('aardbei')){
-    strawberry.className += ' guessed';
-} 
+            case 'peren':
+                pear.className += ' guessed';
+                break;
+
+            case 'sinaasappel':
+
+            case 'sinaasappels':
+                orange.className += ' guessed';
+                break;
+
+            case 'ananas':
+
+            case 'ananassen':
+                pineapple.className += ' guessed';
+                break;
+
+            case 'druif':
+
+            case 'druiven':
+                grape.className += ' guessed';
+                break;
+
+            case 'mango':
+
+            case 'mango\'s':
+                mango.className += ' guessed';
+                break;
+
+            case 'kers':
+
+            case 'kersen':
+                cherry.className += ' guessed';
+                break;
+
+            case 'banaan':
+
+            case 'bananen':
+                banana.className += ' guessed';
+                break;
+
+            case 'aardbei':
+
+            case 'aardbeien':
+                strawberry.className += ' guessed';
+                break;
+            default:
+                break;
+        }
+    }
+
+
 
 }
 
 
 
-let array =['appel', 'banaan', 'aardbei', 'kiwi', 'peer'];
+
+let array = ['appel', 'banaan', 'aardbei', 'kiwi', 'peer'];
 let random = Math.floor(Math.random() * array.length);
 array[0] = 'mango';
 console.log(array[random]);
@@ -71,7 +113,7 @@ console.log(myArray[7]);
 
 
 function ShowResult($txtBox) {
-   
+
 
     let textbox = document.getElementById($txtBox);
     let x = document.getElementById('number-input').value;
@@ -118,37 +160,37 @@ function ShowResult($txtBox) {
 
 }
 
-function ShowTextResult(){
+function ShowTextResult() {
     let textbox = document.getElementById('txt-box1');
     let input = document.getElementById('text-input').value;
     let modifiedText = addHello(input);
     textbox.innerHTML = modifiedText;
 }
 
-function addHello(parameter){
+function addHello(parameter) {
     let result = "Hello, " + parameter + "! How are you today?";
     return result;
 }
 
-console.log(Math.max(1,3,2));
-console.log(Math.min(1,3,2));
+console.log(Math.max(1, 3, 2));
+console.log(Math.min(1, 3, 2));
 
 const output = document.getElementById('txt-box3');
 
-function showIsMember(){
+function showIsMember() {
     let checkName = document.getElementById('name-input').value.toLowerCase();
     let result = isMember(checkName);
     //let output = document.getElementById('txt-box3');
     output.innerHTML = result;
 }
 
- 
 
-function isMember(checkName){
-    let teamNames = ["joost", "fares", "lex","nathaniel"];
-    if(teamNames.includes(checkName)){
+
+function isMember(checkName) {
+    let teamNames = ["joost", "fares", "lex", "nathaniel"];
+    if (teamNames.includes(checkName)) {
         return checkName + " is one of the goodguys!"
-    }else{
+    } else {
         return checkName + " is not one of us"
     }
 }
