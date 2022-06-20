@@ -380,3 +380,229 @@ We eindigen deze oefeningen met een lastige:
 
 [link naar de voorbeelden CTRL+CLICK](https://htmlpreview.github.io/?https://github.com/TG-WD6/wd-6-repo-Verwoost/blob/main/02_Programming/Javascript/01_basics_opdrachten/index.html)
 
+### **Opdracht 5.2:**
+
+We oefenen met Loops. Gegeven het volgende array:
+
+![image](../01_basics/images/image31.png)
+
+1. Loop door het array heen en log de items 1 voor 1 in je console.
+2. Doe nu hetzelfde met een for...in en een for...of loop
+3. Maak een for loop die van de getallen 1 t/m 20 de even getallen logt.
+
+<br>
+
+```
+let twentyArray =  new Array(20);
+
+for (let i = 0; i < twentyArray.length; i++) {
+    let y = i + 1;
+    if(y%2==0){
+        console.log(y);
+    }
+    
+}
+
+```
+
+<br>
+
+Nu gaan we even oefenen met nested loops. Maak nu een for-loop aan die drie keer draait.
+
+4. Maak daarbinnen een for-loop die 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 logt.
+5. Je console.log() toont nu 3x 1,2,3,4,5,6,7,8,9,10. Gebruik nu dezelfde 2 loops om eerst 1, 2,3,4,5,6,7,8,9,10 te loggen, vervolgens 2,4,6,8,10,12,14,16,18,20 en uiteindelijk 3,6,9,12,15,18,21,24,27,30.
+
+<br>
+
+```
+let threeArray = new Array(3);
+let tenArray =  new Array(10);
+
+for (let i = 0; i < threeArray.length; i++) {
+    let c = i + 1;
+    for (let b = 0; b < tenArray.length; b++) {
+        let y = b+1;
+        console.log(y * c);
+        
+    }
+    
+}
+
+```
+<br>
+
+Nu maken we het iets lastiger. De Reeks van Fibonacci is een lijst met getallen waarbij elk getal een opsomming is van de vorige 2 getallen.
+
+6. Begin met het array [0,1]. Maak vervolgens een loop die dit array vult met de eerste 50 getallen van de Reeks van Fibonacci. Log dit array.
+
+<br>
+
+```
+let fibArray = [0,1];
+
+for (let i = 1; i <= 50; i++) {
+    y = i - 1;
+    let x = fibArray[i] + fibArray[y];
+    fibArray.push(x);
+    console. log(x);
+}
+
+```
+
+<br>
+
+
+Stel je hebt het volgende array met random getallen [2,7,5,10,4,9,3,1,8,6] en je wil dit sorteren. Er zijn ontzettend veel verschillende methodes om dingen te sorteren - ze zijn niet allemaal even efficiënt. Een van die methodes heet [bubblesort](https://nl.wikipedia.org/wiki/Bubblesort). Een voorbeeld:
+
+![image](../01_basics/images/image55.gif)
+
+1. Bouw een loop die het gegeven array met bubblesort sorteert.
+
+<br>
+
+```
+let sortArray = [2,7,5,10,4,9,3,1,8,6];
+for (let j = 0; j < sortArray.length; j++) {
+    for (let i = 1; i < sortArray.length - j; i++) {
+        if (sortArray[i-1] > sortArray[i]) {
+            let temp = sortArray[i];
+            sortArray[i] = sortArray[i-1];
+            sortArray[i-1] = temp;
+        }
+    }
+}
+console.log(sortArray);
+
+```
+
+<br>
+
+### **Opdracht 5.3:**
+
+We oefenen met Array Methods. Gegeven het volgende array:
+
+![image](../01_basics/images/image31.png)
+
+Gebruik Array methods om het volgende te doen. Elke vraag gebruikt een andere method:
+
+1. Voeg Zeilen en Zwemmen toe aan het einde van het array
+2. Voeg Volleybal toe aan het begin van het array
+3. Maak een nieuw array ballSports, met de balsporten uit dutchSports
+4. Verwijder die items uit dutchSports.
+5. Sorteer het dutchSports array.
+6. Log elk item in de console.
+7. Maak een nieuw array sportsLength, met daarin de lengte van elk item in het dutchSports array.
+
+<br>
+
+```
+let mySports = ['Voetbal', 'Hockey', 'Schaatsen'];
+
+//voeg aan het einde toe
+mySports.push('Zeilen', 'Zwemmen');
+//voeg aan het begin toe
+mySports.unshift('Volleybal');
+//pak de eerste twee items en maak een nieuwe array
+let ballSports = mySports.slice(0,2);
+//sorteren
+mySports.sort();
+//voer een functie uit op elk item en maak een nieuwe array van de resultaten
+let sportsLength = mySports.map(getLength);
+
+function getLength(item){
+    return item.length;
+}
+console.log(sportsLength);
+
+```
+
+<br>
+
+
+### **Opdracht 5.4:**
+
+We onderzoeken Array-Like Objects en nog enkele array methods. 
+
+Array-Like Objects zijn ook lijsten, maar dan met een ander datatype. Ze worden hetzelfde geschreven. Er is wel een cruciaal technisch verschil - Array-Like Objects kunnen geen Array methods gebruiken. Gegeven de volgende code:
+
+![image](../01_basics/images/image42.png)
+
+1. Gebruik Array.from() om er een nieuw array van te maken.
+
+Onderzoek de volgende array methods en maak voor elke een voorbeeld:
+
+1. filter()
+2. find()
+3. some()
+4. every()
+5. includes()
+
+
+
+# Objects
+
+Een Object is een manier om bepaalde eigenschappen en gedrag te groeperen. Zo kan je per gebruiker alle informatie bij elkaar houden. JavaScript gebruikt aardig wat ingebouwde objecten - met enkele heb je al kennis gemaakt. Maar je kan ook je eigen objecten aanmaken! Dat doe je met een zogenaamde **_Constructor_**. De belangrijkste soorten zijn:
+
+* Object Constructor
+* Literal Constructor
+* Function Constructor
+* Singleton Constructor
+* Class-based Constructor
+
+De **_Object Constructor_**:
+
+![image](../01_basics/images/image24.png)
+
+De **_Literal Constructor_**:
+
+![image](../01_basics/images/image30.png)
+
+De **_Function Constructor_**:
+
+![image](../01_basics/images/image10.png)
+
+De **_Singleton Constructor_**:
+
+![image](../01_basics/images/image48.png)
+
+De **_Class-based Constructor:_**
+
+![image](../01_basics/images/image15.png)
+
+Elke constructor heeft zijn eigen voordelen en nadelen. Een deel van het verschil zit in het omgaan met de **_Object Prototype._** Dat is een voorbeeld waar een Object bepaalde properties en gedrag van kunnen overnemen. 
+
+Misschien wel het allerbelangrijkste onderwerp wat met Objects te maken heeft is **_JSON_**, **_J_**ava**_S_**cript **_O_**bject **_N_**otation. JSON wordt binnen en buiten JavaScript gebruikt om data over het internet te communiceren. Weten hoe je zo’n file uitleest en verwerkt is dus ontzettend belangrijk! Een goede uitleg over JSON kan je [hier](https://www.youtube.com/watch?v=iiADhChRriM) vinden.
+
+
+
+# Objects - Opdrachten
+
+
+
+### **Opdracht 6.1:**
+
+We oefenen met het aanmaken van Objects.
+
+1. Maak meerdere objects Pet met een naam en een soort. Maak een ander dier met elk van de 5 soorten constructor uit de voorbeelden en log deze in de console. Kijk bij elke ook naar de prototype - kan je een verschil ontdekken?
+
+De laatste veelgebruikte manier om Objecten aan te maken is met Object.create()
+
+2. Gebruik Object.create() om een Object aan te maken. Doe dit voor elke Pet die je in de vorige opdracht hebt gemaakt, en log ze in de console. Valt er iets op aan de prototype?
+3. Maak een array met 10 Person Objects, die een naam en leeftijd hebben. Gebruik vervolgens Array methods om je personen te sorteren op leeftijd.
+
+
+
+### **Opdracht 6.2:**
+
+We oefenen met nested Objects.
+
+1. Maak een Club class die het volgende bijhoudt:
+    * Naam
+    * Type club
+    * Aantal :Leden
+2. Maak een Contactinformatie class aan en voeg die toe aan de Club class. De Contactinformatie houdt het volgende bij:
+    * Adres
+    * Telefoonnummer
+    * Contactpersoon
+3. Maak een array met 5 verschillende Clubs aan. Itereer door het array heen en log voor elke Club de naam, het telefoonnummer en de contactpersoon.
+4. Geef 2 clubs dezelfde contactpersoon, en verander iets aan deze contactpersoon bij 1 van de 2. Log vervolgens de contactpersoon van de andere club.
