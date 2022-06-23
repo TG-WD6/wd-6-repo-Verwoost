@@ -262,6 +262,9 @@ for (let i = 0; i < personArray.length; i++) {
     
 }
 
+let newArray = nameArray.map((item)=>{return item += " is gek";});
+console.log(newArray);
+
 personArray.sort(function(a,b){return a.age - b.age});
 console.log(personArray);
 
