@@ -606,3 +606,50 @@ We oefenen met nested Objects.
     * Contactpersoon
 3. Maak een array met 5 verschillende Clubs aan. Itereer door het array heen en log voor elke Club de naam, het telefoonnummer en de contactpersoon.
 4. Geef 2 clubs dezelfde contactpersoon, en verander iets aan deze contactpersoon bij 1 van de 2. Log vervolgens de contactpersoon van de andere club.
+
+
+<br>
+<br>
+
+```
+
+class Aclub{
+    constructor(clubname, clubtype, clubsize, contact){
+        this.clubname = clubname;
+        this.clubtype = clubtype;
+        this.clubsize = clubsize;
+        this.adress = contact.adress;
+        this.phone = contact.phone;
+        this.contactName = contact.contactName;
+    }
+}
+
+class Contact{
+    constructor(adress, phone, contactName){
+        this.adress = adress;
+        this.phone = phone;
+        this.contactName = contactName;
+    }
+}
+
+let ajaxContact = new Contact("meerplein 1 ", "0678791272", "Edwin");
+
+let myClub = new Aclub('Ajax', 'soccer', 110, ajaxContact);
+let mySClub = new Aclub('ATC', 'tennis', 280 , new Contact('beukenplein 1', '0251-898778', 'Ludo'));
+let myTClub = new Aclub('AZ', 'soccer', 180, ajaxContact);
+let myFClub = new Aclub('ADO', 'soccer', 230, new Contact('jacobslaan 6', '09007272', 'Yordi'));
+
+myTClub.contactName = "Karin";
+
+console.log(myClub);
+console.log(mySClub);
+console.log(myTClub);
+
+let myClubsArray = [myClub, mySClub, myTClub, myFClub];
+
+for (let i = 0; i < myClubsArray.length; i++) {
+    console.log(myClubsArray[i].clubname, myClubsArray[i].phone, myClubsArray[i].contactName);
+    
+}
+
+```
