@@ -1,16 +1,13 @@
 .button {
-  background-color: #ff5733;
+  background-color: rgb(255, 87, 51);
 }
-
 .button:hover {
-  background-color: #c70039;
+  background-color: rgb(199, 0, 57);
 }
 
 .button {
   background-color: aqua;
 }
-
 .button:hover {
   background-color: cadetblue;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
