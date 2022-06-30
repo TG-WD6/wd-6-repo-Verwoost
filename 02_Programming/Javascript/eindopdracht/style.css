@@ -126,4 +126,16 @@ html {
   background-color: turquoise;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+}
+
+.deck-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  justify-content: space-around;
+}
+
+.card {
+  width: 20vw;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

@@ -137,3 +137,17 @@ html {
     border-top-right-radius: 3px;
 
 }
+
+.deck-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    justify-content: space-around;
+    
+}
+
+.card{
+    
+    width: 20vw;
+    text-align: center;
+}
