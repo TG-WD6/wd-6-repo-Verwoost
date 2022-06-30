@@ -32,11 +32,20 @@
         </div>
 
     </div>
-
+    <br>
+    <br>
     <div class="container">
         <div class="deck-title" id="deck-title"></div>
-        <button onclick="clearDeck()">Clear</button>
-        <button onclick="populate()">Show</button>
+        <label for="deck__select-set">Choose Set</label>
+        <select name="deck__select-set" id="select-set" onchange="thisSet()">
+            <option value="./M21.json">2021 Core</option>
+            <option value="./M20.json">2020 Core</option>
+            <option selected value="./mtg.json">Fourth Edition 1993</option>
+        </select>
+        <label for="deck__select-artist">Choose Artist</label>
+        <select name="deck__select-artist" id="select-artist" onchange="thisArtistCards()"></select>
+        <!-- <button onclick="clearDeck()">Clear</button> -->
+        <!-- <button onclick="populate()">Show</button> -->
         <div class="deck-wrapper" id="deck-wrapper"></div>
     </div>
 

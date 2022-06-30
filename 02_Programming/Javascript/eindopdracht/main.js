@@ -9,7 +9,11 @@ const secondHand = document.querySelector('[data-second-hand]');
 const deckTitle = document.querySelector('#deck-title');
 const deckWrapper = document.querySelector('#deck-wrapper');
 const cardImageURL = 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=';
-
+const selectArtist = document.querySelector('#select-artist');
+let myArtist = null;
+let defaultText = '';
+let mySet = './mtg.json';
+const selectSet = document.querySelector('#select-set');
 
 function setClock() {
     let date = new Date();
@@ -27,10 +31,21 @@ function setRotation(element, rotationRatio) {
 
 setClock();
 
+function thisArtistCards() {
+    myArtist = selectArtist.value;
 
-async function populate() {
+    populate(mySet);
+}
 
-    const requestURL = './mtg.json';
+function thisSet(){
+    mySet = selectSet.value;
+    clearArtists();
+    myArtist = null;
+    populate(mySet);
+}
+async function populate(mySet) {
+
+    const requestURL = mySet;
     const request = new Request(requestURL);
 
     const response = await fetch(request);
@@ -38,6 +53,7 @@ async function populate() {
 
     console.log(magicObject['data'].cards[1]);
     clearDeck();
+    
     populateHeader(magicObject);
     populateCards(magicObject);
 
@@ -52,42 +68,82 @@ function populateHeader(object) {
 function populateCards(object) {
     const cards = object['data'].cards;
 
-    console.log(cards[1].identifiers.multiverseId);
-    // for (const card of cards){
-    //     console.log(card.artist);
-    // }
+    
 
-    // const artists = cards.map((x) => { return x.artist });
-    // const types = cards.map((x) => { return x.types[0] });
+    const artists = cards.map((x) => { return x.artist });
 
-    // console.log(artists[2]);
-    // console.log(types[25]);
+    const uniqueArray = artists.filter((value, index) => {
+        const _value = JSON.stringify(value);
+        return index === artists.findIndex(obj => {
+            return JSON.stringify(obj) === _value;
+        });
+    });
 
-    for (let i = 0; i < 36; i++) {
+    uniqueArray.sort();
+
+if(!selectArtist.firstChild){
+    for (const artist of uniqueArray) {
+        let myArtistOption = document.createElement('option');
+        myArtistOption.innerHTML = populateArtistOptions(artist);
+        selectArtist.appendChild(myArtistOption);
+    }
+    selectArtist.firstChild.setAttribute('selected', true);
+    myArtist = selectArtist.firstChild.value;
+    console.log(myArtist);
+    
+}
+
+    function populateArtistOptions(artist) {
+        return `<option value = ${artist}>${artist}</option>`;
+
+    }
+
+    let myCards = cards.filter(x => x.artist == myArtist);
+
+    const uniqueCards = myCards.filter((value, index) => {
+        const _value = JSON.stringify(value);
+        return index === myCards.findIndex(obj => {
+            return JSON.stringify(obj) === _value;
+        });
+    });
+
+
+    for (let i = 0; i < myCards.length; i++) {
 
         let myDiv = document.createElement('div');
-        myDiv.innerHTML = cardElement(cards[i].name, cards[i].artist, cards[i].flavorText, cardImageURL, cards[i].identifiers.multiverseId);
-
+        if (!myCards[i].flavorText) {
+            defaultText = myCards[i].text;
+        } else {
+            defaultText = myCards[i].flavorText;
+        }
+        myDiv.innerHTML = cardElement(myCards[i].name, myCards[i].artist, defaultText, cardImageURL, myCards[i].identifiers.multiverseId);
+        myDiv.classList.add('card');
         deckWrapper.appendChild(myDiv);
+        console.log(myCards[i].identifiers);
     }
 
     function cardElement(cardName, cardArtist, cardText, cardImageURL, cardImageID) {
-        if(cardText == null){
-            cardText = "";
-
-        };
-        cardArtist ="Artist: "+ cardArtist;
-        return `<div class="card"><h3>${cardName}</h3><p>${cardArtist}</p><img src="${cardImageURL} ${cardImageID}"> <p>${cardText}</p></div>`;
+      
+        cardArtist = "Artist: " + cardArtist;
+        return `<h3>${cardName}</h3><p>${cardArtist}</p><img src="${cardImageURL} ${cardImageID}"> <p class="card-text">${cardText}</p>`;
     }
 
 }
 
-async function clearDeck(){
-    while(deckWrapper.firstChild){
+async function clearDeck() {
+    while (deckWrapper.firstChild) {
         deckWrapper.removeChild(deckWrapper.firstChild);
-        
-    }
 
-    deckTitle.removeChild(deckTitle.firstChild);
+    }
+    if (deckTitle.firstChild) {
+        deckTitle.removeChild(deckTitle.firstChild);
+    }
 }
+
+async function clearArtists(){
+    while(selectArtist.firstChild)
+    selectArtist.removeChild(selectArtist.firstChild);
+}
+
+populate(mySet);
 
