@@ -15,6 +15,7 @@ let defaultText = '';
 let mySet = './mtg.json';
 const selectSet = document.querySelector('#select-set');
 
+
 function setClock() {
     let date = new Date();
     let secondsRatio = date.getSeconds() / 60;
@@ -31,20 +32,26 @@ function setRotation(element, rotationRatio) {
 
 setClock();
 
+
+//-----------------------------------------------Cards----------------
+// select-artist onchange
 function thisArtistCards() {
     myArtist = selectArtist.value;
 
     populate(mySet);
 }
-
+// select-set onchange
 function thisSet(){
     mySet = selectSet.value;
     clearArtists();
     myArtist = null;
     populate(mySet);
 }
-async function populate(mySet) {
 
+
+
+async function populate(mySet) {
+    //mySet is path to json file
     const requestURL = mySet;
     const request = new Request(requestURL);
 
@@ -52,6 +59,7 @@ async function populate(mySet) {
     const magicObject = await response.json();
 
     console.log(magicObject['data'].cards[0]);
+    //if populated with other artist or set
     clearDeck();
     
     populateHeader(magicObject);
@@ -66,12 +74,13 @@ function populateHeader(object) {
 }
 
 function populateCards(object) {
+    //create array of card objects
     const cards = object['data'].cards;
 
-    
-
+    //create array of each card's artist
     const artists = cards.map((x) => { return x.artist });
 
+    //remove duplicates and return array
     const uniqueArray = artists.filter((value, index) => {
         const _value = JSON.stringify(value);
         return index === artists.findIndex(obj => {
@@ -81,6 +90,7 @@ function populateCards(object) {
 
     uniqueArray.sort();
 
+    //if the list of artists is empty add option element for each artist
 if(!selectArtist.firstChild){
     for (const artist of uniqueArray) {
         let myArtistOption = document.createElement('option');
@@ -98,16 +108,10 @@ if(!selectArtist.firstChild){
 
     }
 
+    //create array of card objects by myArtist
     let myCards = cards.filter(x => x.artist == myArtist);
 
-    const uniqueCards = myCards.filter((value, index) => {
-        const _value = JSON.stringify(value);
-        return index === myCards.findIndex(obj => {
-            return JSON.stringify(obj) === _value;
-        });
-    });
-
-
+    //add a div with classname card for each card to document
     for (let i = 0; i < myCards.length; i++) {
 
         let myDiv = document.createElement('div');
