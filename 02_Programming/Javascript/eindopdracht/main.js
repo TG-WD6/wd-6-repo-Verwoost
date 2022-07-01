@@ -51,7 +51,7 @@ async function populate(mySet) {
     const response = await fetch(request);
     const magicObject = await response.json();
 
-    console.log(magicObject['data'].cards[1]);
+    console.log(magicObject['data'].cards[0]);
     clearDeck();
     
     populateHeader(magicObject);
@@ -119,7 +119,7 @@ if(!selectArtist.firstChild){
         myDiv.innerHTML = cardElement(myCards[i].name, myCards[i].artist, defaultText, cardImageURL, myCards[i].identifiers.multiverseId);
         myDiv.classList.add('card');
         deckWrapper.appendChild(myDiv);
-        console.log(myCards[i].identifiers);
+        
     }
 
     function cardElement(cardName, cardArtist, cardText, cardImageURL, cardImageID) {
