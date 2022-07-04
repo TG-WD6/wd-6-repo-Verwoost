@@ -1,4 +1,4 @@
-* {
+*, *::after, *::before {
   box-sizing: border-box;
 }
 
@@ -16,6 +16,7 @@ html {
 }
 
 .deck__container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -158,6 +159,69 @@ html {
   height: 8em;
   overflow-y: scroll;
   padding: 1em;
+}
+
+.carousel {
+  width: 80vw;
+  height: 600px;
+  position: relative;
+}
+.carousel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  transition-property: opacity;
+  transition-duration: 200ms;
+  transition-delay: 200ms;
+  transition-timing-function: ease-in;
+  opacity: 0;
+}
+.slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.slide.active {
+  transition-property: opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in;
+  opacity: 1;
+}
+
+.carousel__btn-next, .carousel__btn-prev {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  line-height: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.carousel__btn-next:hover, .carousel__btn-next :focus, .carousel__btn-prev:hover, .carousel__btn-prev :focus {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel__btn-next {
+  right: 1rem;
+}
+
+.carousel__btn-prev {
+  left: 1rem;
 }
 
 @media screen and (max-width: 600px) {

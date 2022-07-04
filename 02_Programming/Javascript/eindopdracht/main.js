@@ -15,6 +15,9 @@ let defaultText = '';
 let mySet = './mtg.json';
 const selectSet = document.querySelector('#select-set');
 
+//var for carousel
+const carouselList = document.querySelector('.carousel-list');
+
 
 function setClock() {
     let date = new Date();
@@ -41,7 +44,7 @@ function thisArtistCards() {
     populate(mySet);
 }
 // select-set onchange
-function thisSet(){
+function thisSet() {
     mySet = selectSet.value;
     clearArtists();
     myArtist = null;
@@ -61,7 +64,7 @@ async function populate(mySet) {
     console.log(magicObject['data'].cards[0]);
     //if populated with other artist or set
     clearDeck();
-    
+
     populateHeader(magicObject);
     populateCards(magicObject);
 
@@ -91,17 +94,17 @@ function populateCards(object) {
     uniqueArray.sort();
 
     //if the list of artists is empty add option element for each artist
-if(!selectArtist.firstChild){
-    for (const artist of uniqueArray) {
-        let myArtistOption = document.createElement('option');
-        myArtistOption.innerHTML = populateArtistOptions(artist);
-        selectArtist.appendChild(myArtistOption);
+    if (!selectArtist.firstChild) {
+        for (const artist of uniqueArray) {
+            let myArtistOption = document.createElement('option');
+            myArtistOption.innerHTML = populateArtistOptions(artist);
+            selectArtist.appendChild(myArtistOption);
+        }
+        selectArtist.firstChild.setAttribute('selected', true);
+        myArtist = selectArtist.firstChild.value;
+        console.log(myArtist);
+
     }
-    selectArtist.firstChild.setAttribute('selected', true);
-    myArtist = selectArtist.firstChild.value;
-    console.log(myArtist);
-    
-}
 
     function populateArtistOptions(artist) {
         return `<option value = ${artist}>${artist}</option>`;
@@ -123,11 +126,11 @@ if(!selectArtist.firstChild){
         myDiv.innerHTML = cardElement(myCards[i].name, myCards[i].artist, defaultText, cardImageURL, myCards[i].identifiers.multiverseId);
         myDiv.classList.add('card');
         deckWrapper.appendChild(myDiv);
-        
+
     }
 
     function cardElement(cardName, cardArtist, cardText, cardImageURL, cardImageID) {
-      
+
         cardArtist = "Artist: " + cardArtist;
         return `<h3>${cardName}</h3><p>${cardArtist}</p><img src="${cardImageURL} ${cardImageID}"> <p class="card-text">${cardText}</p>`;
     }
@@ -144,10 +147,26 @@ async function clearDeck() {
     }
 }
 
-async function clearArtists(){
-    while(selectArtist.firstChild)
-    selectArtist.removeChild(selectArtist.firstChild);
+async function clearArtists() {
+    while (selectArtist.firstChild)
+        selectArtist.removeChild(selectArtist.firstChild);
 }
 
 populate(mySet);
+
+
+//carousel
+
+function changePic(myBool) {
+    let slides = Array.from(carouselList.children);
+    let offset = myBool ? +1 : -1;
+    let activeIndex = slides.findIndex(x => x.classList.contains('active'));
+    let newIndex = activeIndex + offset;
+
+    if (newIndex > slides.length - 1) { newIndex = 0 };
+    if (newIndex < 0) { newIndex = slides.length - 1 };
+    slides[activeIndex].classList.remove('active');
+    slides[newIndex].classList.add('active');
+
+}
 
