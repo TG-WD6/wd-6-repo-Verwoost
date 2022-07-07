@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
@@ -8,7 +10,7 @@ html {
 }
 
 .container {
-    
+
     margin-top: 2em;
     display: flex;
     flex-direction: column;
@@ -16,12 +18,12 @@ html {
     justify-content: center;
 }
 
-.deck__container{
+.deck__container {
     position: relative;
     display: flex;
     flex-direction: column;
-     align-items: flex-start;
-   
+    align-items: flex-start;
+
 }
 
 .clock-el {
@@ -34,7 +36,7 @@ html {
     position: relative;
     //box-shadow: 10px 5px 5px 4px gray;
 
-    &::after{
+    &::after {
         content: '';
         position: absolute;
         height: 20px;
@@ -55,7 +57,7 @@ html {
     //color: white;
     -webkit-text-stroke: 1px turquoise;
     filter: drop-shadow(0 0 0.35rem turquoise);
-  
+
     color: transparent;
     font-weight: bold;
     text-align: center;
@@ -118,7 +120,7 @@ html {
     transform-origin: bottom;
     border: 3px solid turquoise;
     filter: drop-shadow(0 0 0.35rem turquoise);
-  
+
     color: transparent;
     transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
 
@@ -148,73 +150,223 @@ html {
 
 }
 
-.deck-wrapper{
+.deck-wrapper {
     display: flex;
     flex-wrap: wrap;
     max-width: 95vw;
     justify-content: space-around;
     gap: 0.5em;
-    
+
 }
 
-.card{
-    
+.card {
+
     width: 30vw;
     text-align: center;
     border: 1px solid black;
     margin-top: 2em;
     border-radius: 15px;
 
-    img{
+    img {
         max-width: 25vw;
     }
 }
 
-.card-text{
+.card-text {
     height: 8em;
     overflow-y: scroll;
     padding: 1em;
 }
 
-.carousel{
-    width: 80vw;
-    height: 600px;
-    position: relative;
+//comment
 
-    & ul{
+.comment-container{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.comment{
+    display: flex;
+    width: 40vw;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgreen;
+    margin: 0.5rem;
+    border-radius: 15px;
+
+    img{
+        
+        margin: 0.25rem;
+    }
+
+    p{
+        margin-left: 1rem;
+     }
+
+    button{
+        background-color: rebeccapurple;
+        color: white;
+        height: 2rem;
+        margin-right: 1rem;
+        border: none;
+
+        &:hover{
+            transform: scale(110%);
+            cursor: pointer;
+            
+        }
+    }
+}
+
+.comment-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 480px;
+    overflow-y: scroll;
+    background-color: rgb(172, 244, 200);
+}
+
+.comment-list{
+    padding: 0;
+}
+
+.comment.reply{
+    background-color: rgb(73, 240, 165);
+    margin-left: 5vw;
+
+
+    p{
+        margin-right: 1rem;
+     }
+
+
+
+  
+}
+
+.replytext{
+    font-size: 12px;
+    width: 40vw;
+    margin-left: 5vw;
+}
+
+.person{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3{
+        margin: 0;
+    }
+}
+
+.edit-area{
+    display: flex;
+    flex-direction: column;
+
+    textarea{
+        display: block;
+    }
+}
+
+
+//carousel
+.carousel {
+    width: 80vw;
+    height: 480px;
+    position: relative;
+    border: 2px solid darkgreen;
+
+    & ul {
         list-style: none;
         margin: 0;
         padding: 0;
     }
+
+    overflow: hidden;
 }
 
-.slide{
+.slide {
     position: absolute;
     inset: 0;
-    transition-property: opacity;
+    transition-property: all;
     transition-duration: 200ms;
     transition-delay: 200ms;
-    transition-timing-function: ease-in;
-    opacity: 0;
-    
-    & img{ display: block;
+    transform: translateX(100%);
+   //opacity: 0;
+ 
+    & img {
+        display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         object-position: center;
 
     }
 }
 
-.slide.active{
-    transition-property: opacity;
-    transition-duration: 200ms;
-    transition-timing-function: ease-in;
-    
-    opacity: 1;
+.slide.active {
+    transition: all, 500ms, ease-out;
+    transform: translateX(0);
 }
 
-.carousel__btn-next, .carousel__btn-prev{
+
+
+.slide.slideleft {
+    animation: slideleft 500ms ease-out;
+
+}
+
+@keyframes slideleft {
+    from {
+        transform: translateX(0%);
+        
+    }
+
+    to {
+        transform: translateX(-100%);
+        
+    }
+}
+
+.slide.slideright {
+    animation: slideright 500ms ease-out;
+}
+
+@keyframes slideright {
+    from {
+        transform: translateX(0%);
+        
+    }
+
+    to {
+        transform: translateX(100%);
+        
+    }
+}
+
+.slide.fromRight{
+    animation: fromright 500ms ease-out;
+}
+
+.slide.fromLeft{
+    animation: fromleft 500ms ease-out;
+}
+@keyframes fromright{
+    from{ transform: translateX(100%);}
+    to{transform: translateX(0%);}
+}
+@keyframes fromleft{
+    from{ transform: translateX(-100%);}
+    to{transform: translateX(0%);}
+}
+
+
+.carousel__btn-next,
+.carousel__btn-prev {
     position: absolute;
     background: none;
     border: none;
@@ -225,34 +377,47 @@ html {
     z-index: 2;
     color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
-   
+
     background-color: rgba($color: #000000, $alpha: 0.3);
 
-    &:hover, :focus{
+    &:hover,
+    :focus {
         background-color: rgba($color: #000000, $alpha: 0.5);
         color: rgba(255, 255, 255, 0.5);
-        
+
     }
 
-  
+
 }
 
-.carousel__btn-next{
+.carousel__btn-next {
     right: 1rem;
 }
 
-.carousel__btn-prev{
+.carousel__btn-prev {
     left: 1rem;
 }
 
-@media screen and (max-width: 600px) {
-    .card{
+@media screen and (max-width: 800px) {
+    .card {
         width: 90vw;
 
-        img{
+        img {
             width: auto;
             max-width: 100%;
         }
     }
-    
+
+    .comment-container{
+        flex-direction: column;
+    }
+
+    .comment{
+        width: 80vw;
+    }
+
+    .comment.reply{
+        width: 75vw;
+    }
+
 }

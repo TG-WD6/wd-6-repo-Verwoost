@@ -18,6 +18,16 @@ const selectSet = document.querySelector('#select-set');
 //var for carousel
 const carouselList = document.querySelector('.carousel-list');
 
+//var for comments
+const myTextInput = document.querySelector('#input-text');
+const myCommentList = document.querySelector('.comment-list');
+const postButton = document.querySelector('#comment__post-btn');
+const postForm = document.querySelector('#comment-form');
+const postTitle = document.querySelector('#input-title');
+const commentAlert = document.querySelector('.comment__form-alert');
+const replyParent = document.querySelector('.reply-parent');
+let myCommentId = 1;
+
 
 function setClock() {
     let date = new Date();
@@ -160,13 +170,106 @@ populate(mySet);
 function changePic(myBool) {
     let slides = Array.from(carouselList.children);
     let offset = myBool ? +1 : -1;
+    let changeClass = myBool ? 'slideleft' : 'slideright';
+    let changeActive = myBool ? 'fromRight' : 'fromLeft';
     let activeIndex = slides.findIndex(x => x.classList.contains('active'));
     let newIndex = activeIndex + offset;
 
+
     if (newIndex > slides.length - 1) { newIndex = 0 };
     if (newIndex < 0) { newIndex = slides.length - 1 };
-    slides[activeIndex].classList.remove('active');
-    slides[newIndex].classList.add('active');
+
+    slides[activeIndex].classList.remove('active', 'fromRight', 'fromLeft');
+    slides[activeIndex].classList.add(changeClass);
+
+
+    slides[newIndex].classList.remove('slideleft', 'slideright');
+    slides[newIndex].classList.add(changeActive, 'active');
+
+
 
 }
+
+postForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    //formValidation();
+   
+    console.log(myTextInput.value);
+    let postContent = myTextInput.value;
+    let myTitle = postTitle.value;
+    let myListItem = comment(myTitle, "https://source.unsplash.com/K3QQLUlqVVg", postContent, myCommentId);
+    
+    if(replyParent.textContent){
+        let foundComment = document.getElementById(replyParent.textContent);
+        let replyText = document.createElement('p');
+        let foundTitle = foundComment.querySelector('.comment__title').textContent;
+        replyText.textContent=" \u2193 Antwoord op: "+ foundTitle + " \u2193";
+        myListItem.classList.add('reply');
+        replyText.classList.add('replytext');
+        foundComment.after(myListItem);
+        foundComment.after(replyText);
+        console.log(foundComment);
+    }else{
+        myCommentList.appendChild(myListItem);
+    }
+
+    postForm.reset();
+    myCommentId ++;
+    commentAlert.textContent="Opmerking plaatsen";
+    replyParent.textContent= null;
+
+
+});
+
+
+function comment(title, imageUrl, text, id) {
+
+
+    let myListItem = document.createElement('li');
+    let myPerson = document.createElement('div');
+    let myImage = document.createElement('img');
+    let myTitle = document.createElement('h3');
+    let myText = document.createElement('p');
+    let myReplyButton = document.createElement('button');
+
+    myImage.src = imageUrl;
+    myImage.width = 64;
+    myImage.height = 64;
+
+    myPerson.appendChild(myImage);
+    myPerson.classList.add('person');
+    myTitle.textContent = title + ' #' + id;
+    myTitle.classList.add('comment__title');
+    myPerson.appendChild(myTitle);
+
+    myListItem.appendChild(myPerson);
+
+    myText.textContent = text;
+    myListItem.appendChild(myText);
+
+    myReplyButton.textContent = 'reply';
+    myReplyButton.setAttribute('onclick','replyToComment(this)');
+    myReplyButton.classList.add('comment__reply-btn');
+    myListItem.appendChild(myReplyButton);
+
+    myListItem.classList.add('comment');
+    myListItem.setAttribute('id', id);
+
+    return myListItem;
+
+}
+
+function replyToComment(button){
+    // console.log(button.parentElement);
+    // let reply = document.createElement('li');
+    // reply.textContent = 'dit is een antwoord';
+    // button.parentElement.after(reply);
+    let title = button.parentElement.querySelector('.comment__title').textContent;
+    let myId= button.parentElement.id;
+    replyParent.textContent= myId;
+    commentAlert.textContent = 'Antwoord op: '+ title ;
+}
+
+
+
 

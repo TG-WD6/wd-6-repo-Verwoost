@@ -36,15 +36,42 @@
     <div class="container">
         <div class="carousel">
             <button class="carousel__btn-next" onclick="changePic(true);">&gt;</button>
-            <button class="carousel__btn-prev"onclick="changePic(false);">&lt;</button>
+            <button class="carousel__btn-prev" onclick="changePic(false);">&lt;</button>
 
             <ul class="carousel-list">
-                <li class="slide active"> <img src="https://source.unsplash.com/I3Wz-GuPKPE" alt="chameleon" > </li>
+                <li class="slide active"> <img src="https://source.unsplash.com/I3Wz-GuPKPE" alt="chameleon"> </li>
                 <li class="slide"><img src="https://source.unsplash.com/K3QQLUlqVVg" alt="chameleon"></li>
                 <li class="slide"><img src="https://source.unsplash.com/WPRPQUsaeHo" alt="chameleon"></li>
             </ul>
 
         </div>
+    </div>
+    <br>
+    <div class="comment-container">
+        <section class="edit-area">
+            <form id="comment-form">
+                <p class="comment__form-alert">Opmerking plaatsen</p>
+            <fieldset>
+                <textarea name="input-text" id="input-text" cols="60" rows="5"></textarea>
+                <input type="text" name="input-title" id="input-title" required>
+                <button id="comment__post-btn">Post</button>
+            </fieldset>
+        </form>
+        <div hidden class="reply-parent"></div>
+        </section>
+        <section class="comment-area">
+            <ul class="comment-list">
+                <li class="comment" id="0">
+                    <div class="person"><img src="https://source.unsplash.com/K3QQLUlqVVg" alt="" height="64px"
+                        width="64px">
+                    <h3 class="comment__title">Joost</h3>
+                </div>
+                    <p>Ik ben de beste!</p>
+                    <button class="comment__reply-btn" onclick="replyToComment(this)">reply</button>
+                </li>
+            </ul>
+        </section>
+
     </div>
     <br>
     <div class="deck__container">
