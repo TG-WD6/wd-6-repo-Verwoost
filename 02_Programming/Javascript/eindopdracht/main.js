@@ -26,7 +26,9 @@ const postForm = document.querySelector('#comment-form');
 const postTitle = document.querySelector('#input-title');
 const commentAlert = document.querySelector('.comment__form-alert');
 const replyParent = document.querySelector('.reply-parent');
+const mySound = new Audio('./images/Flute.ogg');
 let myCommentId = 1;
+let charSelect = document.querySelector('#char-select');
 
 
 function setClock() {
@@ -112,7 +114,7 @@ function populateCards(object) {
         }
         selectArtist.firstChild.setAttribute('selected', true);
         myArtist = selectArtist.firstChild.value;
-        console.log(myArtist);
+       
 
     }
 
@@ -186,37 +188,60 @@ function changePic(myBool) {
     slides[newIndex].classList.remove('slideleft', 'slideright');
     slides[newIndex].classList.add(changeActive, 'active');
 
-
-
 }
+
+//comment section
 
 postForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    //formValidation();
-   
-    console.log(myTextInput.value);
+
+    let myCharImage = '';
+
+    switch (charSelect.value) {
+        case 'Birdy':
+            myCharImage = './images/birdy.svg';
+            break;
+        case 'Skully':
+            myCharImage = './images/skull.svg';
+            break;
+
+        case 'Bunny':
+            myCharImage = './images/bunny.svg'
+            break;
+        default:
+            break;
+    }
+
+    if (myTextInput.value === '') {
+        alert("Bericht heeft geen inhoud!");
+        return;
+    }
+
     let postContent = myTextInput.value;
-    let myTitle = postTitle.value;
-    let myListItem = comment(myTitle, "https://source.unsplash.com/K3QQLUlqVVg", postContent, myCommentId);
-    
-    if(replyParent.textContent){
+    let myTitle = charSelect.value;
+    let myListItem = comment(myTitle, myCharImage, postContent, myCommentId);
+
+    if (replyParent.textContent) {
         let foundComment = document.getElementById(replyParent.textContent);
         let replyText = document.createElement('p');
         let foundTitle = foundComment.querySelector('.comment__title').textContent;
-        replyText.textContent=" \u2193 Antwoord op: "+ foundTitle + " \u2193";
+        replyText.textContent = "Antwoord op: " + foundTitle;
         myListItem.classList.add('reply');
         replyText.classList.add('replytext');
         foundComment.after(myListItem);
         foundComment.after(replyText);
-        console.log(foundComment);
-    }else{
+        
+    } else {
         myCommentList.appendChild(myListItem);
     }
 
     postForm.reset();
-    myCommentId ++;
-    commentAlert.textContent="Opmerking plaatsen";
-    replyParent.textContent= null;
+    myCommentId++;
+    commentAlert.textContent = "Opmerking plaatsen";
+    commentAlert.classList.remove('special');
+    replyParent.textContent = null;
+
+    mySound.play();
 
 
 });
@@ -248,7 +273,7 @@ function comment(title, imageUrl, text, id) {
     myListItem.appendChild(myText);
 
     myReplyButton.textContent = 'reply';
-    myReplyButton.setAttribute('onclick','replyToComment(this)');
+    myReplyButton.setAttribute('onclick', 'replyToComment(this)');
     myReplyButton.classList.add('comment__reply-btn');
     myListItem.appendChild(myReplyButton);
 
@@ -259,15 +284,12 @@ function comment(title, imageUrl, text, id) {
 
 }
 
-function replyToComment(button){
-    // console.log(button.parentElement);
-    // let reply = document.createElement('li');
-    // reply.textContent = 'dit is een antwoord';
-    // button.parentElement.after(reply);
+function replyToComment(button) {
     let title = button.parentElement.querySelector('.comment__title').textContent;
-    let myId= button.parentElement.id;
-    replyParent.textContent= myId;
-    commentAlert.textContent = 'Antwoord op: '+ title ;
+    let myId = button.parentElement.id;
+    replyParent.textContent = myId;
+    commentAlert.textContent = 'Antwoord op: ' + title;
+    commentAlert.classList.add('special');
 }
 
 

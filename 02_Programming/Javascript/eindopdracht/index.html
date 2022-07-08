@@ -52,8 +52,14 @@
             <form id="comment-form">
                 <p class="comment__form-alert">Opmerking plaatsen</p>
             <fieldset>
-                <textarea name="input-text" id="input-text" cols="60" rows="5"></textarea>
-                <input type="text" name="input-title" id="input-title" required>
+                <textarea name="input-text" id="input-text" cols="30" rows="6" placeholder="Jouw bericht"></textarea>
+                <!-- <input type="text" name="input-title" id="input-title" required placeholder="Gebruikersnaam"> -->
+                <label for="char-select">Gebruikersnaam</label>
+                <select name="char-select" id="char-select" required>
+                    <option value="Birdy">Birdy</option>
+                    <option value="Bunny">Bunny</option>
+                    <option value="Skully">Skully</option>
+                </select>
                 <button id="comment__post-btn">Post</button>
             </fieldset>
         </form>
@@ -62,14 +68,15 @@
         <section class="comment-area">
             <ul class="comment-list">
                 <li class="comment" id="0">
-                    <div class="person"><img src="https://source.unsplash.com/K3QQLUlqVVg" alt="" height="64px"
+                    <div class="person"><img src="./images/birdy.svg" alt="" height="64px"
                         width="64px">
-                    <h3 class="comment__title">Joost</h3>
+                    <h3 class="comment__title">Birdy #0</h3>
                 </div>
-                    <p>Ik ben de beste!</p>
+                    <p>Hey! Hoe gaat het?</p>
                     <button class="comment__reply-btn" onclick="replyToComment(this)">reply</button>
                 </li>
             </ul>
+            
         </section>
 
     </div>

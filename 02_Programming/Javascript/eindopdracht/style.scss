@@ -187,6 +187,7 @@ html {
 }
 
 .comment{
+    
     display: flex;
     width: 40vw;
     justify-content: space-between;
@@ -195,9 +196,13 @@ html {
     margin: 0.5rem;
     border-radius: 15px;
 
+    animation: pop-comment 300ms ease-in-out ;
+
+
     img{
         
         margin: 0.25rem;
+        border-radius: 50%;
     }
 
     p{
@@ -219,6 +224,25 @@ html {
     }
 }
 
+@keyframes pop-comment {
+    from{
+        transform: scale(0%);
+    }
+
+    to{transform: scale(100%)}
+    
+}
+
+.comment__form-alert{
+    padding: 0.5rem;
+}
+
+.comment__form-alert.special{
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
 .comment-area{
     display: flex;
     flex-direction: column;
@@ -230,26 +254,24 @@ html {
 
 .comment-list{
     padding: 0;
+    position: relative;
 }
 
 .comment.reply{
     background-color: rgb(73, 240, 165);
     margin-left: 5vw;
 
-
     p{
         margin-right: 1rem;
-     }
-
-
-
-  
+     } 
 }
 
 .replytext{
     font-size: 12px;
-    width: 40vw;
-    margin-left: 5vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: -28px;
 }
 
 .person{
@@ -257,6 +279,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0.25rem;
 
     h3{
         margin: 0;
