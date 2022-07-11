@@ -30,7 +30,14 @@ const mySound = new Audio('./images/Flute.ogg');
 let myCommentId = 1;
 let charSelect = document.querySelector('#char-select');
 
+// var for search
+const searchInput = document.querySelector('#input-search');
+const searchButton = document.querySelector('#search-btn');
+const searchList = document.querySelector('.search-list');
+let searchWords = [];
+localStorage.clear();
 
+//clock---------------
 function setClock() {
     let date = new Date();
     let secondsRatio = date.getSeconds() / 60;
@@ -47,6 +54,49 @@ function setRotation(element, rotationRatio) {
 
 setClock();
 
+
+//------------------------Search-----------------------
+searchInput.addEventListener('input', (e)=>{
+    const value = e.target.value;
+    if(localStorage.length > 0){
+    let myStorageArray = localStorage.getItem('storageArray');
+
+    let myParsed = JSON.parse(myStorageArray);
+        for (let i = 0; i < myParsed.length; i++) {
+            if(myParsed[i].includes(value)){
+                console.log(searchList.children[i]);
+                searchList.children[i].classList.add('show');
+                
+            }
+            
+        }
+}
+});
+
+searchButton.addEventListener('click', (e)=>{
+    let myWord = searchInput.value.toLowerCase();
+    searchWords.push(myWord);
+
+     searchWords = searchWords.filter((value, index) => {
+        const _value = JSON.stringify(value);
+        return index === searchWords.findIndex(obj => {
+            return JSON.stringify(obj) === _value;
+        });
+    });
+    let stringified = JSON.stringify(searchWords);
+    localStorage.setItem('storageArray', stringified);
+
+   
+        
+        let mySearchElement = document.createElement('div');
+        mySearchElement.textContent = myWord;
+        mySearchElement.classList.add('autofill-item');
+        searchList.appendChild(mySearchElement);
+
+        searchInput.value = '';
+        
+    
+});
 
 //-----------------------------------------------Cards----------------
 // select-artist onchange
@@ -167,7 +217,7 @@ async function clearArtists() {
 populate(mySet);
 
 
-//carousel
+//carousel----------------------------------------------------------------------------
 
 function changePic(myBool) {
     let slides = Array.from(carouselList.children);
@@ -190,7 +240,7 @@ function changePic(myBool) {
 
 }
 
-//comment section
+//comment section--------------------------------------------------------------------------------
 
 postForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -241,7 +291,7 @@ postForm.addEventListener("submit", (e) => {
     commentAlert.classList.remove('special');
     replyParent.textContent = null;
 
-    mySound.play();
+    //mySound.play();
 
 
 });

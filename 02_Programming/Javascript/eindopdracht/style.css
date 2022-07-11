@@ -275,6 +275,14 @@ html {
   display: block;
 }
 
+.autofill-item {
+  display: none;
+}
+
+.autofill-item.show {
+  display: block;
+}
+
 .carousel {
   width: 80vw;
   height: 480px;

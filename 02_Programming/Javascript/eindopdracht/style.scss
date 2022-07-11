@@ -294,6 +294,16 @@ html {
         display: block;
     }
 }
+//search
+
+.autofill-item{
+    display: none;
+}
+
+.autofill-item.show{
+    display: block;
+    
+}
 
 
 //carousel
@@ -420,6 +430,8 @@ html {
 .carousel__btn-prev {
     left: 1rem;
 }
+
+
 
 @media screen and (max-width: 800px) {
     .card {
