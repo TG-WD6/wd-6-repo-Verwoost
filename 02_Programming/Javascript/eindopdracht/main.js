@@ -56,46 +56,132 @@ setClock();
 
 
 //------------------------Search-----------------------
-searchInput.addEventListener('input', (e)=>{
-    const value = e.target.value;
-    if(localStorage.length > 0){
-    let myStorageArray = localStorage.getItem('storageArray');
+let currentActive = -1;
+searchInput.addEventListener('keydown', function (e) {
 
-    let myParsed = JSON.parse(myStorageArray);
-        for (let i = 0; i < myParsed.length; i++) {
-            if(myParsed[i].includes(value)){
-                console.log(searchList.children[i]);
-                searchList.children[i].classList.add('show');
-                
+    if (searchList.firstChild) {
+        let array = Array.from(searchList.children);
+        let positions = [];
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].classList.contains('show')) {
+                positions.push(i);
             }
-            
+
         }
-}
+        if (e.keyCode == 40) {
+
+            if (currentActive < positions.length - 1) {
+                currentActive++;
+            }
+
+            console.log(currentActive);
+
+            searchList.children[positions[currentActive]].classList.add('active');
+            if (currentActive > 0) {
+                searchList.children[positions[currentActive - 1]].classList.remove('active');
+            }
+
+        }
+
+        else if (e.keyCode == 38) {
+
+            if (currentActive > 0) {
+                currentActive--;
+            }
+            console.log(currentActive);
+            if (currentActive < positions.length) {
+                searchList.children[positions[currentActive]].classList.add('active');
+                if (currentActive < positions.length - 1) {
+
+                    searchList.children[positions[currentActive + 1]].classList.remove('active');
+                }
+            }
+        }
+        else if (e.keyCode == 13) {
+            if (searchList.children[positions[currentActive]]) {
+                searchList.children[positions[currentActive]].click();
+            } else { searchButton.click(); }
+        }
+
+
+    }
+
+    else if (e.keyCode ==13) {
+        searchButton.click();
+    }
 });
 
-searchButton.addEventListener('click', (e)=>{
-    let myWord = searchInput.value.toLowerCase();
-    searchWords.push(myWord);
 
-     searchWords = searchWords.filter((value, index) => {
-        const _value = JSON.stringify(value);
-        return index === searchWords.findIndex(obj => {
-            return JSON.stringify(obj) === _value;
+searchInput.addEventListener('input', (e) => {
+
+    for (let i = 0; i < searchList.children.length; i++) {
+        searchList.children[i].classList.remove('show', 'active');
+
+
+    }
+    const value = e.target.value;
+
+    currentActive = -1;
+
+    if (localStorage.length > 0) {
+        let myStorageArray = localStorage.getItem('storageArray');
+
+        let myParsed = JSON.parse(myStorageArray);
+
+        for (let i = 0; i < myParsed.length; i++) {
+            if (value.length > 0) {
+                if (myParsed[i].includes(value)) {
+                    console.log(searchList.children[i]);
+                    searchList.children[i].classList.add('show');
+                    searchList.children[i].addEventListener('click', function (e) {
+                        searchInput.value = searchList.children[i].textContent;
+                        for (let i = 0; i < searchList.children.length; i++) {
+                            searchList.children[i].classList.remove('show', 'active');
+
+                        }
+                    });
+                }
+            }
+
+        }
+    }
+});
+
+searchButton.addEventListener('click', (e) => {
+
+    for (let i = 0; i < searchList.children.length; i++) {
+        searchList.children[i].classList.remove('show', 'active');
+
+    }
+
+
+    if (searchInput.value.length > 0 && searchInput.value.trim() !== '') {
+        let myWord = searchInput.value.toLowerCase();
+        let isDuplicate = searchWords.includes(myWord);
+        searchWords.push(myWord);
+
+        searchWords = searchWords.filter((value, index) => {
+            const _value = JSON.stringify(value);
+            return index === searchWords.findIndex(obj => {
+                return JSON.stringify(obj) === _value;
+            });
         });
-    });
-    let stringified = JSON.stringify(searchWords);
-    localStorage.setItem('storageArray', stringified);
+        let stringified = JSON.stringify(searchWords);
+        localStorage.setItem('storageArray', stringified);
 
-   
-        
-        let mySearchElement = document.createElement('div');
-        mySearchElement.textContent = myWord;
-        mySearchElement.classList.add('autofill-item');
-        searchList.appendChild(mySearchElement);
+
+        if (!isDuplicate) {
+            let mySearchElement = document.createElement('div');
+            mySearchElement.textContent = myWord;
+            mySearchElement.classList.add('autofill-item');
+            searchList.appendChild(mySearchElement);
+        }
 
         searchInput.value = '';
-        
-    
+
+    }
+
 });
 
 //-----------------------------------------------Cards----------------
@@ -164,7 +250,7 @@ function populateCards(object) {
         }
         selectArtist.firstChild.setAttribute('selected', true);
         myArtist = selectArtist.firstChild.value;
-       
+
 
     }
 
@@ -262,7 +348,7 @@ postForm.addEventListener("submit", (e) => {
             break;
     }
 
-    if (myTextInput.value === '') {
+    if (myTextInput.value === '' || myTextInput.value.trim() === '') {
         alert("Bericht heeft geen inhoud!");
         return;
     }
@@ -280,7 +366,7 @@ postForm.addEventListener("submit", (e) => {
         replyText.classList.add('replytext');
         foundComment.after(myListItem);
         foundComment.after(replyText);
-        
+
     } else {
         myCommentList.appendChild(myListItem);
     }
