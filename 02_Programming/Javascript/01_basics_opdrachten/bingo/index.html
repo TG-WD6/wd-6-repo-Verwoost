@@ -12,10 +12,19 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
+        .container{
+            display: flex;
+            gap: 1em;
+        }
+
         .fruit-box{
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .fruit-output{
+            white-space: pre-wrap;
         }
 
         .bingo-row{
@@ -44,7 +53,7 @@
             <div class="fruit-box">
                 <h2>vruchtenbingo</h2>
                 <p>Schrijf een verhaal over verschillende vruchten.</p> <p>Raad jij ze alle 9?</p>
-                <textarea name="fruit-input" id="fruit-input" cols="30" rows="10" oninput="checkFruits()" placeholder="Jouw tekst"></textarea>
+                <textarea name="fruit-input" id="fruit-input" cols="30" rows="10" onchange="checkFruits(this)" placeholder="Jouw tekst"></textarea>
 
                 <div class="bingobox">
                     <div class="bingo-row">
@@ -63,6 +72,13 @@
                         <img class="fruit__img" id="orange" src="./images/sinaasappel.png" alt="">
                     </div>
                 </div>
+            </div>
+            <div class="fruit-box">
+                <h2>vruchtenbingo</h2>
+                <p>Schrijf een verhaal over verschillende vruchten.</p> <p>Raad jij ze alle 9?</p>
+                <textarea name="fruit-input" id="fruit-input__second" cols="30" rows="10" onchange="checkFruitsRaw(this)" placeholder="Jouw tekst"></textarea>
+                <textarea name="fruit-output" id="fruit-output" cols="30" rows="10"></textarea>
+               
             </div>
         </div>
 
