@@ -17,13 +17,17 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    p{
+        max-width: 30vw;
+    }
 }
 
 .deck__container {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
 }
 
@@ -155,7 +159,6 @@ html {
     display: flex;
     flex-wrap: wrap;
     max-width: 95vw;
-    justify-content: space-around;
     gap: 0.5em;
 
 }
@@ -311,24 +314,20 @@ html {
 //search
 
 .search-container{
+    
     margin-left: 10vw;
     width: 80vw;
     height: 256px;
     display: flex;
     flex-direction: column;
-    //justify-content: center;
     align-items: center;
 
-
-    p{
-        width: 40vw;
-    }
 }
 
 .search-wrapper {
-    position: relative;
-    display: inline-block;
-
+    position: absolute;
+    transform: translateX(-25%);
+    
 }
 
 .autofill-item {
@@ -339,7 +338,8 @@ html {
     display: block;
     padding: 10px;
     cursor: pointer;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #d4d4d4;
+    background-color: white;
 
     &:hover{
         background-color: #d4d4d4;
@@ -348,9 +348,11 @@ html {
 }
 .autofill-item.show.active{
     background-color: dodgerblue;
+    color: white;
 }
 
 .search-list {
+    position: relative;
     border: 1px solid #d4d4d4;
     border-bottom: none;
     border-top: none;
@@ -362,9 +364,27 @@ html {
 }
 
 #input-search {
-    font-size: 1rem;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #d4d4d4;
+   
 
 }
+
+#search-btn{
+    position: absolute;
+    background-color: dodgerblue;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    left:100%;
+    top: 0;
+}
+
+
 
 
 //carousel

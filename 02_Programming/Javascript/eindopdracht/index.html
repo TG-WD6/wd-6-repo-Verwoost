@@ -95,46 +95,46 @@
     <hr>
     <br>
 
-    <div class="search-container">
+    <div class="container">
         <h2>Search Bar</h2>
-        <p>Zoektermen worden in localstorage opgeslagen. Deze worden weergegeven als suggesties. 
+        <p>Zoektermen worden in localstorage opgeslagen. Deze worden weergegeven als suggesties.
             Je kunt met de pijltjestoetsen (en enter) of muisklik een keuze maken.
-        Zowel enter als de knop bevestigen je invoer. </p>
-        <br>
-        <div class="search-wrapper">
-            <input type="search" id="input-search" autocomplete="off">
-            <input type="submit" id="search-btn">
-            <div class="search-list"></div>
-
-        </div>
-        
-
-        
-        <!-- <div class="search-container">
-        
-        <input type="search" name="input-search" id="input-search" autocomplete="off">
-        
-        <div class="search-list"></div>
-
-        </div>
-        <input type="submit" value="Search" id="search-btn"> -->
+            Zowel enter als de knop bevestigen je invoer. </p>
     </div>
     <br>
+    <div class="search-container">
+
+        <br>
+        <div class="search-wrapper">
+            <input type="search" id="input-search" autocomplete="off" spellcheck="false">
+
+            <div class="search-list"></div>
+            <input type="submit" id="search-btn">
+        </div>
+
+    </div>
+
+
+    <br>
+    <hr>
+    <br>
     <div class="deck__container">
-        <div class="deck-title" id="deck-title"></div>
+        <h2> JASON card deck</h2>
         <label for="deck__select-set">Choose Set</label>
         <select name="deck__select-set" id="select-set" onchange="thisSet()">
-            <option value="./M21.json">2021 Core</option>
-            <option value="./M20.json">2020 Core</option>
-            <option selected value="./mtg.json">Fourth Edition 1993</option>
+            <option selected value="./4ED.json">Fourth Edition 1993</option>
+            <option value="./5ED.json">Fifth Edition 1997</option>
+            <option value="./6ED.json">Sixth Edition 1999</option>
+
         </select>
         <label for="deck__select-artist">Choose Artist</label>
         <select name="deck__select-artist" id="select-artist" onchange="thisArtistCards()"></select>
-        <!-- <button onclick="clearDeck()">Clear</button> -->
-        <!-- <button onclick="populate()">Show</button> -->
-        <div class="deck-wrapper" id="deck-wrapper"></div>
-    </div>
+        <br>
+        <br>
+        <div class="deck-title" id="deck-title"></div>
 
+    </div>
+    <div class="deck-wrapper" id="deck-wrapper"></div>
 
 
 

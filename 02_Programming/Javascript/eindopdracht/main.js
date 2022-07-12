@@ -10,24 +10,24 @@ const deckTitle = document.querySelector('#deck-title');
 const deckWrapper = document.querySelector('#deck-wrapper');
 const cardImageURL = 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=';
 const selectArtist = document.querySelector('#select-artist');
-let myArtist = null;
+let varArtist = null;
 let defaultText = '';
-let mySet = './mtg.json';
+let varSet = './4ED.json';
 const selectSet = document.querySelector('#select-set');
 
 //var for carousel
 const carouselList = document.querySelector('.carousel-list');
 
 //var for comments
-const myTextInput = document.querySelector('#input-text');
-const myCommentList = document.querySelector('.comment-list');
+const varTextInput = document.querySelector('#input-text');
+const varCommentList = document.querySelector('.comment-list');
 const postButton = document.querySelector('#comment__post-btn');
 const postForm = document.querySelector('#comment-form');
 const postTitle = document.querySelector('#input-title');
 const commentAlert = document.querySelector('.comment__form-alert');
 const replyParent = document.querySelector('.reply-parent');
-const mySound = new Audio('./images/Flute.ogg');
-let myCommentId = 1;
+const varSound = new Audio('./images/Flute.ogg');
+let varCommentId = 1;
 let charSelect = document.querySelector('#char-select');
 
 // var for search
@@ -120,18 +120,18 @@ searchInput.addEventListener('input', (e) => {
 
 
     }
-    const value = e.target.value;
+    const value = e.target.value.toLowerCase();
 
     currentActive = -1;
 
     if (localStorage.length > 0) {
-        let myStorageArray = localStorage.getItem('storageArray');
+        let storageArray = localStorage.getItem('storageArray');
 
-        let myParsed = JSON.parse(myStorageArray);
+        let parsed = JSON.parse(storageArray);
 
-        for (let i = 0; i < myParsed.length; i++) {
+        for (let i = 0; i < parsed.length; i++) {
             if (value.length > 0) {
-                if (myParsed[i].includes(value)) {
+                if (parsed[i].includes(value)) {
                     console.log(searchList.children[i]);
                     searchList.children[i].classList.add('show');
                     searchList.children[i].addEventListener('click', function (e) {
@@ -157,9 +157,9 @@ searchButton.addEventListener('click', (e) => {
 
 
     if (searchInput.value.length > 0 && searchInput.value.trim() !== '') {
-        let myWord = searchInput.value.toLowerCase();
-        let isDuplicate = searchWords.includes(myWord);
-        searchWords.push(myWord);
+        let varWord = searchInput.value.toLowerCase();
+        let isDuplicate = searchWords.includes(varWord);
+        searchWords.push(varWord);
 
         searchWords = searchWords.filter((value, index) => {
             const _value = JSON.stringify(value);
@@ -172,10 +172,10 @@ searchButton.addEventListener('click', (e) => {
 
 
         if (!isDuplicate) {
-            let mySearchElement = document.createElement('div');
-            mySearchElement.textContent = myWord;
-            mySearchElement.classList.add('autofill-item');
-            searchList.appendChild(mySearchElement);
+            let varSearchElement = document.createElement('div');
+            varSearchElement.textContent = varWord;
+            varSearchElement.classList.add('autofill-item');
+            searchList.appendChild(varSearchElement);
         }
 
         searchInput.value = '';
@@ -187,23 +187,23 @@ searchButton.addEventListener('click', (e) => {
 //-----------------------------------------------Cards----------------
 // select-artist onchange
 function thisArtistCards() {
-    myArtist = selectArtist.value;
+    varArtist = selectArtist.value;
 
-    populate(mySet);
+    populate(varSet);
 }
 // select-set onchange
 function thisSet() {
-    mySet = selectSet.value;
+    varSet = selectSet.value;
     clearArtists();
-    myArtist = null;
-    populate(mySet);
+    varArtist = null;
+    populate(varSet);
 }
 
 
 
-async function populate(mySet) {
-    //mySet is path to json file
-    const requestURL = mySet;
+async function populate(varSet) {
+    //varSet is path to json file
+    const requestURL = varSet;
     const request = new Request(requestURL);
 
     const response = await fetch(request);
@@ -219,9 +219,9 @@ async function populate(mySet) {
 }
 
 function populateHeader(object) {
-    const myHeader = document.createElement('h2');
-    myHeader.textContent = object['data'].name;
-    deckTitle.appendChild(myHeader);
+    const varHeader = document.createElement('h2');
+    varHeader.textContent = object['data'].name;
+    deckTitle.appendChild(varHeader);
 }
 
 function populateCards(object) {
@@ -244,12 +244,12 @@ function populateCards(object) {
     //if the list of artists is empty add option element for each artist
     if (!selectArtist.firstChild) {
         for (const artist of uniqueArray) {
-            let myArtistOption = document.createElement('option');
-            myArtistOption.innerHTML = populateArtistOptions(artist);
-            selectArtist.appendChild(myArtistOption);
+            let varArtistOption = document.createElement('option');
+            varArtistOption.innerHTML = populateArtistOptions(artist);
+            selectArtist.appendChild(varArtistOption);
         }
         selectArtist.firstChild.setAttribute('selected', true);
-        myArtist = selectArtist.firstChild.value;
+        varArtist = selectArtist.firstChild.value;
 
 
     }
@@ -259,21 +259,21 @@ function populateCards(object) {
 
     }
 
-    //create array of card objects by myArtist
-    let myCards = cards.filter(x => x.artist == myArtist);
+    //create array of card objects by varArtist
+    let varCards = cards.filter(x => x.artist == varArtist);
 
     //add a div with classname card for each card to document
-    for (let i = 0; i < myCards.length; i++) {
+    for (let i = 0; i < varCards.length; i++) {
 
-        let myDiv = document.createElement('div');
-        if (!myCards[i].flavorText) {
-            defaultText = myCards[i].text;
+        let varDiv = document.createElement('div');
+        if (!varCards[i].flavorText) {
+            defaultText = varCards[i].text;
         } else {
-            defaultText = myCards[i].flavorText;
+            defaultText = varCards[i].flavorText;
         }
-        myDiv.innerHTML = cardElement(myCards[i].name, myCards[i].artist, defaultText, cardImageURL, myCards[i].identifiers.multiverseId);
-        myDiv.classList.add('card');
-        deckWrapper.appendChild(myDiv);
+        varDiv.innerHTML = cardElement(varCards[i].name, varCards[i].artist, defaultText, cardImageURL, varCards[i].identifiers.multiverseId);
+        varDiv.classList.add('card');
+        deckWrapper.appendChild(varDiv);
 
     }
 
@@ -300,16 +300,16 @@ async function clearArtists() {
         selectArtist.removeChild(selectArtist.firstChild);
 }
 
-populate(mySet);
+populate(varSet);
 
 
 //carousel----------------------------------------------------------------------------
 
-function changePic(myBool) {
+function changePic(varBool) {
     let slides = Array.from(carouselList.children);
-    let offset = myBool ? +1 : -1;
-    let changeClass = myBool ? 'slideleft' : 'slideright';
-    let changeActive = myBool ? 'fromRight' : 'fromLeft';
+    let offset = varBool ? +1 : -1;
+    let changeClass = varBool ? 'slideleft' : 'slideright';
+    let changeActive = varBool ? 'fromRight' : 'fromLeft';
     let activeIndex = slides.findIndex(x => x.classList.contains('active'));
     let newIndex = activeIndex + offset;
 
@@ -331,53 +331,53 @@ function changePic(myBool) {
 postForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    let myCharImage = '';
+    let varCharImage = '';
 
     switch (charSelect.value) {
         case 'Birdy':
-            myCharImage = './images/birdy.svg';
+            varCharImage = './images/birdy.svg';
             break;
         case 'Skully':
-            myCharImage = './images/skull.svg';
+            varCharImage = './images/skull.svg';
             break;
 
         case 'Bunny':
-            myCharImage = './images/bunny.svg'
+            varCharImage = './images/bunny.svg'
             break;
         default:
             break;
     }
 
-    if (myTextInput.value === '' || myTextInput.value.trim() === '') {
+    if (varTextInput.value === '' || varTextInput.value.trim() === '') {
         alert("Bericht heeft geen inhoud!");
         return;
     }
 
-    let postContent = myTextInput.value;
-    let myTitle = charSelect.value;
-    let myListItem = comment(myTitle, myCharImage, postContent, myCommentId);
+    let postContent = varTextInput.value;
+    let varTitle = charSelect.value;
+    let varListItem = comment(varTitle, varCharImage, postContent, varCommentId);
 
     if (replyParent.textContent) {
         let foundComment = document.getElementById(replyParent.textContent);
         let replyText = document.createElement('p');
         let foundTitle = foundComment.querySelector('.comment__title').textContent;
         replyText.textContent = "Antwoord op: " + foundTitle;
-        myListItem.classList.add('reply');
+        varListItem.classList.add('reply');
         replyText.classList.add('replytext');
-        foundComment.after(myListItem);
+        foundComment.after(varListItem);
         foundComment.after(replyText);
 
     } else {
-        myCommentList.appendChild(myListItem);
+        varCommentList.appendChild(varListItem);
     }
 
     postForm.reset();
-    myCommentId++;
+    varCommentId++;
     commentAlert.textContent = "Opmerking plaatsen";
     commentAlert.classList.remove('special');
     replyParent.textContent = null;
 
-    //mySound.play();
+    //varSound.play();
 
 
 });
@@ -386,44 +386,44 @@ postForm.addEventListener("submit", (e) => {
 function comment(title, imageUrl, text, id) {
 
 
-    let myListItem = document.createElement('li');
-    let myPerson = document.createElement('div');
-    let myImage = document.createElement('img');
-    let myTitle = document.createElement('h3');
-    let myText = document.createElement('p');
-    let myReplyButton = document.createElement('button');
+    let varListItem = document.createElement('li');
+    let varPerson = document.createElement('div');
+    let varImage = document.createElement('img');
+    let varTitle = document.createElement('h3');
+    let varText = document.createElement('p');
+    let varReplyButton = document.createElement('button');
 
-    myImage.src = imageUrl;
-    myImage.width = 64;
-    myImage.height = 64;
+    varImage.src = imageUrl;
+    varImage.width = 64;
+    varImage.height = 64;
 
-    myPerson.appendChild(myImage);
-    myPerson.classList.add('person');
-    myTitle.textContent = title + ' #' + id;
-    myTitle.classList.add('comment__title');
-    myPerson.appendChild(myTitle);
+    varPerson.appendChild(varImage);
+    varPerson.classList.add('person');
+    varTitle.textContent = title + ' #' + id;
+    varTitle.classList.add('comment__title');
+    varPerson.appendChild(varTitle);
 
-    myListItem.appendChild(myPerson);
+    varListItem.appendChild(varPerson);
 
-    myText.textContent = text;
-    myListItem.appendChild(myText);
+    varText.textContent = text;
+    varListItem.appendChild(varText);
 
-    myReplyButton.textContent = 'reply';
-    myReplyButton.setAttribute('onclick', 'replyToComment(this)');
-    myReplyButton.classList.add('comment__reply-btn');
-    myListItem.appendChild(myReplyButton);
+    varReplyButton.textContent = 'reply';
+    varReplyButton.setAttribute('onclick', 'replyToComment(this)');
+    varReplyButton.classList.add('comment__reply-btn');
+    varListItem.appendChild(varReplyButton);
 
-    myListItem.classList.add('comment');
-    myListItem.setAttribute('id', id);
+    varListItem.classList.add('comment');
+    varListItem.setAttribute('id', id);
 
-    return myListItem;
+    return varListItem;
 
 }
 
 function replyToComment(button) {
     let title = button.parentElement.querySelector('.comment__title').textContent;
-    let myId = button.parentElement.id;
-    replyParent.textContent = myId;
+    let varId = button.parentElement.id;
+    replyParent.textContent = varId;
     commentAlert.textContent = 'Antwoord op: ' + title;
     commentAlert.classList.add('special');
 }
