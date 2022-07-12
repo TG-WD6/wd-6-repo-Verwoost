@@ -17,7 +17,7 @@ html {
   justify-content: center;
 }
 .container p {
-  max-width: 30vw;
+  width: 30vw;
 }
 
 .deck__container {
@@ -144,11 +144,15 @@ html {
 .deck-wrapper {
   display: flex;
   flex-wrap: wrap;
-  max-width: 95vw;
+  justify-content: center;
+  margin-left: 2.5vw;
+  width: 95vw;
   gap: 0.5em;
 }
 
 .card {
+  -webkit-animation: pop-comment 400ms ease-in;
+          animation: pop-comment 400ms ease-in;
   width: 30vw;
   text-align: center;
   border: 1px solid black;
@@ -210,19 +214,19 @@ html {
 
 @-webkit-keyframes pop-comment {
   from {
-    transform: scale(0%);
+    opacity: 0;
   }
   to {
-    transform: scale(100%);
+    opacity: 1;
   }
 }
 
 @keyframes pop-comment {
   from {
-    transform: scale(0%);
+    opacity: 0;
   }
   to {
-    transform: scale(100%);
+    opacity: 1;
   }
 }
 .comment__form-alert {
@@ -505,6 +509,15 @@ html {
 }
 
 @media screen and (max-width: 800px) {
+  .container p {
+    width: 60vw;
+  }
+
+  .deck-wrapper {
+    width: 95vw;
+    margin-left: 2.5vw;
+  }
+
   .card {
     width: 90vw;
   }

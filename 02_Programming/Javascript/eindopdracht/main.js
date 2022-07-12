@@ -28,9 +28,10 @@ const commentAlert = document.querySelector('.comment__form-alert');
 const replyParent = document.querySelector('.reply-parent');
 const varSound = new Audio('./images/Flute.ogg');
 let varCommentId = 1;
-let charSelect = document.querySelector('#char-select');
+const charSelect = document.querySelector('#char-select');
 
 // var for search
+const searchContainer = document.querySelector('.search-container');
 const searchInput = document.querySelector('#input-search');
 const searchButton = document.querySelector('#search-btn');
 const searchList = document.querySelector('.search-list');
@@ -182,6 +183,14 @@ searchButton.addEventListener('click', (e) => {
 
     }
 
+});
+
+searchContainer.addEventListener('click', (e)=>{
+    for (let i = 0; i < searchList.children.length; i++) {
+        searchList.children[i].classList.remove('show', 'active');
+
+    }
+    
 });
 
 //-----------------------------------------------Cards----------------
