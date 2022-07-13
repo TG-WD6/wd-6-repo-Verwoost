@@ -151,13 +151,16 @@ html {
 }
 
 .card {
-  -webkit-animation: pop-comment 400ms ease-in;
-          animation: pop-comment 400ms ease-in;
+  -webkit-animation: pop-comment 600ms ease-in;
+          animation: pop-comment 600ms ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   width: 30vw;
   text-align: center;
   border: 1px solid black;
   margin-top: 2em;
   border-radius: 15px;
+  opacity: 0;
 }
 .card img {
   max-width: 25vw;

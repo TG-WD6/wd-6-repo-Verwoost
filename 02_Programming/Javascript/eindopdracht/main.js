@@ -36,7 +36,8 @@ const searchInput = document.querySelector('#input-search');
 const searchButton = document.querySelector('#search-btn');
 const searchList = document.querySelector('.search-list');
 let searchWords = [];
-localStorage.clear();
+let currentActive = -1;
+
 
 //clock---------------
 function setClock() {
@@ -57,84 +58,32 @@ setClock();
 
 
 //------------------------Search-----------------------
-let currentActive = -1;
-searchInput.addEventListener('keydown', function (e) {
-
-    if (searchList.firstChild) {
-        let array = Array.from(searchList.children);
-        let positions = [];
-
-        for (let i = 0; i < array.length; i++) {
-            if (array[i].classList.contains('show')) {
-                positions.push(i);
-            }
-
-        }
-        if (e.keyCode == 40) {
-
-            if (currentActive < positions.length - 1) {
-                currentActive++;
-            }
-
-            console.log(currentActive);
-
-            searchList.children[positions[currentActive]].classList.add('active');
-            if (currentActive > 0) {
-                searchList.children[positions[currentActive - 1]].classList.remove('active');
-            }
-
-        }
-
-        else if (e.keyCode == 38) {
-
-            if (currentActive > 0) {
-                currentActive--;
-            }
-            console.log(currentActive);
-            if (currentActive < positions.length) {
-                searchList.children[positions[currentActive]].classList.add('active');
-                if (currentActive < positions.length - 1) {
-
-                    searchList.children[positions[currentActive + 1]].classList.remove('active');
-                }
-            }
-        }
-        else if (e.keyCode == 13) {
-            if (searchList.children[positions[currentActive]]) {
-                searchList.children[positions[currentActive]].click();
-            } else { searchButton.click(); }
-        }
-
-
-    }
-
-    else if (e.keyCode ==13) {
-        searchButton.click();
-    }
-});
-
+localStorage.clear();
 
 searchInput.addEventListener('input', (e) => {
-
+    //hide matches
     for (let i = 0; i < searchList.children.length; i++) {
         searchList.children[i].classList.remove('show', 'active');
-
-
     }
-    const value = e.target.value.toLowerCase();
 
+    const value = e.target.value.toLowerCase();
     currentActive = -1;
 
     if (localStorage.length > 0) {
+        //read localStorage
         let storageArray = localStorage.getItem('storageArray');
-
         let parsed = JSON.parse(storageArray);
 
         for (let i = 0; i < parsed.length; i++) {
             if (value.length > 0) {
-                if (parsed[i].includes(value)) {
-                    console.log(searchList.children[i]);
+                // if first character matches
+                if (parsed[i].substr(0, value.length) == value) {
+                    // make matching characters bold
+                    searchList.children[i].innerHTML = "<strong>" + parsed[i].substr(0, value.length) + "</strong>";
+                    searchList.children[i].innerHTML += parsed[i].substr(value.length);
+                    // make matching words visible
                     searchList.children[i].classList.add('show');
+                    // move clicked matching word to input and hide list
                     searchList.children[i].addEventListener('click', function (e) {
                         searchInput.value = searchList.children[i].textContent;
                         for (let i = 0; i < searchList.children.length; i++) {
@@ -149,48 +98,100 @@ searchInput.addEventListener('input', (e) => {
     }
 });
 
-searchButton.addEventListener('click', (e) => {
+searchInput.addEventListener('keydown', function (e) {
 
+    if (searchList.firstChild) {
+        let array = Array.from(searchList.children);
+        let positions = [];
+
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].classList.contains('show')) {
+                positions.push(i);
+            }
+        }
+        //arrow down
+        if (e.keyCode == 40) {
+
+            if (currentActive < positions.length - 1) {
+                currentActive++;
+            }
+
+            searchList.children[positions[currentActive]].classList.add('active');
+            if (currentActive > 0) {
+                searchList.children[positions[currentActive - 1]].classList.remove('active');
+            }
+
+        }
+        //arrow up
+        else if (e.keyCode == 38) {
+
+            if (currentActive > 0) {
+                currentActive--;
+            }
+
+            if (currentActive < positions.length) {
+                searchList.children[positions[currentActive]].classList.add('active');
+                if (currentActive < positions.length - 1) {
+                    searchList.children[positions[currentActive + 1]].classList.remove('active');
+                }
+            }
+        }
+        //enter key
+        else if (e.keyCode == 13) {
+            // if one of the listitems is active
+            if (searchList.children[positions[currentActive]]) {
+                searchList.children[positions[currentActive]].click();
+                // if none of the listitems is active
+            } else { searchButton.click(); }
+        }
+
+
+    }
+    //enter key if first input (localstorage = empty)
+    else if (e.keyCode == 13) {
+        searchButton.click();
+    }
+});
+
+
+searchButton.addEventListener('click', (e) => {
+    // hide list
     for (let i = 0; i < searchList.children.length; i++) {
         searchList.children[i].classList.remove('show', 'active');
 
     }
 
-
+    // check if input is not empty
     if (searchInput.value.length > 0 && searchInput.value.trim() !== '') {
         let varWord = searchInput.value.toLowerCase();
         let isDuplicate = searchWords.includes(varWord);
-        searchWords.push(varWord);
-
-        searchWords = searchWords.filter((value, index) => {
-            const _value = JSON.stringify(value);
-            return index === searchWords.findIndex(obj => {
-                return JSON.stringify(obj) === _value;
-            });
-        });
-        let stringified = JSON.stringify(searchWords);
-        localStorage.setItem('storageArray', stringified);
-
-
+        
         if (!isDuplicate) {
+            //add input to array searchWords
+            searchWords.push(varWord);
+            let stringified = JSON.stringify(searchWords);
+            //ad array to localStorage
+            localStorage.setItem('storageArray', stringified);
+            //create a div with the input and append to searchList
             let varSearchElement = document.createElement('div');
             varSearchElement.textContent = varWord;
             varSearchElement.classList.add('autofill-item');
             searchList.appendChild(varSearchElement);
         }
-
+        //clear input
         searchInput.value = '';
 
     }
 
 });
 
-searchContainer.addEventListener('click', (e)=>{
+// if clicked outside searchbar: hide list
+searchContainer.addEventListener('click', (e) => {
     for (let i = 0; i < searchList.children.length; i++) {
         searchList.children[i].classList.remove('show', 'active');
 
     }
-    
+
 });
 
 //-----------------------------------------------Cards----------------
