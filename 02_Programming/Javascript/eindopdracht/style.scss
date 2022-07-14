@@ -330,6 +330,7 @@ body {
 
     p {
         margin-left: 1rem;
+        margin-top: 1rem;
     }
 
     button {
@@ -404,7 +405,6 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: -28px;
     z-index: 100;
 }
 
