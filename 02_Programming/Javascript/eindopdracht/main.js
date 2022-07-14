@@ -31,7 +31,7 @@ let varCommentId = 1;
 const charSelect = document.querySelector('#char-select');
 
 // var for search
-const searchContainer = document.querySelector('.search-container');
+const searchContainer = document.querySelector('#search-container');
 const searchInput = document.querySelector('#input-search');
 const searchButton = document.querySelector('#search-btn');
 const searchList = document.querySelector('.search-list');
@@ -290,7 +290,7 @@ function populateCards(object) {
     function cardElement(cardName, cardArtist, cardText, cardImageURL, cardImageID) {
 
         cardArtist = "Artist: " + cardArtist;
-        return `<h3>${cardName}</h3><p>${cardArtist}</p><img src="${cardImageURL} ${cardImageID}"> <p class="card-text">${cardText}</p>`;
+        return `<h3>${cardName}</h3><p>${cardArtist}</p><img src="${cardImageURL} ${cardImageID}" alt="Image not found"> <p class="card-text">${cardText}</p>`;
     }
 
 }
