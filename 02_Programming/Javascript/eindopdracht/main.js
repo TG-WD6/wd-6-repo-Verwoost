@@ -10,6 +10,7 @@ const deckTitle = document.querySelector('#deck-title');
 const deckWrapper = document.querySelector('#deck-wrapper');
 const cardImageURL = 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=';
 const selectArtist = document.querySelector('#select-artist');
+const selectColor = document.querySelector('#select-color');
 let varArtist = null;
 let defaultText = '';
 let varSet = './4ED.json';
@@ -197,8 +198,7 @@ searchContainer.addEventListener('click', (e) => {
 //-----------------------------------------------Cards----------------
 // select-artist onchange
 function thisArtistCards() {
-    varArtist = selectArtist.value;
-
+   varArtist = selectArtist.value;
     populate(varSet);
 }
 // select-set onchange
@@ -206,7 +206,7 @@ function thisSet() {
     varSet = selectSet.value;
     clearArtists();
     varArtist = null;
-    populate(varSet);
+    populate(varSet);   
 }
 
 
@@ -239,21 +239,25 @@ function populateCards(object) {
     const cards = object['data'].cards;
 
     //create array of each card's artist
-    const artists = cards.map((x) => { return x.artist });
-
-    //remove duplicates and return array
-    const uniqueArray = artists.filter((value, index) => {
-        const _value = JSON.stringify(value);
-        return index === artists.findIndex(obj => {
-            return JSON.stringify(obj) === _value;
+    //const artists = cards.map((x) => { return x.artist });
+    const artists = cards.map((x) => { return x.colorIdentity });
+    const cleanArtists = cleanArray(artists);
+  
+    function cleanArray(array){
+        let uniqueArray = array.filter((value, index) => {
+            const _value = JSON.stringify(value);
+            return index === array.findIndex(obj => {
+                return JSON.stringify(obj) === _value;
+            });
         });
-    });
-
-    uniqueArray.sort();
+    
+        uniqueArray.sort(); 
+        return uniqueArray;
+    }
 
     //if the list of artists is empty add option element for each artist
     if (!selectArtist.firstChild) {
-        for (const artist of uniqueArray) {
+        for (const artist of cleanArtists) {
             let varArtistOption = document.createElement('option');
             varArtistOption.innerHTML = populateArtistOptions(artist);
             selectArtist.appendChild(varArtistOption);
@@ -261,8 +265,8 @@ function populateCards(object) {
         selectArtist.firstChild.setAttribute('selected', true);
         varArtist = selectArtist.firstChild.value;
 
-
     }
+
 
     function populateArtistOptions(artist) {
         return `<option value = ${artist}>${artist}</option>`;
@@ -270,19 +274,21 @@ function populateCards(object) {
     }
 
     //create array of card objects by varArtist
-    let varCards = cards.filter(x => x.artist == varArtist);
+    //let varCards = cards.filter(x => x.artist == varArtist);
+    let varCards = cards.filter(x => x.colorIdentity == varArtist);
 
     //add a div with classname card for each card to document
     for (let i = 0; i < varCards.length; i++) {
 
         let varDiv = document.createElement('div');
-        if (!varCards[i].flavorText) {
-            defaultText = varCards[i].text;
-        } else {
+        if (!varCards[i].text) {
             defaultText = varCards[i].flavorText;
+        } else {
+            defaultText = varCards[i].text;
         }
         varDiv.innerHTML = cardElement(varCards[i].name, varCards[i].artist, defaultText, cardImageURL, varCards[i].identifiers.multiverseId);
-        varDiv.classList.add('card');
+        //varDiv.classList.add('card');
+        varDiv.classList.add('flip-card');
         deckWrapper.appendChild(varDiv);
 
     }
@@ -290,7 +296,18 @@ function populateCards(object) {
     function cardElement(cardName, cardArtist, cardText, cardImageURL, cardImageID) {
 
         cardArtist = "Artist: " + cardArtist;
-        return `<h3>${cardName}</h3><p>${cardArtist}</p><img src="${cardImageURL} ${cardImageID}" alt="Image not found"> <p class="card-text">${cardText}</p>`;
+        //return `<h3>${cardName}</h3><p>${cardArtist}</p><img src="${cardImageURL} ${cardImageID}" alt="Image not found"> <p class="card-text">${cardText}</p>`;
+
+        return ` <div class="flip-card-inner">
+        <div class="flip-card-front">
+        <img src="${cardImageURL} ${cardImageID}" alt="Image not found">
+        </div>
+        <div class="flip-card-back">
+        <h3>${cardName}</h3>
+        <p>${cardArtist}</p>
+          <p class="card-text">${cardText}</p>
+        </div>
+      </div>`;
     }
 
 }
