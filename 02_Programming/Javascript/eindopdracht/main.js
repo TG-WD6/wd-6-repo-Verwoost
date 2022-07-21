@@ -9,9 +9,8 @@ const secondHand = document.querySelector('[data-second-hand]');
 const deckTitle = document.querySelector('#deck-title');
 const deckWrapper = document.querySelector('#deck-wrapper');
 const cardImageURL = 'https://gatherer.wizards.com/Handlers/Image.ashx?type=card&multiverseid=';
-const selectArtist = document.querySelector('#select-artist');
 const selectColor = document.querySelector('#select-color');
-let varArtist = null;
+let varColor = null;
 let defaultText = '';
 let varSet = './4ED.json';
 const selectSet = document.querySelector('#select-set');
@@ -166,7 +165,7 @@ searchButton.addEventListener('click', (e) => {
     if (searchInput.value.length > 0 && searchInput.value.trim() !== '') {
         let varWord = searchInput.value.toLowerCase();
         let isDuplicate = searchWords.includes(varWord);
-        
+
         if (!isDuplicate) {
             //add input to array searchWords
             searchWords.push(varWord);
@@ -197,16 +196,16 @@ searchContainer.addEventListener('click', (e) => {
 
 //-----------------------------------------------Cards----------------
 // select-artist onchange
-function thisArtistCards() {
-   varArtist = selectArtist.value;
+function thisColorCards() {
+    varColor = selectColor.value;
     populate(varSet);
 }
 // select-set onchange
 function thisSet() {
     varSet = selectSet.value;
-    clearArtists();
-    varArtist = null;
-    populate(varSet);   
+    clearColors();
+    varColor = null;
+    populate(varSet);
 }
 
 
@@ -242,52 +241,78 @@ function populateCards(object) {
     //const artists = cards.map((x) => { return x.artist });
     const artists = cards.map((x) => { return x.colorIdentity });
     const cleanArtists = cleanArray(artists);
-  
-    function cleanArray(array){
+
+    function cleanArray(array) {
         let uniqueArray = array.filter((value, index) => {
             const _value = JSON.stringify(value);
             return index === array.findIndex(obj => {
                 return JSON.stringify(obj) === _value;
             });
         });
-    
-        uniqueArray.sort(); 
+
+        uniqueArray.sort();
         return uniqueArray;
     }
 
     //if the list of artists is empty add option element for each artist
-    if (!selectArtist.firstChild) {
+    if (!selectColor.firstChild) {
         for (const artist of cleanArtists) {
-            let varArtistOption = document.createElement('option');
-            varArtistOption.innerHTML = populateArtistOptions(artist);
-            selectArtist.appendChild(varArtistOption);
+
+            console.log(artist);
+
+            let varColorOption = document.createElement('option');
+            varColorOption.value = artist;
+            switch (artist[0]) {
+                case 'B':
+                    varColorOption.textContent = "Black";
+                    if (artist[1]) { varColorOption.textContent = "Black + " + artist[1]; }
+                    break;
+
+                case 'U':
+                    varColorOption.textContent = "Blue";
+                    if (artist[1]) { varColorOption.textContent = "Blue + " + artist[1]; }
+                    break;
+                case 'W':
+                    varColorOption.textContent = "White";
+                    if (artist[1]) { varColorOption.textContent = "White + " + artist[1]; }
+                    break;
+                case 'R':
+                    varColorOption.textContent = "Red";
+                    if (artist[1]) { varColorOption.textContent = "Red + " + artist[1]; }
+                    break;
+                case 'G':
+                    varColorOption.textContent = "Green";
+                    if (artist[1]) { varColorOption.textContent = "Green + " + artist[1]; }
+                    break;
+                default:
+                    varColorOption.textContent = "Colorless";
+                    if (artist[1]) { varColorOption.textContent = "Colorless + " + artist[1]; }
+                    break;
+            }
+
+            selectColor.appendChild(varColorOption);
         }
-        selectArtist.firstChild.setAttribute('selected', true);
-        varArtist = selectArtist.firstChild.value;
+        selectColor.firstChild.setAttribute('selected', true);
+        varColor = selectColor.firstChild.value;
+        console.log(varColor);
 
     }
 
 
-    function populateArtistOptions(artist) {
-        return `<option value = ${artist}>${artist}</option>`;
 
-    }
 
-    //create array of card objects by varArtist
-    //let varCards = cards.filter(x => x.artist == varArtist);
-    let varCards = cards.filter(x => x.colorIdentity == varArtist);
+    //create array of card objects by varColor
+    //let varCards = cards.filter(x => x.artist == varColor);
+    let varCards = cards.filter(x => x.colorIdentity == varColor);
 
     //add a div with classname card for each card to document
     for (let i = 0; i < varCards.length; i++) {
 
         let varDiv = document.createElement('div');
-        if (!varCards[i].text) {
-            defaultText = varCards[i].flavorText;
-        } else {
-            defaultText = varCards[i].text;
-        }
+
+        defaultText = varCards[i].manaCost;
+
         varDiv.innerHTML = cardElement(varCards[i].name, varCards[i].artist, defaultText, cardImageURL, varCards[i].identifiers.multiverseId);
-        //varDiv.classList.add('card');
         varDiv.classList.add('flip-card');
         deckWrapper.appendChild(varDiv);
 
@@ -322,9 +347,9 @@ async function clearDeck() {
     }
 }
 
-async function clearArtists() {
-    while (selectArtist.firstChild)
-        selectArtist.removeChild(selectArtist.firstChild);
+async function clearColors() {
+    while (selectColor.firstChild)
+        selectColor.removeChild(selectColor.firstChild);
 }
 
 populate(varSet);
