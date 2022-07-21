@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSFinal</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Clock</h2>
+        <div class="clock-el">
+            <div class="hand hand-hours" id="hour-hand"></div>
+            <div class="hand hand-minutes" data-minute-hand></div>
+            <div class="hand hand-seconds" data-second-hand></div>
+            <div class="number number1">1</div>
+            <div class="number number2">2</div>
+            <div class="number number3">3</div>
+            <div class="number number4">4</div>
+            <div class="number number5">5</div>
+            <div class="number number6">6</div>
+            <div class="number number7">7</div>
+            <div class="number number8">8</div>
+            <div class="number number9">9</div>
+            <div class="number number10">10</div>
+            <div class="number number11">11</div>
+            <div class="number number12">12</div>
+
+        </div>
+
+    </div>
+
+    
+    
+    <div class="container">
+        <h2>Carousel</h2>
+        <div class="carousel">
+            <button class="carousel__btn-next" onclick="changePic(true);">&gt;</button>
+            <button class="carousel__btn-prev" onclick="changePic(false);">&lt;</button>
+
+            <ul class="carousel-list">
+                <li class="slide active"> <img src="https://source.unsplash.com/I3Wz-GuPKPE" alt="chameleon"> </li>
+                <li class="slide"><img src="https://source.unsplash.com/K3QQLUlqVVg" alt="chameleon"></li>
+                <li class="slide"><img src="https://source.unsplash.com/WPRPQUsaeHo" alt="chameleon"></li>
+            </ul>
+
+        </div>
+    </div>
+
+    
+    
+    
+
+
+    <div class="container">
+        <h2>Comment Section</h2>
+        <div class="comment-wrapper">
+            <section class="edit-area">
+                <form id="comment-form">
+                    <p class="comment__form-alert">Opmerking plaatsen</p>
+                    <fieldset>
+                        <textarea name="input-text" id="input-text" cols="30" rows="6"
+                            placeholder="Jouw bericht"></textarea>
+                        <!-- <input type="text" name="input-title" id="input-title" required placeholder="Gebruikersnaam"> -->
+                        <label for="char-select">Gebruikersnaam</label>
+                        <select name="char-select" id="char-select" required>
+                            <option value="Birdy">Birdy</option>
+                            <option value="Bunny">Bunny</option>
+                            <option value="Skully">Skully</option>
+                        </select>
+                        <button id="comment__post-btn">Post</button>
+                    </fieldset>
+                </form>
+                <div hidden class="reply-parent"></div>
+            </section>
+            <section class="comment-area">
+                <ul class="comment-list">
+                    <li class="comment" id="0">
+                        <div class="person"><img src="./images/birdy.svg" alt="" height="64px" width="64px">
+                            <h3 class="comment__title">Birdy #0</h3>
+                        </div>
+                        <p>Een heel goede programmeur!</p>
+                        <button class="comment__reply-btn" onclick="replyToComment(this)">reply</button>
+                    </li>
+                </ul>
+
+            </section>
+        </div>
+    </div>
+  
+
+    <div class="container" >
+        <h2>Search Bar</h2>
+        <p>Zoektermen worden in localstorage opgeslagen. Deze worden weergegeven als suggesties.
+            Je kunt met de pijltjestoetsen (en enter) of muisklik een keuze maken.
+            Zowel enter als de knop bevestigen je invoer. </p>
+    </div>
+    
+    <div class="container" id="search-container">
+
+        <br>
+        <div class="search-wrapper">
+            <input type="search" id="input-search" autocomplete="off" spellcheck="false">
+
+            <div class="search-list"></div>
+            <input type="submit" id="search-btn">
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+        <h2> JASON card deck</h2>
+        <label for="deck__select-set">Choose Set</label>
+        <select name="deck__select-set" id="select-set" onchange="thisSet()">
+            <option selected value="./4ED.json">Fourth Edition 1993</option>
+            <option value="./5ED.json">Fifth Edition 1997</option>
+            <option value="./6ED.json">Sixth Edition 1999</option>
+
+        </select>
+        <label for="deck__select-color">Choose Mana Color</label>
+        <select name="deck__select-color" id="select-color" onchange="thisColorCards()"></select>
+
+        <br>
+        <div class="deck-title" id="deck-title"></div>
+
+    </div>
+    <div class="deck-wrapper" id="deck-wrapper"></div>
+
+
+
+</body>
+
+</html>

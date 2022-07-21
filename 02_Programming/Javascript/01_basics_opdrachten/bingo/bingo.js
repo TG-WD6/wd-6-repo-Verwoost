@@ -10,7 +10,8 @@ let grape = document.getElementById('grape');
 //let fruitInput = document.getElementById('fruit-input');
 const fruitOutput = document.querySelector('#fruit-output');
 let comPareArray = ['appel', 'appels', 'peer', 'peren', 'sinaasappel', 'sinaasappels', 'ananas','ananassen', 'druif', 'druiven', 'mango', 'mango\'s', 'mangos', 'kers', 'kersen', 'banaan', 'bananen', 'aardbei', 'aardbeien'];
-let regex = /[\..*,.*:.*;.*'.*'.*!.*\?.*".*".\n]/ig;
+// let regex = /[\..*,.*:.*;.*'.*'.*!.*\?.*".*".\n]/ig;
+let regex = /[\.\,\'\"\:\n\?\!]/ig;
 
 function checkFruits(fruitInput) {
     let fruitInputString = fruitInput.value;

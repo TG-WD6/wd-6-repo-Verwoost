@@ -1,0 +1,4 @@
+De afgelopen weken hebben we geleerd te werken volgens de SCRUM methode. Daarnaast maken we gebruik van peer-learning.
+Tijdens het werken aan de eindopdracht heeft de daily stand-up weinig nut aangezien de voortgang van een ander teamlid geen invloed heeft op die van de rest van het team. Het blijft natuurlijk wel zo dat het goed is om te weten wie er hulp kan gebruiken en hoe het met de energy-levels staat. Peer learning; daar moet je wel wat moeite voor doen, omdat er veel bronnen op internet zijn te vinden waarbij de uitleg vaak duidelijker is. Wel is peer-learning een goede manier om verbinding tussen de teamleden te versterken.
+
+We zouden het toepassen van peer-learning kunnen verbeteren door wat vaker naar de bekende weg te vragen en dus meer interesse te tonen voor het werk van een ander. Persoonlijk vind ik lastig omdat het niet altijd oprecht aanvoelt.
